@@ -1,10 +1,3 @@
-//
-//  TabBar.swift
-//  Leaders
-//
-//  Created by 大澤清乃 on 2024/05/19.
-//
-
 import UIKit
 
 class TabBar: UITabBar {
@@ -14,5 +7,4 @@ class TabBar: UITabBar {
         sizeThatFits.height = 88
         return sizeThatFits;
     }
-
 }

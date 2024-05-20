@@ -19,8 +19,8 @@
 		CE2AA7E12BF9F0B900768F69 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE2AA7DB2BF9F0B900768F69 /* HomeViewController.swift */; };
 		CE2AA7E22BF9F0B900768F69 /* DiaryCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE2AA7DC2BF9F0B900768F69 /* DiaryCollectionViewCell.xib */; };
 		CE2AA7E32BF9F0B900768F69 /* PlaylistViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE2AA7DD2BF9F0B900768F69 /* PlaylistViewController.swift */; };
-		CE2AA7E42BF9F0B900768F69 /* TabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE2AA7DE2BF9F0B900768F69 /* TabBar.swift */; };
-		CE2AA7E52BF9F0B900768F69 /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE2AA7DF2BF9F0B900768F69 /* TabBarViewController.swift */; };
+		CE428F5A2BFA15CE00C095B8 /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE428F582BFA15CE00C095B8 /* TabBarViewController.swift */; };
+		CE428F5B2BFA15CE00C095B8 /* TabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE428F592BFA15CE00C095B8 /* TabBar.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,8 +38,8 @@
 		CE2AA7DB2BF9F0B900768F69 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		CE2AA7DC2BF9F0B900768F69 /* DiaryCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DiaryCollectionViewCell.xib; sourceTree = "<group>"; };
 		CE2AA7DD2BF9F0B900768F69 /* PlaylistViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaylistViewController.swift; sourceTree = "<group>"; };
-		CE2AA7DE2BF9F0B900768F69 /* TabBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBar.swift; sourceTree = "<group>"; };
-		CE2AA7DF2BF9F0B900768F69 /* TabBarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
+		CE428F582BFA15CE00C095B8 /* TabBarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
+		CE428F592BFA15CE00C095B8 /* TabBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBar.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,20 +75,36 @@
 				CE2AA7C22BF9F09B00768F69 /* AppDelegate.swift */,
 				CE2AA7C42BF9F09B00768F69 /* SceneDelegate.swift */,
 				CE2AA7C62BF9F09B00768F69 /* ViewController.swift */,
-				CE2AA7DA2BF9F0B900768F69 /* DiaryCollectionViewCell.swift */,
-				CE2AA7DC2BF9F0B900768F69 /* DiaryCollectionViewCell.xib */,
-				CE2AA7DB2BF9F0B900768F69 /* HomeViewController.swift */,
+				CE428F592BFA15CE00C095B8 /* TabBar.swift */,
+				CE428F582BFA15CE00C095B8 /* TabBarViewController.swift */,
+				CE428F572BF9F97800C095B8 /* Home */,
 				CE2AA7DD2BF9F0B900768F69 /* PlaylistViewController.swift */,
-				CE2AA7DE2BF9F0B900768F69 /* TabBar.swift */,
-				CE2AA7DF2BF9F0B900768F69 /* TabBarViewController.swift */,
-				CE2AA7C82BF9F09B00768F69 /* Main.storyboard */,
-				CE2AA7D62BF9F0B000768F69 /* Home.storyboard */,
-				CE2AA7D72BF9F0B000768F69 /* Playlist.storyboard */,
+				CE428F552BF9F95800C095B8 /* StoryBoard */,
 				CE2AA7CB2BF9F09C00768F69 /* Assets.xcassets */,
 				CE2AA7CD2BF9F09C00768F69 /* LaunchScreen.storyboard */,
 				CE2AA7D02BF9F09C00768F69 /* Info.plist */,
 			);
 			path = Music;
+			sourceTree = "<group>";
+		};
+		CE428F552BF9F95800C095B8 /* StoryBoard */ = {
+			isa = PBXGroup;
+			children = (
+				CE2AA7C82BF9F09B00768F69 /* Main.storyboard */,
+				CE2AA7D62BF9F0B000768F69 /* Home.storyboard */,
+				CE2AA7D72BF9F0B000768F69 /* Playlist.storyboard */,
+			);
+			path = StoryBoard;
+			sourceTree = "<group>";
+		};
+		CE428F572BF9F97800C095B8 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				CE2AA7DB2BF9F0B900768F69 /* HomeViewController.swift */,
+				CE2AA7DA2BF9F0B900768F69 /* DiaryCollectionViewCell.swift */,
+				CE2AA7DC2BF9F0B900768F69 /* DiaryCollectionViewCell.xib */,
+			);
+			path = Home;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -165,14 +181,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CE2AA7E52BF9F0B900768F69 /* TabBarViewController.swift in Sources */,
 				CE2AA7E12BF9F0B900768F69 /* HomeViewController.swift in Sources */,
 				CE2AA7E02BF9F0B900768F69 /* DiaryCollectionViewCell.swift in Sources */,
 				CE2AA7E32BF9F0B900768F69 /* PlaylistViewController.swift in Sources */,
+				CE428F5B2BFA15CE00C095B8 /* TabBar.swift in Sources */,
 				CE2AA7C72BF9F09B00768F69 /* ViewController.swift in Sources */,
+				CE428F5A2BFA15CE00C095B8 /* TabBarViewController.swift in Sources */,
 				CE2AA7C32BF9F09B00768F69 /* AppDelegate.swift in Sources */,
 				CE2AA7C52BF9F09B00768F69 /* SceneDelegate.swift in Sources */,
-				CE2AA7E42BF9F0B900768F69 /* TabBar.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
