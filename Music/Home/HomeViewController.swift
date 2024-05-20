@@ -20,7 +20,7 @@ class HomeViewController: UIViewController {
 
 extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 5
+        return 10
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -35,16 +35,16 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let space: CGFloat = 10
-//        let cellWidth: CGFloat = self.view.frame.width - 76
-//        let cellHeight: CGFloat = diaryCollectionView.frame.height - 60
-        let cellWidth: CGFloat = 344
-        let cellHeight: CGFloat = 128
+        let space: CGFloat = 24
+//        let cellWidth: CGFloat = self.view.frame.width - space
+        let cellHeight: CGFloat = diaryCollectionView.frame.height - 60
+        let cellWidth: CGFloat = 200
+//        let cellHeight: CGFloat = 128
         return CGSize(width: cellWidth, height: cellHeight)
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-        return 30
+        return 60
     }
     
     
