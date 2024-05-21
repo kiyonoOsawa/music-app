@@ -22,14 +22,14 @@
 		CE428F5A2BFA15CE00C095B8 /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE428F582BFA15CE00C095B8 /* TabBarViewController.swift */; };
 		CE428F5B2BFA15CE00C095B8 /* TabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE428F592BFA15CE00C095B8 /* TabBar.swift */; };
 		CE54D8FD2BFB99230087DD32 /* AddDiaryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE54D8FC2BFB99230087DD32 /* AddDiaryViewController.swift */; };
-		CE54D9032BFB99590087DD32 /* DateCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE54D9012BFB99590087DD32 /* DateCollectionViewCell.swift */; };
-		CE54D9042BFB99590087DD32 /* DateCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE54D9022BFB99590087DD32 /* DateCollectionViewCell.xib */; };
-		CE54D9072BFB99650087DD32 /* MusicCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE54D9052BFB99650087DD32 /* MusicCollectionViewCell.swift */; };
-		CE54D9082BFB99650087DD32 /* MusicCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE54D9062BFB99650087DD32 /* MusicCollectionViewCell.xib */; };
-		CE54D90B2BFB99790087DD32 /* EmotionCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE54D9092BFB99790087DD32 /* EmotionCollectionViewCell.swift */; };
-		CE54D90C2BFB99790087DD32 /* EmotionCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE54D90A2BFB99790087DD32 /* EmotionCollectionViewCell.xib */; };
-		CE54D90F2BFB99850087DD32 /* TextCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE54D90D2BFB99850087DD32 /* TextCollectionViewCell.swift */; };
-		CE54D9102BFB99850087DD32 /* TextCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE54D90E2BFB99850087DD32 /* TextCollectionViewCell.xib */; };
+		CE8A18D52BFC312F00CEBE7F /* DateTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8A18D32BFC312F00CEBE7F /* DateTableViewCell.swift */; };
+		CE8A18D62BFC312F00CEBE7F /* DateTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE8A18D42BFC312F00CEBE7F /* DateTableViewCell.xib */; };
+		CE8A18D92BFC314D00CEBE7F /* MusicTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8A18D72BFC314D00CEBE7F /* MusicTableViewCell.swift */; };
+		CE8A18DA2BFC314D00CEBE7F /* MusicTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE8A18D82BFC314D00CEBE7F /* MusicTableViewCell.xib */; };
+		CE8A18DD2BFC318000CEBE7F /* EmotionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8A18DB2BFC318000CEBE7F /* EmotionTableViewCell.swift */; };
+		CE8A18DE2BFC318000CEBE7F /* EmotionTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE8A18DC2BFC318000CEBE7F /* EmotionTableViewCell.xib */; };
+		CE8A18E12BFC318D00CEBE7F /* TextTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8A18DF2BFC318D00CEBE7F /* TextTableViewCell.swift */; };
+		CE8A18E22BFC318D00CEBE7F /* TextTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE8A18E02BFC318D00CEBE7F /* TextTableViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -50,14 +50,14 @@
 		CE428F582BFA15CE00C095B8 /* TabBarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
 		CE428F592BFA15CE00C095B8 /* TabBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBar.swift; sourceTree = "<group>"; };
 		CE54D8FC2BFB99230087DD32 /* AddDiaryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddDiaryViewController.swift; sourceTree = "<group>"; };
-		CE54D9012BFB99590087DD32 /* DateCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateCollectionViewCell.swift; sourceTree = "<group>"; };
-		CE54D9022BFB99590087DD32 /* DateCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DateCollectionViewCell.xib; sourceTree = "<group>"; };
-		CE54D9052BFB99650087DD32 /* MusicCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicCollectionViewCell.swift; sourceTree = "<group>"; };
-		CE54D9062BFB99650087DD32 /* MusicCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MusicCollectionViewCell.xib; sourceTree = "<group>"; };
-		CE54D9092BFB99790087DD32 /* EmotionCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmotionCollectionViewCell.swift; sourceTree = "<group>"; };
-		CE54D90A2BFB99790087DD32 /* EmotionCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EmotionCollectionViewCell.xib; sourceTree = "<group>"; };
-		CE54D90D2BFB99850087DD32 /* TextCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextCollectionViewCell.swift; sourceTree = "<group>"; };
-		CE54D90E2BFB99850087DD32 /* TextCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TextCollectionViewCell.xib; sourceTree = "<group>"; };
+		CE8A18D32BFC312F00CEBE7F /* DateTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateTableViewCell.swift; sourceTree = "<group>"; };
+		CE8A18D42BFC312F00CEBE7F /* DateTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DateTableViewCell.xib; sourceTree = "<group>"; };
+		CE8A18D72BFC314D00CEBE7F /* MusicTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicTableViewCell.swift; sourceTree = "<group>"; };
+		CE8A18D82BFC314D00CEBE7F /* MusicTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MusicTableViewCell.xib; sourceTree = "<group>"; };
+		CE8A18DB2BFC318000CEBE7F /* EmotionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmotionTableViewCell.swift; sourceTree = "<group>"; };
+		CE8A18DC2BFC318000CEBE7F /* EmotionTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EmotionTableViewCell.xib; sourceTree = "<group>"; };
+		CE8A18DF2BFC318D00CEBE7F /* TextTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextTableViewCell.swift; sourceTree = "<group>"; };
+		CE8A18E02BFC318D00CEBE7F /* TextTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TextTableViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -130,14 +130,14 @@
 			isa = PBXGroup;
 			children = (
 				CE54D8FC2BFB99230087DD32 /* AddDiaryViewController.swift */,
-				CE54D9012BFB99590087DD32 /* DateCollectionViewCell.swift */,
-				CE54D9022BFB99590087DD32 /* DateCollectionViewCell.xib */,
-				CE54D9052BFB99650087DD32 /* MusicCollectionViewCell.swift */,
-				CE54D9062BFB99650087DD32 /* MusicCollectionViewCell.xib */,
-				CE54D9092BFB99790087DD32 /* EmotionCollectionViewCell.swift */,
-				CE54D90A2BFB99790087DD32 /* EmotionCollectionViewCell.xib */,
-				CE54D90D2BFB99850087DD32 /* TextCollectionViewCell.swift */,
-				CE54D90E2BFB99850087DD32 /* TextCollectionViewCell.xib */,
+				CE8A18D32BFC312F00CEBE7F /* DateTableViewCell.swift */,
+				CE8A18D42BFC312F00CEBE7F /* DateTableViewCell.xib */,
+				CE8A18D72BFC314D00CEBE7F /* MusicTableViewCell.swift */,
+				CE8A18D82BFC314D00CEBE7F /* MusicTableViewCell.xib */,
+				CE8A18DB2BFC318000CEBE7F /* EmotionTableViewCell.swift */,
+				CE8A18DC2BFC318000CEBE7F /* EmotionTableViewCell.xib */,
+				CE8A18DF2BFC318D00CEBE7F /* TextTableViewCell.swift */,
+				CE8A18E02BFC318D00CEBE7F /* TextTableViewCell.xib */,
 			);
 			path = AddDiary;
 			sourceTree = "<group>";
@@ -200,14 +200,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CE8A18DE2BFC318000CEBE7F /* EmotionTableViewCell.xib in Resources */,
+				CE8A18D62BFC312F00CEBE7F /* DateTableViewCell.xib in Resources */,
 				CE2AA7CC2BF9F09C00768F69 /* Assets.xcassets in Resources */,
+				CE8A18E22BFC318D00CEBE7F /* TextTableViewCell.xib in Resources */,
 				CE2AA7CF2BF9F09C00768F69 /* Base in Resources */,
-				CE54D90C2BFB99790087DD32 /* EmotionCollectionViewCell.xib in Resources */,
 				CE2AA7CA2BF9F09B00768F69 /* Base in Resources */,
+				CE8A18DA2BFC314D00CEBE7F /* MusicTableViewCell.xib in Resources */,
 				CE2AA7D92BF9F0B000768F69 /* Playlist.storyboard in Resources */,
-				CE54D9102BFB99850087DD32 /* TextCollectionViewCell.xib in Resources */,
-				CE54D9082BFB99650087DD32 /* MusicCollectionViewCell.xib in Resources */,
-				CE54D9042BFB99590087DD32 /* DateCollectionViewCell.xib in Resources */,
 				CE2AA7E22BF9F0B900768F69 /* DiaryCollectionViewCell.xib in Resources */,
 				CE2AA7D82BF9F0B000768F69 /* Home.storyboard in Resources */,
 			);
@@ -220,19 +220,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CE54D90B2BFB99790087DD32 /* EmotionCollectionViewCell.swift in Sources */,
 				CE2AA7E12BF9F0B900768F69 /* HomeViewController.swift in Sources */,
 				CE54D8FD2BFB99230087DD32 /* AddDiaryViewController.swift in Sources */,
+				CE8A18DD2BFC318000CEBE7F /* EmotionTableViewCell.swift in Sources */,
 				CE2AA7E02BF9F0B900768F69 /* DiaryCollectionViewCell.swift in Sources */,
 				CE2AA7E32BF9F0B900768F69 /* PlaylistViewController.swift in Sources */,
-				CE54D9032BFB99590087DD32 /* DateCollectionViewCell.swift in Sources */,
-				CE54D9072BFB99650087DD32 /* MusicCollectionViewCell.swift in Sources */,
+				CE8A18D52BFC312F00CEBE7F /* DateTableViewCell.swift in Sources */,
 				CE428F5B2BFA15CE00C095B8 /* TabBar.swift in Sources */,
 				CE2AA7C72BF9F09B00768F69 /* ViewController.swift in Sources */,
+				CE8A18E12BFC318D00CEBE7F /* TextTableViewCell.swift in Sources */,
 				CE428F5A2BFA15CE00C095B8 /* TabBarViewController.swift in Sources */,
 				CE2AA7C32BF9F09B00768F69 /* AppDelegate.swift in Sources */,
+				CE8A18D92BFC314D00CEBE7F /* MusicTableViewCell.swift in Sources */,
 				CE2AA7C52BF9F09B00768F69 /* SceneDelegate.swift in Sources */,
-				CE54D90F2BFB99850087DD32 /* TextCollectionViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
