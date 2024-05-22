@@ -3,6 +3,7 @@
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22684"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -35,7 +36,7 @@
                                     <fontDescription key="titleFontDescription" type="system" pointSize="32"/>
                                 </buttonConfiguration>
                                 <connections>
-                                    <segue destination="DCc-yg-G6O" kind="modal" id="MA0-eT-Ptg"/>
+                                    <action selector="addDiary" destination="Y6W-OH-hqX" eventType="touchUpInside" id="abh-Tx-pxD"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -64,47 +65,110 @@
             <objects>
                 <viewController id="DCc-yg-G6O" customClass="AddDiaryViewController" customModule="Music" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="SR0-8U-MgU">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Yr9-kF-gQt">
-                                <rect key="frame" x="312" y="20" width="56" height="35"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="保存"/>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yOS-VO-g9b">
-                                <rect key="frame" x="2" y="20" width="104" height="35"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="キャンセル"/>
-                                <connections>
-                                    <action selector="desimiss" destination="DCc-yg-G6O" eventType="touchUpInside" id="bFd-gW-E49"/>
-                                </connections>
-                            </button>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="insetGrouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" estimatedSectionHeaderHeight="-1" sectionFooterHeight="18" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="nMn-zv-F8w">
-                                <rect key="frame" x="0.0" y="63" width="393" height="779"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="insetGrouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" estimatedSectionHeaderHeight="-1" sectionFooterHeight="18" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="nMn-zv-F8w">
+                                <rect key="frame" x="0.0" y="103" width="393" height="749"/>
                                 <color key="backgroundColor" systemColor="systemGray4Color"/>
                             </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="T09-WV-jCC"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="nMn-zv-F8w" firstAttribute="leading" secondItem="T09-WV-jCC" secondAttribute="leading" id="Cda-iA-brK"/>
+                            <constraint firstItem="nMn-zv-F8w" firstAttribute="top" secondItem="T09-WV-jCC" secondAttribute="top" id="Ilg-DZ-0Ru"/>
+                            <constraint firstAttribute="bottom" secondItem="nMn-zv-F8w" secondAttribute="bottom" id="RJl-lL-xDR"/>
+                            <constraint firstItem="nMn-zv-F8w" firstAttribute="trailing" secondItem="T09-WV-jCC" secondAttribute="trailing" id="Rof-B7-wuv"/>
+                        </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="Zme-J3-oAm"/>
+                    <navigationItem key="navigationItem" id="Zme-J3-oAm">
+                        <barButtonItem key="leftBarButtonItem" title="Cancel" id="gkb-Fg-Opu">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="xP7-Z4-fOt">
+                                <rect key="frame" x="16.000000000000007" y="5" width="103.66666666666669" height="34.333333333333336"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="キャンセル"/>
+                                <connections>
+                                    <action selector="desimiss" destination="DCc-yg-G6O" eventType="touchUpInside" id="MWf-wd-9Xv"/>
+                                </connections>
+                            </button>
+                            <color key="tintColor" name="AccentColor"/>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="保存" id="SG1-fy-jgN">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="Pw3-vo-iXX">
+                                <rect key="frame" x="290" y="5" width="87" height="34.333333333333336"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="保存"/>
+                            </button>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
-                        <outlet property="cancelButton" destination="yOS-VO-g9b" id="yPf-3R-c9Y"/>
-                        <outlet property="saveButton" destination="Yr9-kF-gQt" id="vKk-Gv-Zdm"/>
                         <outlet property="sectionTableView" destination="nMn-zv-F8w" id="df2-H8-mwm"/>
+                        <segue destination="A0T-Jl-ItO" kind="show" identifier="toSelectMusic" id="z8K-dI-9YX"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jOO-TZ-nQM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2046.564885496183" y="-2.1126760563380285"/>
+        </scene>
+        <!--Music View Controller-->
+        <scene sceneID="cKV-Yw-vAD">
+            <objects>
+                <viewController storyboardIdentifier="toSelectMusic" id="A0T-Jl-ItO" customClass="MusicViewController" customModule="Music" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="qPM-6E-phf">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="kSu-Oh-SHa">
+                                <rect key="frame" x="0.0" y="103" width="393" height="749"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="q0r-Pt-lvi"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="kSu-Oh-SHa" secondAttribute="bottom" id="3b6-Wd-a49"/>
+                            <constraint firstItem="kSu-Oh-SHa" firstAttribute="top" secondItem="q0r-Pt-lvi" secondAttribute="top" id="EwN-Dw-uVs"/>
+                            <constraint firstItem="kSu-Oh-SHa" firstAttribute="leading" secondItem="q0r-Pt-lvi" secondAttribute="leading" id="Ilr-52-QjM"/>
+                            <constraint firstItem="kSu-Oh-SHa" firstAttribute="trailing" secondItem="q0r-Pt-lvi" secondAttribute="trailing" id="Xer-cq-ZRg"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="WMZ-wT-PKJ"/>
+                    <connections>
+                        <outlet property="musicTable" destination="kSu-Oh-SHa" id="0kP-nK-16v"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2nH-SY-EFl" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2944.2748091603053" y="-2.1126760563380285"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="8D6-tV-j0f">
+            <objects>
+                <navigationController storyboardIdentifier="toAddDiary" automaticallyAdjustsScrollViewInsets="NO" id="uOc-2W-eu1" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Mdu-Im-In7">
+                        <rect key="frame" x="0.0" y="59" width="393" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="DCc-yg-G6O" kind="relationship" relationship="rootViewController" id="xrU-ZY-lbR"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Sx7-Gl-1H9" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1119.8473282442749" y="-2.1126760563380285"/>
         </scene>
     </scenes>
     <resources>
         <image name="house" catalog="system" width="128" height="104"/>
+        <namedColor name="AccentColor">
+            <color red="0.0" green="0.46000000000000002" blue="0.89000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

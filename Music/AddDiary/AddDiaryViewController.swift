@@ -55,6 +55,15 @@ extension AddDiaryViewController: UITableViewDelegate, UITableViewDataSource {
         }
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if indexPath.section == 1 {
+            self.performSegue(withIdentifier: "toSelectMusic", sender: nil)
+            print("画面遷移")
+        } else {
+            return
+        }
+    }
+    
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         if indexPath.section == 0 {
             return 50
