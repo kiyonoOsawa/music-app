@@ -30,6 +30,12 @@
 		CE8A18DE2BFC318000CEBE7F /* EmotionTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE8A18DC2BFC318000CEBE7F /* EmotionTableViewCell.xib */; };
 		CE8A18E12BFC318D00CEBE7F /* TextTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8A18DF2BFC318D00CEBE7F /* TextTableViewCell.swift */; };
 		CE8A18E22BFC318D00CEBE7F /* TextTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE8A18E02BFC318D00CEBE7F /* TextTableViewCell.xib */; };
+		CEF4EC262BFC96CC0044EB54 /* MusicKitViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF4EC252BFC96CC0044EB54 /* MusicKitViewModel.swift */; };
+		CEF4EC282BFCF1350044EB54 /* MusicViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF4EC272BFCF1350044EB54 /* MusicViewController.swift */; };
+		CEF4EC312BFDCAFB0044EB54 /* MusicListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF4EC2F2BFDCAFB0044EB54 /* MusicListTableViewCell.swift */; };
+		CEF4EC322BFDCAFB0044EB54 /* MusicListTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CEF4EC302BFDCAFB0044EB54 /* MusicListTableViewCell.xib */; };
+		CEF4EC352BFE503E0044EB54 /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = CEF4EC342BFE503E0044EB54 /* Realm */; };
+		CEF4EC372BFE503E0044EB54 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = CEF4EC362BFE503E0044EB54 /* RealmSwift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -58,6 +64,10 @@
 		CE8A18DC2BFC318000CEBE7F /* EmotionTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EmotionTableViewCell.xib; sourceTree = "<group>"; };
 		CE8A18DF2BFC318D00CEBE7F /* TextTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextTableViewCell.swift; sourceTree = "<group>"; };
 		CE8A18E02BFC318D00CEBE7F /* TextTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TextTableViewCell.xib; sourceTree = "<group>"; };
+		CEF4EC252BFC96CC0044EB54 /* MusicKitViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicKitViewModel.swift; sourceTree = "<group>"; };
+		CEF4EC272BFCF1350044EB54 /* MusicViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicViewController.swift; sourceTree = "<group>"; };
+		CEF4EC2F2BFDCAFB0044EB54 /* MusicListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicListTableViewCell.swift; sourceTree = "<group>"; };
+		CEF4EC302BFDCAFB0044EB54 /* MusicListTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MusicListTableViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,6 +75,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CEF4EC372BFE503E0044EB54 /* RealmSwift in Frameworks */,
+				CEF4EC352BFE503E0044EB54 /* Realm in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -95,6 +107,10 @@
 				CE2AA7C62BF9F09B00768F69 /* ViewController.swift */,
 				CE428F592BFA15CE00C095B8 /* TabBar.swift */,
 				CE428F582BFA15CE00C095B8 /* TabBarViewController.swift */,
+				CEF4EC252BFC96CC0044EB54 /* MusicKitViewModel.swift */,
+				CEF4EC272BFCF1350044EB54 /* MusicViewController.swift */,
+				CEF4EC2F2BFDCAFB0044EB54 /* MusicListTableViewCell.swift */,
+				CEF4EC302BFDCAFB0044EB54 /* MusicListTableViewCell.xib */,
 				CE54D8FE2BFB992B0087DD32 /* AddDiary */,
 				CE428F572BF9F97800C095B8 /* Home */,
 				CE2AA7DD2BF9F0B900768F69 /* PlaylistViewController.swift */,
@@ -158,6 +174,10 @@
 			dependencies = (
 			);
 			name = Music;
+			packageProductDependencies = (
+				CEF4EC342BFE503E0044EB54 /* Realm */,
+				CEF4EC362BFE503E0044EB54 /* RealmSwift */,
+			);
 			productName = Music;
 			productReference = CE2AA7BF2BF9F09B00768F69 /* Music.app */;
 			productType = "com.apple.product-type.application";
@@ -186,6 +206,9 @@
 				Base,
 			);
 			mainGroup = CE2AA7B62BF9F09B00768F69;
+			packageReferences = (
+				CEF4EC332BFE503E0044EB54 /* XCRemoteSwiftPackageReference "realm-swift" */,
+			);
 			productRefGroup = CE2AA7C02BF9F09B00768F69 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -208,6 +231,7 @@
 				CE2AA7CA2BF9F09B00768F69 /* Base in Resources */,
 				CE8A18DA2BFC314D00CEBE7F /* MusicTableViewCell.xib in Resources */,
 				CE2AA7D92BF9F0B000768F69 /* Playlist.storyboard in Resources */,
+				CEF4EC322BFDCAFB0044EB54 /* MusicListTableViewCell.xib in Resources */,
 				CE2AA7E22BF9F0B900768F69 /* DiaryCollectionViewCell.xib in Resources */,
 				CE2AA7D82BF9F0B000768F69 /* Home.storyboard in Resources */,
 			);
@@ -226,9 +250,12 @@
 				CE2AA7E02BF9F0B900768F69 /* DiaryCollectionViewCell.swift in Sources */,
 				CE2AA7E32BF9F0B900768F69 /* PlaylistViewController.swift in Sources */,
 				CE8A18D52BFC312F00CEBE7F /* DateTableViewCell.swift in Sources */,
+				CEF4EC282BFCF1350044EB54 /* MusicViewController.swift in Sources */,
+				CEF4EC312BFDCAFB0044EB54 /* MusicListTableViewCell.swift in Sources */,
 				CE428F5B2BFA15CE00C095B8 /* TabBar.swift in Sources */,
 				CE2AA7C72BF9F09B00768F69 /* ViewController.swift in Sources */,
 				CE8A18E12BFC318D00CEBE7F /* TextTableViewCell.swift in Sources */,
+				CEF4EC262BFC96CC0044EB54 /* MusicKitViewModel.swift in Sources */,
 				CE428F5A2BFA15CE00C095B8 /* TabBarViewController.swift in Sources */,
 				CE2AA7C32BF9F09B00768F69 /* AppDelegate.swift in Sources */,
 				CE8A18D92BFC314D00CEBE7F /* MusicTableViewCell.swift in Sources */,
@@ -384,8 +411,10 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 5TMS54W5TQ;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Music/Info.plist;
+				INFOPLIST_KEY_NSAppleMusicUsageDescription = "メディアライブラリーを使用します";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -396,7 +425,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.kiyono.Music;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.kiyono.Music-app";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -411,8 +440,10 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 5TMS54W5TQ;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Music/Info.plist;
+				INFOPLIST_KEY_NSAppleMusicUsageDescription = "メディアライブラリーを使用します";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -423,7 +454,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.kiyono.Music;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.kiyono.Music-app";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -453,6 +484,30 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		CEF4EC332BFE503E0044EB54 /* XCRemoteSwiftPackageReference "realm-swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/realm/realm-swift.git";
+			requirement = {
+				kind = exactVersion;
+				version = 10.32.3;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		CEF4EC342BFE503E0044EB54 /* Realm */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = CEF4EC332BFE503E0044EB54 /* XCRemoteSwiftPackageReference "realm-swift" */;
+			productName = Realm;
+		};
+		CEF4EC362BFE503E0044EB54 /* RealmSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = CEF4EC332BFE503E0044EB54 /* XCRemoteSwiftPackageReference "realm-swift" */;
+			productName = RealmSwift;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = CE2AA7B72BF9F09B00768F69 /* Project object */;
 }
