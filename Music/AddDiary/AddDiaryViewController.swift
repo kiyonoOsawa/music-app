@@ -14,12 +14,6 @@ class AddDiaryViewController: UIViewController {
     var musicCell = MusicTableViewCell()
     var emotionCell = EmotionTableViewCell()
     var textCell = TextTableViewCell()
-    var date = Date()
-    var musicImage = UIImage(data: Data())
-    var musicTitle = String()
-    var emotion = Int()
-    var content = String()
-    
 
     override func viewDidLoad() {
         super.viewDidLoad()

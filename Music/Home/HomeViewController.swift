@@ -62,9 +62,9 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "DiaryCell", for: indexPath) as! DiaryCollectionViewCell
-        cell.layer.cornerRadius = 25
-        cell.layer.shadowColor = UIColor.black.cgColor
-        cell.layer.shadowOpacity = 0.25
+        cell.layer.cornerRadius = 16
+        cell.layer.shadowColor = UIColor.gray.cgColor
+        cell.layer.shadowOpacity = 0.45
         cell.layer.shadowOffset = CGSize(width: 0, height: 0)
         cell.layer.shadowRadius = 5
         cell.layer.masksToBounds = false
@@ -78,15 +78,17 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let space: CGFloat = 24
-        let cellHeight: CGFloat = diaryCollectionView.frame.height - 60
-        let cellWidth: CGFloat = 200
+        let space: CGFloat = 8
+        let cellWidth: CGFloat = diaryCollectionView.frame.width - space
+        let cellHeight: CGFloat = 88
         return CGSize(width: cellWidth, height: cellHeight)
     }
     
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+//        return UIEdgeInsets(top: 30, left:16, bottom: 0, right: 16)
+//    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
         return 60
     }
-    
-    
 }
