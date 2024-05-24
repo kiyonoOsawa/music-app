@@ -36,6 +36,7 @@
 		CEF4EC322BFDCAFB0044EB54 /* MusicListTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CEF4EC302BFDCAFB0044EB54 /* MusicListTableViewCell.xib */; };
 		CEF4EC352BFE503E0044EB54 /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = CEF4EC342BFE503E0044EB54 /* Realm */; };
 		CEF4EC372BFE503E0044EB54 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = CEF4EC362BFE503E0044EB54 /* RealmSwift */; };
+		CEF4EC3B2BFE51CA0044EB54 /* Diary.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF4EC3A2BFE51CA0044EB54 /* Diary.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -68,6 +69,7 @@
 		CEF4EC272BFCF1350044EB54 /* MusicViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicViewController.swift; sourceTree = "<group>"; };
 		CEF4EC2F2BFDCAFB0044EB54 /* MusicListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicListTableViewCell.swift; sourceTree = "<group>"; };
 		CEF4EC302BFDCAFB0044EB54 /* MusicListTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MusicListTableViewCell.xib; sourceTree = "<group>"; };
+		CEF4EC3A2BFE51CA0044EB54 /* Diary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Diary.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,12 +107,9 @@
 				CE2AA7C22BF9F09B00768F69 /* AppDelegate.swift */,
 				CE2AA7C42BF9F09B00768F69 /* SceneDelegate.swift */,
 				CE2AA7C62BF9F09B00768F69 /* ViewController.swift */,
-				CE428F592BFA15CE00C095B8 /* TabBar.swift */,
-				CE428F582BFA15CE00C095B8 /* TabBarViewController.swift */,
-				CEF4EC252BFC96CC0044EB54 /* MusicKitViewModel.swift */,
-				CEF4EC272BFCF1350044EB54 /* MusicViewController.swift */,
-				CEF4EC2F2BFDCAFB0044EB54 /* MusicListTableViewCell.swift */,
-				CEF4EC302BFDCAFB0044EB54 /* MusicListTableViewCell.xib */,
+				CEF4EC3C2BFE51CD0044EB54 /* VariousOtherThings */,
+				CEF4EC382BFE51590044EB54 /* Tabbar */,
+				CEF4EC392BFE51810044EB54 /* Music */,
 				CE54D8FE2BFB992B0087DD32 /* AddDiary */,
 				CE428F572BF9F97800C095B8 /* Home */,
 				CE2AA7DD2BF9F0B900768F69 /* PlaylistViewController.swift */,
@@ -156,6 +155,34 @@
 				CE8A18E02BFC318D00CEBE7F /* TextTableViewCell.xib */,
 			);
 			path = AddDiary;
+			sourceTree = "<group>";
+		};
+		CEF4EC382BFE51590044EB54 /* Tabbar */ = {
+			isa = PBXGroup;
+			children = (
+				CE428F592BFA15CE00C095B8 /* TabBar.swift */,
+				CE428F582BFA15CE00C095B8 /* TabBarViewController.swift */,
+			);
+			path = Tabbar;
+			sourceTree = "<group>";
+		};
+		CEF4EC392BFE51810044EB54 /* Music */ = {
+			isa = PBXGroup;
+			children = (
+				CEF4EC272BFCF1350044EB54 /* MusicViewController.swift */,
+				CEF4EC2F2BFDCAFB0044EB54 /* MusicListTableViewCell.swift */,
+				CEF4EC302BFDCAFB0044EB54 /* MusicListTableViewCell.xib */,
+			);
+			path = Music;
+			sourceTree = "<group>";
+		};
+		CEF4EC3C2BFE51CD0044EB54 /* VariousOtherThings */ = {
+			isa = PBXGroup;
+			children = (
+				CEF4EC252BFC96CC0044EB54 /* MusicKitViewModel.swift */,
+				CEF4EC3A2BFE51CA0044EB54 /* Diary.swift */,
+			);
+			path = VariousOtherThings;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -254,6 +281,7 @@
 				CEF4EC312BFDCAFB0044EB54 /* MusicListTableViewCell.swift in Sources */,
 				CE428F5B2BFA15CE00C095B8 /* TabBar.swift in Sources */,
 				CE2AA7C72BF9F09B00768F69 /* ViewController.swift in Sources */,
+				CEF4EC3B2BFE51CA0044EB54 /* Diary.swift in Sources */,
 				CE8A18E12BFC318D00CEBE7F /* TextTableViewCell.swift in Sources */,
 				CEF4EC262BFC96CC0044EB54 /* MusicKitViewModel.swift in Sources */,
 				CE428F5A2BFA15CE00C095B8 /* TabBarViewController.swift in Sources */,

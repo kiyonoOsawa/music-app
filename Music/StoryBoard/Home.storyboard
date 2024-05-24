@@ -84,27 +84,32 @@
                     </view>
                     <navigationItem key="navigationItem" id="Zme-J3-oAm">
                         <barButtonItem key="leftBarButtonItem" title="Cancel" id="gkb-Fg-Opu">
-                            <button key="customView" opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="xP7-Z4-fOt">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="xP7-Z4-fOt">
                                 <rect key="frame" x="16.000000000000007" y="5" width="103.66666666666669" height="34.333333333333336"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="キャンセル"/>
                                 <connections>
-                                    <action selector="desimiss" destination="DCc-yg-G6O" eventType="touchUpInside" id="MWf-wd-9Xv"/>
+                                    <action selector="desimiss" destination="DCc-yg-G6O" eventType="touchUpOutside" id="EJk-vL-va4"/>
                                 </connections>
                             </button>
                             <color key="tintColor" name="AccentColor"/>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="保存" id="SG1-fy-jgN">
-                            <button key="customView" opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="Pw3-vo-iXX">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="Pw3-vo-iXX">
                                 <rect key="frame" x="290" y="5" width="87" height="34.333333333333336"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="保存"/>
+                                <connections>
+                                    <action selector="save" destination="DCc-yg-G6O" eventType="touchUpInside" id="zH0-Po-zcO"/>
+                                </connections>
                             </button>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="cancelButton" destination="xP7-Z4-fOt" id="Ls4-1G-kqo"/>
+                        <outlet property="saveButton" destination="Pw3-vo-iXX" id="LTu-HO-prd"/>
                         <outlet property="sectionTableView" destination="nMn-zv-F8w" id="df2-H8-mwm"/>
                         <segue destination="A0T-Jl-ItO" kind="show" identifier="toSelectMusic" id="z8K-dI-9YX"/>
                     </connections>

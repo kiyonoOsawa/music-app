@@ -1,4 +1,5 @@
 import UIKit
+import RealmSwift
 
 class AddDiaryViewController: UIViewController {
     
@@ -6,10 +7,19 @@ class AddDiaryViewController: UIViewController {
     @IBOutlet weak var cancelButton: UIButton!
     @IBOutlet weak var saveButton: UIButton!
     
+    let realm = try! Realm()
+    var diary = Diary()
+    
     var dateCell = DateTableViewCell()
     var musicCell = MusicTableViewCell()
     var emotionCell = EmotionTableViewCell()
     var textCell = TextTableViewCell()
+    var date = Date()
+    var musicImage = UIImage(data: Data())
+    var musicTitle = String()
+    var emotion = Int()
+    var content = String()
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,9 +34,39 @@ class AddDiaryViewController: UIViewController {
         sectionTableView.register(UINib(nibName: "EmotionTableViewCell", bundle: nil), forCellReuseIdentifier: "emotionCell")
         sectionTableView.register(UINib(nibName: "TextTableViewCell", bundle: nil), forCellReuseIdentifier: "textCell")
     }
+
+    func read() -> Diary? {
+        return realm.objects(Diary.self).first
+    }
+    
+    func dismiss() {
+        dismiss(animated: true, completion: nil)
+    }
+    
+    @IBAction func save() {
+        self.presentingViewController?.dismiss(animated: true, completion: nil)
+        let diaryItem = Diary()
+        print("日にち！\(dateCell.datePicker.date)")
+        diaryItem.date = dateCell.datePicker.date
+//        diaryItem.musicImage = UIImage(data: musicCell.musicImage)
+        diaryItem.musicTitle = musicCell.titleLabel.text!
+        diaryItem.content = textCell.diaryTextField.text!
+        
+        do{
+            let realm = try! Realm()
+            try realm.write({ () -> Void in
+                realm.add(diaryItem)
+            })
+        } catch {
+            print("Save is Faild")
+        }
+        print("ちゃんと保存されてるーーーー？\(diary.date)")
+        print("こっちはーーー？\(diary.content)")
+        NotificationCenter.default.post(name: Notification.Name("DiarySaved"), object: nil)
+    }
     
     @IBAction func desimiss() {
-        dismiss(animated: true, completion: nil)
+        dismiss()
     }
 }
 

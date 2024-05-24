@@ -8,6 +8,8 @@
 import UIKit
 
 class TextTableViewCell: UITableViewCell {
+    
+    @IBOutlet weak var diaryTextField: UITextField!
 
     override func awakeFromNib() {
         super.awakeFromNib()
