@@ -38,6 +38,9 @@
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="diaryTextField" destination="nsl-NU-OzM" id="S0k-PO-Vis"/>
+            </connections>
             <point key="canvasLocation" x="-6.1068702290076331" y="124.29577464788733"/>
         </tableViewCell>
     </objects>

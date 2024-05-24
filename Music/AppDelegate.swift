@@ -1,5 +1,6 @@
 import UIKit
 import MusicKit
+import RealmSwift
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -11,6 +12,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         Task {
             await MusicAuthorization.request()
         }
+        let config = Realm.Configuration(
+            schemaVersion: 1,
+            migrationBlock: nil,
+            deleteRealmIfMigrationNeeded: true
+        )
+        Realm.Configuration.defaultConfiguration = config
+        
         return true
     }
     

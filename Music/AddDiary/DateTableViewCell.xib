@@ -17,7 +17,7 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" translatesAutoresizingMaskIntoConstraints="NO" id="OnN-Vk-gto">
-                        <rect key="frame" x="92" y="5" width="137" height="34"/>
+                        <rect key="frame" x="91.666666666666686" y="5" width="137" height="34.333333333333336"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="137" id="8md-QS-nUZ"/>
                         </constraints>
@@ -30,7 +30,7 @@
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
-                <outlet property="datePicker" destination="OnN-Vk-gto" id="5cR-SZ-EMA"/>
+                <outlet property="datePicker" destination="OnN-Vk-gto" id="ypa-TX-TrW"/>
             </connections>
             <point key="canvasLocation" x="158.77862595419847" y="6.3380281690140849"/>
         </tableViewCell>
