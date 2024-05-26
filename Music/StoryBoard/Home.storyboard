@@ -28,17 +28,6 @@
                                 </collectionViewFlowLayout>
                                 <cells/>
                             </collectionView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IFC-55-z8J">
-                                <rect key="frame" x="174" y="685" width="44" height="53"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="+">
-                                    <fontDescription key="titleFontDescription" type="system" pointSize="32"/>
-                                </buttonConfiguration>
-                                <connections>
-                                    <action selector="addDiary" destination="Y6W-OH-hqX" eventType="touchUpInside" id="abh-Tx-pxD"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -52,7 +41,6 @@
                     <tabBarItem key="tabBarItem" title="Home" image="house" catalog="system" selectedImage="house" id="Iua-Qz-AIk"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
-                        <outlet property="addDiaryButton" destination="IFC-55-z8J" id="q4w-73-KKN"/>
                         <outlet property="diaryCollectionView" destination="rRR-JM-oM0" id="DFY-De-BpB"/>
                     </connections>
                 </viewController>
@@ -90,7 +78,7 @@
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="キャンセル"/>
                                 <connections>
-                                    <action selector="desimiss" destination="DCc-yg-G6O" eventType="touchUpOutside" id="EJk-vL-va4"/>
+                                    <action selector="desimiss" destination="DCc-yg-G6O" eventType="touchUpInside" id="pdb-OC-En1"/>
                                 </connections>
                             </button>
                             <color key="tintColor" name="AccentColor"/>
@@ -102,7 +90,7 @@
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="保存"/>
                                 <connections>
-                                    <action selector="save" destination="DCc-yg-G6O" eventType="touchUpInside" id="zH0-Po-zcO"/>
+                                    <action selector="save" destination="DCc-yg-G6O" eventType="touchUpInside" id="eV1-tq-5tZ"/>
                                 </connections>
                             </button>
                         </barButtonItem>
@@ -178,7 +166,7 @@
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
         <systemColor name="systemGray4Color">
-            <color red="0.81960784310000001" green="0.81960784310000001" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.81960784313725488" green="0.81960784313725488" blue="0.83921568627450982" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

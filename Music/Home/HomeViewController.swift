@@ -3,7 +3,7 @@ import RealmSwift
 
 class HomeViewController: UIViewController {
     
-    @IBOutlet weak var addDiaryButton: UIButton!
+//    @IBOutlet weak var addDiaryButton: UIButton!
     @IBOutlet weak var diaryCollectionView: UICollectionView!
     
     static let shared = HomeViewController()
@@ -48,11 +48,11 @@ class HomeViewController: UIViewController {
         diaryCollectionView.register(UINib(nibName: "DiaryCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "DiaryCell")
     }
     
-    @IBAction func addDiary() {
-        let storyboard: UIStoryboard = UIStoryboard(name: "Home", bundle: nil)
-        let nextVC = storyboard.instantiateViewController(withIdentifier: "toAddDiary")
-        self.present(nextVC, animated: true, completion: nil)
-    }
+//    @IBAction func addDiary() {
+//        let storyboard: UIStoryboard = UIStoryboard(name: "Home", bundle: nil)
+//        let nextVC = storyboard.instantiateViewController(withIdentifier: "toAddDiary")
+//        self.present(nextVC, animated: true, completion: nil)
+//    }
 }
 
 extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSource {
