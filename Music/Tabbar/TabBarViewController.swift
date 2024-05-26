@@ -1,17 +1,39 @@
 import UIKit
 
 class TabBarViewController: UITabBarController, UITabBarControllerDelegate {
+        
+    required init(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)!
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        delegate = self
+        self.delegate = self
         UITabBarItem.appearance().setTitleTextAttributes([.font: UIFont.init(name: "HelveticaNeue-Bold", size: 13), .foregroundColor: UIColor(named: "MainColor")], for: .selected)
-        tabBar.layer.shadowOffset = CGSize(width: 0, height: 1)
-        tabBar.layer.shadowRadius = 6
-        tabBar.layer.shadowColor = UIColor.gray.cgColor
-        tabBar.layer.shadowOpacity = 0.4
-        tabBar.layer.cornerRadius = 25
-        tabBar.layer.masksToBounds = false
-        tabBar.layer.maskedCorners = [.layerMaxXMinYCorner,.layerMinXMinYCorner]
+        setupMiddleButton()
+    }
+    
+    // TabBarButton – 中央ボタンの設定
+    func setupMiddleButton() {
+        let middleBtn = UIButton(frame: CGRect(x: (self.view.bounds.width / 2)-30, y: -30, width: 60, height: 60))
+        // ボタンを自分好みのスタイルに設定する
+        middleBtn.setImage(UIImage(systemName: "plus"), for: .normal)
+        middleBtn.tintColor = .white
+        middleBtn.backgroundColor = UIColor(named: "MainColor")
+        middleBtn.layer.cornerRadius = 30
+        
+        // タブバーに追加し、クリック イベントを追加する
+        self.tabBar.addSubview(middleBtn)
+        middleBtn.addTarget(self, action: #selector(self.menuButtonAction), for: .touchUpInside)
+        
+        self.view.layoutIfNeeded()
+    }
+    
+    // メニュー ボタンのタッチ アクション
+    @objc func menuButtonAction(sender: UIButton) {
+        self.selectedIndex = 2 // 中央のタブを選択します。タブが 3 つしかない場合は "1" を使用します。
+        let storyboard: UIStoryboard = UIStoryboard(name: "Home", bundle: nil)
+        let addVC = storyboard.instantiateViewController(withIdentifier: "toAddDiary")
+        self.present(addVC, animated: true, completion: nil)
     }
 }
