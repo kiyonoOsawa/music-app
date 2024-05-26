@@ -15,15 +15,37 @@
                     <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="LtI-hy-YYI">
+                                <rect key="frame" x="0.0" y="59" width="393" height="710"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="FtY-3J-NPp">
+                                    <size key="itemSize" width="128" height="128"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells/>
+                            </collectionView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="LtI-hy-YYI" firstAttribute="trailing" secondItem="vDu-zF-Fre" secondAttribute="trailing" id="77H-0p-zsw"/>
+                            <constraint firstItem="LtI-hy-YYI" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="CCn-Q1-WNF"/>
+                            <constraint firstItem="LtI-hy-YYI" firstAttribute="bottom" secondItem="vDu-zF-Fre" secondAttribute="bottom" id="DiF-18-f5J"/>
+                            <constraint firstItem="LtI-hy-YYI" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="cAz-2M-OsG"/>
+                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="PlayList" image="play.square.stack" catalog="system" id="DgH-QM-ANG"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="playListCollectionView" destination="LtI-hy-YYI" id="BJ0-i9-fDP"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="76" y="-2"/>
+            <point key="canvasLocation" x="75.572519083969468" y="-2.1126760563380285"/>
         </scene>
     </scenes>
     <resources>
