@@ -83,7 +83,7 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
             let dateFormatter = DateFormatter()
             dateFormatter.dateFormat = "yyyy/MM/dd"
             addVC.date = dateFormatter.string(from: diary[indexPath.row].date)
-//            addVC.musicImage = UIImage(data: diary[indexPath.row].musicImage)!
+            //            addVC.musicImage = UIImage(data: diary[indexPath.row].musicImage)!
             addVC.musicTitle = diary[indexPath.row].musicTitle
             addVC.emotion = diary[indexPath.row].emotion
             addVC.content = diary[indexPath.row].content
@@ -102,11 +102,7 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
         return CGSize(width: cellWidth, height: cellHeight)
     }
     
-    //    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
-    //        return UIEdgeInsets(top: 30, left:16, bottom: 0, right: 16)
-    //    }
-    
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
-        return 60
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+        return UIEdgeInsets(top: 24, left:16, bottom: 0, right: 16)
     }
 }
