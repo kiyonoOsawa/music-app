@@ -1,10 +1,3 @@
-//
-//  TextTableViewCell.swift
-//  Music
-//
-//  Created by 大澤清乃 on 2024/05/21.
-//
-
 import UIKit
 
 class TextTableViewCell: UITableViewCell {
@@ -13,7 +6,7 @@ class TextTableViewCell: UITableViewCell {
 
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        diaryTextField.placeholder = "テキストを入力"
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
