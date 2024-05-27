@@ -9,7 +9,7 @@ class TabBarViewController: UITabBarController, UITabBarControllerDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.delegate = self
-        UITabBarItem.appearance().setTitleTextAttributes([.font: UIFont.init(name: "HelveticaNeue-Bold", size: 13), .foregroundColor: UIColor(named: "MainColor")], for: .selected)
+        UITabBarItem.appearance().setTitleTextAttributes([.font: UIFont.init(name: "HelveticaNeue-Bold", size: 13), .foregroundColor: UIColor(named: "mainColor")], for: .selected)
         setupMiddleButton()
     }
     
@@ -19,7 +19,7 @@ class TabBarViewController: UITabBarController, UITabBarControllerDelegate {
         // ボタンを自分好みのスタイルに設定する
         middleBtn.setImage(UIImage(systemName: "plus"), for: .normal)
         middleBtn.tintColor = .white
-        middleBtn.backgroundColor = UIColor(named: "MainColor")
+        middleBtn.backgroundColor = UIColor(named: "mainColor")
         middleBtn.layer.cornerRadius = 30
         
         // タブバーに追加し、クリック イベントを追加する
