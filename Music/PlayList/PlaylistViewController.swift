@@ -28,7 +28,7 @@ class PlaylistViewController: UIViewController {
     }
 }
 
-extension PlaylistViewController: UICollectionViewDelegate, UICollectionViewDataSource {
+extension PlaylistViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return diary.count
     }
@@ -50,16 +50,17 @@ extension PlaylistViewController: UICollectionViewDelegate, UICollectionViewData
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let cellWidth: CGFloat = 174
+        let space: CGFloat = 8
+        let cellWidth: CGFloat = UIScreen.main.bounds.width / 2 - space * 4
         let cellHeight: CGFloat = 206
         return CGSize(width: cellWidth, height: cellHeight)
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
-        return UIEdgeInsets(top: 24, left:16, bottom: 0, right: 0)
+        return UIEdgeInsets(top: 24, left:18, bottom: 0, right: 18)
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
-        return 24
+        return 8
     }
 }
