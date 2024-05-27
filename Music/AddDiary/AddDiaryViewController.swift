@@ -14,12 +14,18 @@ class AddDiaryViewController: UIViewController {
     var musicCell = MusicTableViewCell()
     var emotionCell = EmotionTableViewCell()
     var textCell = TextTableViewCell()
+    var date = Date()
+    var musicImage = UIImage()
+    var musicTitle = String()
+    var emotion = Int()
+    var content = String()
 
     override func viewDidLoad() {
         super.viewDidLoad()
         sectionTableView.delegate = self
         sectionTableView.dataSource = self
         setTableView()
+//        setData()
     }
     
     func setTableView() {
@@ -36,6 +42,14 @@ class AddDiaryViewController: UIViewController {
     func dismiss() {
         dismiss(animated: true, completion: nil)
     }
+    
+//    func setData() {
+//        dateCell.datePicker.date = date
+//        musicCell.musicImage.image = musicImage
+//        musicCell.titleLabel.text = musicTitle
+////        emotionCell.
+//        textCell.diaryTextField.text = content
+//    }
     
     @IBAction func save() {
         self.presentingViewController?.dismiss(animated: true, completion: nil)

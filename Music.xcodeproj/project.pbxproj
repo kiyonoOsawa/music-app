@@ -32,6 +32,8 @@
 		CE8A18E22BFC318D00CEBE7F /* TextTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE8A18E02BFC318D00CEBE7F /* TextTableViewCell.xib */; };
 		CE90425A2C0396480053A212 /* PlayListCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9042582C0396480053A212 /* PlayListCollectionViewCell.swift */; };
 		CE90425B2C0396480053A212 /* PlayListCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE9042592C0396480053A212 /* PlayListCollectionViewCell.xib */; };
+		CE90425D2C0426F30053A212 /* AddDiary.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE90425C2C0426F30053A212 /* AddDiary.storyboard */; };
+		CE90425F2C04288B0053A212 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE90425E2C04288B0053A212 /* DetailViewController.swift */; };
 		CEF4EC262BFC96CC0044EB54 /* MusicKitViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF4EC252BFC96CC0044EB54 /* MusicKitViewModel.swift */; };
 		CEF4EC282BFCF1350044EB54 /* MusicViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF4EC272BFCF1350044EB54 /* MusicViewController.swift */; };
 		CEF4EC312BFDCAFB0044EB54 /* MusicListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF4EC2F2BFDCAFB0044EB54 /* MusicListTableViewCell.swift */; };
@@ -69,6 +71,8 @@
 		CE8A18E02BFC318D00CEBE7F /* TextTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TextTableViewCell.xib; sourceTree = "<group>"; };
 		CE9042582C0396480053A212 /* PlayListCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayListCollectionViewCell.swift; sourceTree = "<group>"; };
 		CE9042592C0396480053A212 /* PlayListCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PlayListCollectionViewCell.xib; sourceTree = "<group>"; };
+		CE90425C2C0426F30053A212 /* AddDiary.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AddDiary.storyboard; sourceTree = "<group>"; };
+		CE90425E2C04288B0053A212 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		CEF4EC252BFC96CC0044EB54 /* MusicKitViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicKitViewModel.swift; sourceTree = "<group>"; };
 		CEF4EC272BFCF1350044EB54 /* MusicViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicViewController.swift; sourceTree = "<group>"; };
 		CEF4EC2F2BFDCAFB0044EB54 /* MusicListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicListTableViewCell.swift; sourceTree = "<group>"; };
@@ -130,6 +134,7 @@
 			children = (
 				CE2AA7C82BF9F09B00768F69 /* Main.storyboard */,
 				CE2AA7D62BF9F0B000768F69 /* Home.storyboard */,
+				CE90425C2C0426F30053A212 /* AddDiary.storyboard */,
 				CE2AA7D72BF9F0B000768F69 /* Playlist.storyboard */,
 			);
 			path = StoryBoard;
@@ -139,6 +144,7 @@
 			isa = PBXGroup;
 			children = (
 				CE2AA7DB2BF9F0B900768F69 /* HomeViewController.swift */,
+				CE90425E2C04288B0053A212 /* DetailViewController.swift */,
 				CE2AA7DA2BF9F0B900768F69 /* DiaryCollectionViewCell.swift */,
 				CE2AA7DC2BF9F0B900768F69 /* DiaryCollectionViewCell.xib */,
 			);
@@ -267,6 +273,7 @@
 				CE90425B2C0396480053A212 /* PlayListCollectionViewCell.xib in Resources */,
 				CE8A18DE2BFC318000CEBE7F /* EmotionTableViewCell.xib in Resources */,
 				CE8A18D62BFC312F00CEBE7F /* DateTableViewCell.xib in Resources */,
+				CE90425D2C0426F30053A212 /* AddDiary.storyboard in Resources */,
 				CE2AA7CC2BF9F09C00768F69 /* Assets.xcassets in Resources */,
 				CE8A18E22BFC318D00CEBE7F /* TextTableViewCell.xib in Resources */,
 				CE2AA7CF2BF9F09C00768F69 /* Base in Resources */,
@@ -296,6 +303,7 @@
 				CEF4EC282BFCF1350044EB54 /* MusicViewController.swift in Sources */,
 				CEF4EC312BFDCAFB0044EB54 /* MusicListTableViewCell.swift in Sources */,
 				CE428F5B2BFA15CE00C095B8 /* TabBar.swift in Sources */,
+				CE90425F2C04288B0053A212 /* DetailViewController.swift in Sources */,
 				CE2AA7C72BF9F09B00768F69 /* ViewController.swift in Sources */,
 				CEF4EC3B2BFE51CA0044EB54 /* Diary.swift in Sources */,
 				CE8A18E12BFC318D00CEBE7F /* TextTableViewCell.swift in Sources */,
