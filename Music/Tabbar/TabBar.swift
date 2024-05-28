@@ -21,8 +21,8 @@ class TabBar: UITabBar {
         //The below 4 lines are for shadow above the bar. you can skip them if you do not want a shadow
         shapeLayer.shadowOffset = CGSize(width:0, height:0)
         shapeLayer.shadowRadius = 10
-        shapeLayer.shadowColor = UIColor.gray.cgColor
-        shapeLayer.shadowOpacity = 0.3
+        shapeLayer.shadowColor = UIColor(named: "grayColor")?.cgColor
+        shapeLayer.shadowOpacity = 0.8
         
         if let oldShapeLayer = self.shapeLayer {
             self.layer.replaceSublayer(oldShapeLayer, with: shapeLayer)
