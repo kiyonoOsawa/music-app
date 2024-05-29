@@ -23,21 +23,23 @@ class MusicViewController: UIViewController {
         if MPMusicPlayerController.systemMusicPlayer.nowPlayingItem == nil, musicSubscription?.canPlayCatalogContent != false {
             print("取得ゼロ")
         } else {
-            let title = MPMusicPlayerController.systemMusicPlayer.nowPlayingItem!.title!
-            musicTitle.append(title)
             Task {
-                try await viewModel?.getCrrentMusic()
+                do {
+                    let titles = try await viewModel?.getCurrentMusic() ?? []
+                    musicTitle.append(contentsOf: titles)
+                    musicTable.reloadData()
+                } catch {
+                    print("Error fetching music data: \(error)")
+                }
             }
             print("こっちの数は？\(musicTitle.count)")
-            print("これもみたい\([MPMusicPlayerController.systemMusicPlayer.nowPlayingItem!.title!])")
-            print("取得できてる数！\(MPMusicPlayerController.systemMusicPlayer.nowPlayingItem!.title!.count)")
+            print("これもみたい\(MPMusicPlayerController.systemMusicPlayer.nowPlayingItem!)")
         }
     }
 }
 
 extension MusicViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-//        return musicTitle.count
         return musicTitle.count
     }
     

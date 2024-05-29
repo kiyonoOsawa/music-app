@@ -11,10 +11,12 @@ class MusicKitViewModel: NSObject {
     static let shared = MusicKitViewModel()
     
     //最近聴いた曲を最新から順に取得する
-    func getCrrentMusic() async throws {
+    func getCurrentMusic() async throws -> [String] {
         //limitで取得個数制限
         musicRequest.limit = 30
         response = try await musicRequest.response()
-        print("最近聴いた曲",response!.items.debugDescription)
+        let titles = response.items.compactMap { $0.title }
+        print("最近聴いた曲のタイトル: \(titles)")
+        return titles
     }
 }
