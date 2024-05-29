@@ -26,7 +26,6 @@ class MusicViewController: UIViewController {
             musicTitle = MPMusicPlayerController.systemMusicPlayer.nowPlayingItem!.title!
             Task {
                 try await viewModel?.getCrrentMusic()
-                try await viewModel?.getSpecificSongsOnCatalog(ID: viewModel!.response.items.last!.id)
             }
         }
     }
@@ -34,13 +33,12 @@ class MusicViewController: UIViewController {
 
 extension MusicViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 30
+        return musicTitle.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "musicListCell", for: indexPath) as! MusicListTableViewCell
+        cell.musicTitle.text = musicTitle
         return cell
     }
-    
-    
 }

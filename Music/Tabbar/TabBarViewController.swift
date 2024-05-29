@@ -31,7 +31,7 @@ class TabBarViewController: UITabBarController, UITabBarControllerDelegate {
     
     // メニュー ボタンのタッチ アクション
     @objc func menuButtonAction(sender: UIButton) {
-        self.selectedIndex = 2 // 中央のタブを選択します。タブが 3 つしかない場合は "1" を使用します。
+        self.selectedIndex = 1 // 中央のタブを選択します。タブが 3 つしかない場合は "1" を使用します。
         let storyboard: UIStoryboard = UIStoryboard(name: "AddDiary", bundle: nil)
         let addVC = storyboard.instantiateViewController(withIdentifier: "addNC")
         self.present(addVC, animated: true, completion: nil)
