@@ -45,7 +45,7 @@
                 <outlet property="musicImage" destination="vAb-lF-lv8" id="n1p-lI-hat"/>
                 <outlet property="musicTitle" destination="rZe-Lc-ohb" id="exr-O3-mtC"/>
             </connections>
-            <point key="canvasLocation" x="-6.1068702290076331" y="29.225352112676056"/>
+            <point key="canvasLocation" x="-6.1068702290076331" y="28.87323943661972"/>
         </tableViewCell>
     </objects>
 </document>
