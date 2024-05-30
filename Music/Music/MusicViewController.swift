@@ -34,11 +34,6 @@ class MusicViewController: UIViewController {
         print("こっちの数は？\(musicTitle.count)")
         print("これもみたい\(MPMusicPlayerController.systemMusicPlayer.nowPlayingItem!)")
     }
-    
-    @objc private func back() {
-        self.navigationController?.popViewController(animated: true)
-    }
-
 }
 
 extension MusicViewController: UITableViewDelegate, UITableViewDataSource {
@@ -47,10 +42,9 @@ extension MusicViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-
         let cell = tableView.dequeueReusableCell(withIdentifier: "musicListCell", for: indexPath) as! MusicListTableViewCell
+        cell.selectionStyle = UITableViewCell.SelectionStyle.none
         cell.musicTitle.text = musicTitle[indexPath.item]
-//        preVC!.musicTitle = cell.musicTitle.text!
         //取得してきた画像を表示
         if let url = musicImage[indexPath.item] {
             loadImage(from: url) { image in
@@ -61,7 +55,6 @@ extension MusicViewController: UITableViewDelegate, UITableViewDataSource {
         } else {
             cell.musicImage.image = nil
         }
-//        print("画像の型！！！\(type(of: musicImage))")
         return cell
     }
     
@@ -74,7 +67,7 @@ extension MusicViewController: UITableViewDelegate, UITableViewDataSource {
         let preVC = self.navigationController?.viewControllers[count] as? AddDiaryViewController
         preVC?.musicTitle = musicTitle[indexPath.row]
         preVC?.musicImage = musicImage[indexPath.row]!
-        print("選択できてる？\(indexPath.row)")
+        self.navigationController?.popViewController(animated: true)
     }
     
     func loadImage(from url: URL, completion: @escaping (UIImage?) -> Void) {
