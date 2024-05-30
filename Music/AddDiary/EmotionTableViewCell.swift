@@ -15,7 +15,7 @@ class EmotionTableViewCell: UITableViewCell {
     @IBOutlet weak var emotion4: UIButton!
     @IBOutlet weak var emotion5: UIButton!
     @IBOutlet weak var emotion6: UIButton!
-
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         design()
@@ -28,18 +28,16 @@ class EmotionTableViewCell: UITableViewCell {
     }
     
     func design() {
-        emotion1.layer.cornerRadius = 28
-        emotion2.layer.cornerRadius = 28
-        emotion3.layer.cornerRadius = 28
-        emotion4.layer.cornerRadius = 28
-        emotion5.layer.cornerRadius = 28
-        emotion6.layer.cornerRadius = 28
-        emotion1.backgroundColor = UIColor.systemPink
-        emotion2.backgroundColor = UIColor.systemPink
-        emotion3.backgroundColor = UIColor.systemPink
-        emotion4.backgroundColor = UIColor.systemPink
-        emotion5.backgroundColor = UIColor.systemPink
-        emotion6.backgroundColor = UIColor.systemPink
+//        emotion1.imageView?.image = UIImage(named: "happy")
+//        emotion2.imageView?.image = UIImage(named: "reject")
+//        emotion3.imageView?.image = UIImage(named: "unhappy")
+//        emotion4.imageView?.image = UIImage(named: "sad")
+//        emotion5.imageView?.image = UIImage(named: "love")
+//        emotion6.imageView?.image = UIImage(named: "happiness")
+        let buttons = [emotion1, emotion2, emotion3, emotion4, emotion5, emotion6]
+        for button in buttons {
+            button?.imageView?.contentMode = .scaleAspectFit
+        }
 
     }
     
