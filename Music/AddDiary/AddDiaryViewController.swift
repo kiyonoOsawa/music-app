@@ -138,7 +138,7 @@ extension AddDiaryViewController: UITableViewDelegate, UITableViewDataSource {
         } else if indexPath.section == 1 {
             return 120
         } else if indexPath.section == 2 {
-            return 152
+            return 214
         } else if indexPath.section == 3 {
             return 380
         }
