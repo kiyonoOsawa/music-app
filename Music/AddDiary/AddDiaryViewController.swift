@@ -7,6 +7,8 @@ class AddDiaryViewController: UIViewController {
     @IBOutlet weak var cancelButton: UIButton!
     @IBOutlet weak var saveButton: UIButton!
     
+    static let shared = AddDiaryViewController()
+    
     let realm = try! Realm()
     var diary = Diary()
     
@@ -15,17 +17,24 @@ class AddDiaryViewController: UIViewController {
     var emotionCell = EmotionTableViewCell()
     var textCell = TextTableViewCell()
     var date = Date()
-    var musicImage = UIImage()
+    var musicImage: URL? = URL(string: "https://example.com")!
     var musicTitle = String()
     var emotion = Int()
     var content = String()
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         sectionTableView.delegate = self
         sectionTableView.dataSource = self
         setTableView()
-//        setData()
+        //        setData()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        print("曲名!?\(musicTitle)")
+        print("ジャケ写!?\(musicImage)")
+        sectionTableView.reloadData()
     }
     
     func setTableView() {
@@ -34,7 +43,7 @@ class AddDiaryViewController: UIViewController {
         sectionTableView.register(UINib(nibName: "EmotionTableViewCell", bundle: nil), forCellReuseIdentifier: "emotionCell")
         sectionTableView.register(UINib(nibName: "TextTableViewCell", bundle: nil), forCellReuseIdentifier: "textCell")
     }
-
+    
     func read() -> Diary? {
         return realm.objects(Diary.self).first
     }
@@ -43,20 +52,20 @@ class AddDiaryViewController: UIViewController {
         dismiss(animated: true, completion: nil)
     }
     
-//    func setData() {
-//        dateCell.datePicker.date = date
-//        musicCell.musicImage.image = musicImage
-//        musicCell.titleLabel.text = musicTitle
-////        emotionCell.
-//        textCell.diaryTextField.text = content
-//    }
+    //    func setData() {
+    //        dateCell.datePicker.date = date
+    //        musicCell.musicImage.image = musicImage
+    //        musicCell.titleLabel.text = musicTitle
+    ////        emotionCell.
+    //        textCell.diaryTextField.text = content
+    //    }
     
     @IBAction func save() {
         self.presentingViewController?.dismiss(animated: true, completion: nil)
         let diaryItem = Diary()
         print("日にち！\(dateCell.datePicker.date)")
         diaryItem.date = dateCell.datePicker.date
-//        diaryItem.musicImage = UIImage(data: musicCell.musicImage)
+        //        diaryItem.musicImage = UIImage(data: musicCell.musicImage)
         diaryItem.musicTitle = musicCell.titleLabel.text!
         diaryItem.content = textCell.diaryTextField.text!
         
@@ -91,6 +100,17 @@ extension AddDiaryViewController: UITableViewDelegate, UITableViewDataSource {
         } else if indexPath.section == 1 {
             musicCell = tableView.dequeueReusableCell(withIdentifier: "musicCell") as! MusicTableViewCell
             musicCell.selectionStyle = UITableViewCell.SelectionStyle.none
+            musicCell.titleLabel.text = musicTitle
+            //取得してきた画像を表示
+            if let url = musicImage {
+                loadImage(from: url) { image in
+                    DispatchQueue.main.async {
+                        self.musicCell.musicImage.image = image
+                    }
+                }
+            } else {
+                musicCell.musicImage.image = nil
+            }
             return musicCell
         } else if indexPath.section == 2 {
             emotionCell = tableView.dequeueReusableCell(withIdentifier: "emotionCell") as! EmotionTableViewCell
@@ -134,6 +154,16 @@ extension AddDiaryViewController: UITableViewDelegate, UITableViewDataSource {
     
     func numberOfSections(in tableView: UITableView) -> Int {
         return 4
+    }
+    
+    func loadImage(from url: URL, completion: @escaping (UIImage?) -> Void) {
+        DispatchQueue.global().async {
+            if let data = try? Data(contentsOf: url), let image = UIImage(data: data) {
+                completion(image)
+            } else {
+                completion(nil)
+            }
+        }
     }
     
     func setDismissKeyboard() {
