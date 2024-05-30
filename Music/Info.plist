@@ -22,6 +22,6 @@
 		</dict>
 	</dict>
 	<key>kTCCServiceMediaLibrary</key>
-	<string>Access to media library is required to search within Apple Music, and to play songs.</string>
+	<string>ミュージックライブラリーを使用します</string>
 </dict>
 </plist>
