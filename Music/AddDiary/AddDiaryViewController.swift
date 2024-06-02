@@ -17,23 +17,24 @@ class AddDiaryViewController: UIViewController {
     var emotionCell = EmotionTableViewCell()
     var textCell = TextTableViewCell()
     var date = Date()
-    var musicImage: URL? = URL(string: "https://example.com")!
+    var musicImageURL: URL? = URL(string: "https://example.com")!
     var musicTitle = String()
     var emotion = Int()
     var content = String()
+    var emotionNum = Int()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         sectionTableView.delegate = self
         sectionTableView.dataSource = self
         setTableView()
-        //        setData()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         print("曲名!?\(musicTitle)")
-        print("ジャケ写!?\(musicImage)")
+        print("ジャケ写!?\(musicImageURL)")
+        print("感情ナンバー\(emotionNum)")
         sectionTableView.reloadData()
     }
     
@@ -52,21 +53,14 @@ class AddDiaryViewController: UIViewController {
         dismiss(animated: true, completion: nil)
     }
     
-    //    func setData() {
-    //        dateCell.datePicker.date = date
-    //        musicCell.musicImage.image = musicImage
-    //        musicCell.titleLabel.text = musicTitle
-    ////        emotionCell.
-    //        textCell.diaryTextField.text = content
-    //    }
-    
     @IBAction func save() {
         self.presentingViewController?.dismiss(animated: true, completion: nil)
         let diaryItem = Diary()
         print("日にち！\(dateCell.datePicker.date)")
         diaryItem.date = dateCell.datePicker.date
-        //        diaryItem.musicImage = UIImage(data: musicCell.musicImage)
+        diaryItem.musicImage = musicImageURL
         diaryItem.musicTitle = musicCell.titleLabel.text!
+        diaryItem.emotion = emotionNum
         diaryItem.content = textCell.diaryTextField.text!
         
         do{
@@ -87,7 +81,7 @@ class AddDiaryViewController: UIViewController {
     }
 }
 
-extension AddDiaryViewController: UITableViewDelegate, UITableViewDataSource {
+extension AddDiaryViewController: UITableViewDelegate, UITableViewDataSource, EmotionTableViewCellDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 1
     }
@@ -102,7 +96,7 @@ extension AddDiaryViewController: UITableViewDelegate, UITableViewDataSource {
             musicCell.selectionStyle = UITableViewCell.SelectionStyle.none
             musicCell.titleLabel.text = musicTitle
             //取得してきた画像を表示
-            if let url = musicImage {
+            if let url = musicImageURL {
                 loadImage(from: url) { image in
                     DispatchQueue.main.async {
                         self.musicCell.musicImage.image = image
@@ -115,6 +109,13 @@ extension AddDiaryViewController: UITableViewDelegate, UITableViewDataSource {
         } else if indexPath.section == 2 {
             emotionCell = tableView.dequeueReusableCell(withIdentifier: "emotionCell") as! EmotionTableViewCell
             emotionCell.selectionStyle = UITableViewCell.SelectionStyle.none
+            emotionCell.delegate = self
+            emotionCell.emotionButtons.enumerated().forEach { (index, button) in
+                button.tag = index + 1
+            }
+            emotionCell.emotionLabels.enumerated().forEach { (index, label) in
+                label.tag = index + 1
+            }
             return emotionCell
         } else {
             textCell = tableView.dequeueReusableCell(withIdentifier: "textCell") as! TextTableViewCell
@@ -154,6 +155,10 @@ extension AddDiaryViewController: UITableViewDelegate, UITableViewDataSource {
     
     func numberOfSections(in tableView: UITableView) -> Int {
         return 4
+    }
+    
+    func tappedBtn(cell: EmotionTableViewCell, didTapButtonWithTag tag: Int) {
+        emotionNum = tag
     }
     
     func loadImage(from url: URL, completion: @escaping (UIImage?) -> Void) {

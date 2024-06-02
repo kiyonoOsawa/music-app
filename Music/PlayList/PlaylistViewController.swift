@@ -42,8 +42,8 @@ extension PlaylistViewController: UICollectionViewDelegate, UICollectionViewData
         cell.layer.shadowRadius = 5
         cell.layer.masksToBounds = false
         //ここのmusicImageはplaylistの最後の一つを選びたい
-        let musicImage = UIImage(data: diary[indexPath.row].musicImage)
-        cell.musicImage.image = musicImage
+//        let musicImage = UIImage(data: diary[indexPath.row].musicImage)
+//        cell.musicImage.image = musicImage
         //ここのmusicTitleあとで年・月に変更したい
         cell.playListTitle.text = diary[indexPath.row].musicTitle
         return cell

@@ -10,7 +10,7 @@ class MusicViewController: UIViewController {
     weak var viewModel = MusicKitViewModel.shared
     var musicSubscription: MusicSubscription?
     var musicTitle: [String] = []
-    var musicImage: [URL?] = []
+    var musicImageURL: [URL?] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,7 +25,7 @@ class MusicViewController: UIViewController {
             do {
                 let (titles, images) = try await viewModel?.getCurrentMusic() ?? ([], [])
                 musicTitle.append(contentsOf: titles)
-                musicImage.append(contentsOf: images)
+                musicImageURL.append(contentsOf: images)
                 musicTable.reloadData()
             } catch {
                 print("Error fetching music data: \(error)")
@@ -46,7 +46,7 @@ extension MusicViewController: UITableViewDelegate, UITableViewDataSource {
         cell.selectionStyle = UITableViewCell.SelectionStyle.none
         cell.musicTitle.text = musicTitle[indexPath.item]
         //取得してきた画像を表示
-        if let url = musicImage[indexPath.item] {
+        if let url = musicImageURL[indexPath.item] {
             loadImage(from: url) { image in
                 DispatchQueue.main.async {
                     cell.musicImage.image = image
@@ -66,7 +66,7 @@ extension MusicViewController: UITableViewDelegate, UITableViewDataSource {
         let count = (self.navigationController?.viewControllers.count)! - 2
         let preVC = self.navigationController?.viewControllers[count] as? AddDiaryViewController
         preVC?.musicTitle = musicTitle[indexPath.row]
-        preVC?.musicImage = musicImage[indexPath.row]!
+        preVC?.musicImageURL = musicImageURL[indexPath.row]!
         self.navigationController?.popViewController(animated: true)
     }
     

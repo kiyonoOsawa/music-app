@@ -8,6 +8,10 @@ class HomeViewController: UIViewController {
     static let shared = HomeViewController()
     let realm = try! Realm()
     var diary: Results<Diary>!
+    var musicImageURL: URL? = URL(string: "https://example.com")!
+    var diaryCell = DiaryCollectionViewCell()
+    var emotionNum = Int()
+//    var cell = DiaryCollectionViewCell()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -65,8 +69,37 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "MM/dd"
         cell.dateLabel.text = dateFormatter.string(from: diary[indexPath.row].date)
-        let musicImage = UIImage(data: diary[indexPath.row].musicImage)
-        cell.musicImageView.image = musicImage
+        musicImageURL = URL(string: diary[indexPath.row].musicImageString!)
+        print("この中身みたい\(diary[indexPath.row].musicImageString)")
+        print("こっちのこれは？\(musicImageURL)")
+//        let filePath = musicImageURL?.path
+//        cell.musicImageView.image = UIImage(contentsOfFile: filePath!)
+        if let url = musicImageURL {
+            loadImage(from: url) { image in
+                DispatchQueue.main.async {
+                    cell.musicImageView.image = image
+                }
+            }
+        }
+        emotionNum = diary[indexPath.row].emotion
+        if emotionNum == 0 {
+            cell.emotionImage.image = UIImage(named: "happy")
+        } else if emotionNum == 1 {
+            cell.emotionImage.image = UIImage(named: "regret")
+        } else if emotionNum == 2 {
+            cell.emotionImage.image = UIImage(named: "anxiety")
+        } else if emotionNum == 3 {
+            cell.emotionImage.image = UIImage(named: "angry")
+        } else if emotionNum == 4 {
+            cell.emotionImage.image = UIImage(named: "sad")
+        } else if emotionNum == 5 {
+            cell.emotionImage.image = UIImage(named: "love")
+        } else if emotionNum == 6 {
+            cell.emotionImage.image = UIImage(named: "joy")
+        } else {
+            cell.emotionImage.image = UIImage(named: "tired")
+        }
+        
         if diary[indexPath.row].content == "" {
             cell.contentAble.isHidden = true
         } else {
@@ -104,5 +137,15 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
         return UIEdgeInsets(top: 24, left:16, bottom: 0, right: 16)
+    }
+    
+    func loadImage(from url: URL, completion: @escaping (UIImage?) -> Void) {
+        DispatchQueue.global().async {
+            if let data = try? Data(contentsOf: url), let image = UIImage(data: data) {
+                completion(image)
+            } else {
+                completion(nil)
+            }
+        }
     }
 }
