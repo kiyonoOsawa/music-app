@@ -23,13 +23,16 @@
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="pcv-RQ-daE">
                                 <rect key="frame" x="0.0" y="0.0" width="67.333333333333329" height="94"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zxj-ai-hda">
+                                    <button opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zxj-ai-hda">
                                         <rect key="frame" x="0.0" y="0.0" width="67.333333333333329" height="67.333333333333329"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="Zxj-ai-hda" secondAttribute="height" multiplier="1:1" id="H22-09-OrL"/>
                                         </constraints>
                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                         <state key="normal" title="Button" image="happy"/>
+                                        <connections>
+                                            <action selector="tappedBtn:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="m8V-54-puU"/>
+                                        </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Happy" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="78Z-fB-d85">
                                         <rect key="frame" x="0.0" y="75.333333333333329" width="67.333333333333329" height="18.666666666666671"/>
@@ -42,15 +45,18 @@
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="7" translatesAutoresizingMaskIntoConstraints="NO" id="6AE-1B-HXP">
                                 <rect key="frame" x="101.33333333333334" y="0.0" width="68.333333333333343" height="94"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="j1j-6Q-46Q">
+                                    <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="j1j-6Q-46Q">
                                         <rect key="frame" x="0.0" y="0.0" width="68.333333333333329" height="68.333333333333329"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="j1j-6Q-46Q" secondAttribute="height" multiplier="1:1" id="g7T-cc-Xnu"/>
                                         </constraints>
                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                         <state key="normal" image="regret"/>
+                                        <connections>
+                                            <action selector="tappedBtn:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="WVY-u9-DSN"/>
+                                        </connections>
                                     </button>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Regret" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uZ4-IS-SHT">
+                                    <label opaque="NO" userInteractionEnabled="NO" tag="1" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Regret" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uZ4-IS-SHT">
                                         <rect key="frame" x="0.0" y="75.333333333333329" width="68.333333333333329" height="18.666666666666671"/>
                                         <fontDescription key="fontDescription" name="Thonburi" family="Thonburi" pointSize="14"/>
                                         <color key="textColor" name="blackColor"/>
@@ -61,15 +67,18 @@
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="7" translatesAutoresizingMaskIntoConstraints="NO" id="w4k-ht-Zxj">
                                 <rect key="frame" x="203.66666666666666" y="0.0" width="67.999999999999972" height="94"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YVG-EG-50E">
+                                    <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YVG-EG-50E">
                                         <rect key="frame" x="0.0" y="0.0" width="68" height="68.333333333333329"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="YVG-EG-50E" secondAttribute="height" multiplier="1:1" id="Awl-6U-gO6"/>
                                         </constraints>
                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                         <state key="normal" backgroundImage="anxiety"/>
+                                        <connections>
+                                            <action selector="tappedBtn:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="f40-jn-Ie4"/>
+                                        </connections>
                                     </button>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Anxiety" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wL1-AX-zhC">
+                                    <label opaque="NO" userInteractionEnabled="NO" tag="2" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Anxiety" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wL1-AX-zhC">
                                         <rect key="frame" x="0.0" y="75.333333333333329" width="68" height="18.666666666666671"/>
                                         <fontDescription key="fontDescription" name="Thonburi" family="Thonburi" pointSize="14"/>
                                         <color key="textColor" name="blackColor"/>
@@ -80,15 +89,18 @@
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="7" translatesAutoresizingMaskIntoConstraints="NO" id="dDC-wW-6q3">
                                 <rect key="frame" x="305.66666666666669" y="0.0" width="68.333333333333314" height="94"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WWS-oJ-4ES">
+                                    <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WWS-oJ-4ES">
                                         <rect key="frame" x="0.0" y="0.0" width="68.333333333333329" height="68.333333333333329"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="WWS-oJ-4ES" secondAttribute="height" multiplier="1:1" id="eiO-EX-eDO"/>
                                         </constraints>
                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                         <state key="normal" backgroundImage="angry"/>
+                                        <connections>
+                                            <action selector="tappedBtn:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="e4B-nG-M7v"/>
+                                        </connections>
                                     </button>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Angry" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lan-JQ-26M">
+                                    <label opaque="NO" userInteractionEnabled="NO" tag="3" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Angry" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lan-JQ-26M">
                                         <rect key="frame" x="0.0" y="75.333333333333329" width="68.333333333333329" height="18.666666666666671"/>
                                         <fontDescription key="fontDescription" name="Thonburi" family="Thonburi" pointSize="14"/>
                                         <color key="textColor" name="blackColor"/>
@@ -104,15 +116,18 @@
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="z0A-Hb-0N1">
                                 <rect key="frame" x="0.0" y="0.0" width="67.333333333333329" height="94"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xho-W5-c21">
+                                    <button opaque="NO" tag="4" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xho-W5-c21">
                                         <rect key="frame" x="0.0" y="0.0" width="67.333333333333329" height="67.333333333333329"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="xho-W5-c21" secondAttribute="height" multiplier="1:1" id="kLh-jl-wvb"/>
                                         </constraints>
                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                         <state key="normal" title="Button" image="sad"/>
+                                        <connections>
+                                            <action selector="tappedBtn:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="Bie-pg-8zR"/>
+                                        </connections>
                                     </button>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sad" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UDo-Yi-Dxd">
+                                    <label opaque="NO" userInteractionEnabled="NO" tag="4" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sad" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UDo-Yi-Dxd">
                                         <rect key="frame" x="0.0" y="75.333333333333343" width="67.333333333333329" height="18.666666666666671"/>
                                         <fontDescription key="fontDescription" name="Thonburi" family="Thonburi" pointSize="14"/>
                                         <color key="textColor" name="blackColor"/>
@@ -123,15 +138,18 @@
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="7" translatesAutoresizingMaskIntoConstraints="NO" id="Cfz-5F-t2a">
                                 <rect key="frame" x="101.33333333333334" y="0.0" width="68.333333333333343" height="94"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jXm-BW-tNl">
+                                    <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jXm-BW-tNl">
                                         <rect key="frame" x="0.0" y="0.0" width="68.333333333333329" height="68.333333333333329"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="jXm-BW-tNl" secondAttribute="height" multiplier="1:1" id="X4K-jp-t9B"/>
                                         </constraints>
                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                         <state key="normal" image="love"/>
+                                        <connections>
+                                            <action selector="tappedBtn:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="Zva-Yl-eIl"/>
+                                        </connections>
                                     </button>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Love" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="j7P-Ul-7qq">
+                                    <label opaque="NO" userInteractionEnabled="NO" tag="5" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Love" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="j7P-Ul-7qq">
                                         <rect key="frame" x="0.0" y="75.333333333333343" width="68.333333333333329" height="18.666666666666671"/>
                                         <fontDescription key="fontDescription" name="Thonburi" family="Thonburi" pointSize="14"/>
                                         <color key="textColor" name="blackColor"/>
@@ -142,15 +160,18 @@
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="7" translatesAutoresizingMaskIntoConstraints="NO" id="7Ic-sR-Tmo">
                                 <rect key="frame" x="203.66666666666666" y="0.0" width="67.999999999999972" height="94"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OeD-aG-XtO">
+                                    <button opaque="NO" tag="6" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OeD-aG-XtO">
                                         <rect key="frame" x="0.0" y="0.0" width="68" height="68.333333333333329"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="OeD-aG-XtO" secondAttribute="height" multiplier="1:1" id="BkY-EZ-iip"/>
                                         </constraints>
                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                         <state key="normal" image="joy"/>
+                                        <connections>
+                                            <action selector="tappedBtn:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="9bQ-da-faJ"/>
+                                        </connections>
                                     </button>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Joy" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ro0-Wm-uop">
+                                    <label opaque="NO" userInteractionEnabled="NO" tag="6" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Joy" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ro0-Wm-uop">
                                         <rect key="frame" x="0.0" y="75.333333333333343" width="68" height="18.666666666666671"/>
                                         <fontDescription key="fontDescription" name="Thonburi" family="Thonburi" pointSize="14"/>
                                         <color key="textColor" name="blackColor"/>
@@ -161,15 +182,18 @@
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="7" translatesAutoresizingMaskIntoConstraints="NO" id="jUv-d0-NtU">
                                 <rect key="frame" x="305.66666666666669" y="0.0" width="68.333333333333314" height="94"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0eR-jf-TeQ">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0eR-jf-TeQ">
                                         <rect key="frame" x="0.0" y="0.0" width="68.333333333333329" height="68.333333333333329"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="0eR-jf-TeQ" secondAttribute="height" multiplier="1:1" id="mdY-od-3YS"/>
                                         </constraints>
                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                         <state key="normal" backgroundImage="tired"/>
+                                        <connections>
+                                            <action selector="tappedBtn:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="433-mn-pQE"/>
+                                        </connections>
                                     </button>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tired" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dFu-sv-9F7">
+                                    <label opaque="NO" userInteractionEnabled="NO" tag="7" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tired" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dFu-sv-9F7">
                                         <rect key="frame" x="0.0" y="75.333333333333343" width="68.333333333333329" height="18.666666666666671"/>
                                         <fontDescription key="fontDescription" name="Thonburi" family="Thonburi" pointSize="14"/>
                                         <color key="textColor" name="blackColor"/>
@@ -191,9 +215,22 @@
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
-                <outlet property="emotion1" destination="Zxj-ai-hda" id="PY6-Jc-2wX"/>
-                <outlet property="emotion2" destination="j1j-6Q-46Q" id="fHZ-Vc-7yy"/>
-                <outlet property="emotion3" destination="YVG-EG-50E" id="Ncf-Sm-0xR"/>
+                <outletCollection property="emotionButtons" destination="Zxj-ai-hda" collectionClass="NSMutableArray" id="LOT-up-Muo"/>
+                <outletCollection property="emotionButtons" destination="j1j-6Q-46Q" collectionClass="NSMutableArray" id="hA7-eH-THc"/>
+                <outletCollection property="emotionButtons" destination="YVG-EG-50E" collectionClass="NSMutableArray" id="sSK-jC-RyY"/>
+                <outletCollection property="emotionButtons" destination="WWS-oJ-4ES" collectionClass="NSMutableArray" id="QGD-Zg-pq4"/>
+                <outletCollection property="emotionButtons" destination="xho-W5-c21" collectionClass="NSMutableArray" id="RdG-N4-rt8"/>
+                <outletCollection property="emotionButtons" destination="jXm-BW-tNl" collectionClass="NSMutableArray" id="aaf-EY-6q7"/>
+                <outletCollection property="emotionButtons" destination="OeD-aG-XtO" collectionClass="NSMutableArray" id="UGH-BH-jl7"/>
+                <outletCollection property="emotionButtons" destination="0eR-jf-TeQ" collectionClass="NSMutableArray" id="mY0-rm-uJL"/>
+                <outletCollection property="emotionLabels" destination="78Z-fB-d85" collectionClass="NSMutableArray" id="SgF-BR-YDX"/>
+                <outletCollection property="emotionLabels" destination="uZ4-IS-SHT" collectionClass="NSMutableArray" id="wE9-Xr-gAo"/>
+                <outletCollection property="emotionLabels" destination="wL1-AX-zhC" collectionClass="NSMutableArray" id="C5b-Rz-UFg"/>
+                <outletCollection property="emotionLabels" destination="Lan-JQ-26M" collectionClass="NSMutableArray" id="tMo-yP-cI1"/>
+                <outletCollection property="emotionLabels" destination="UDo-Yi-Dxd" collectionClass="NSMutableArray" id="oXL-ls-Raa"/>
+                <outletCollection property="emotionLabels" destination="j7P-Ul-7qq" collectionClass="NSMutableArray" id="E1o-6O-mvo"/>
+                <outletCollection property="emotionLabels" destination="ro0-Wm-uop" collectionClass="NSMutableArray" id="8hI-T6-Wz0"/>
+                <outletCollection property="emotionLabels" destination="dFu-sv-9F7" collectionClass="NSMutableArray" id="kO3-sB-Pur"/>
             </connections>
             <point key="canvasLocation" x="198.47328244274809" y="19.014084507042256"/>
         </tableViewCell>
