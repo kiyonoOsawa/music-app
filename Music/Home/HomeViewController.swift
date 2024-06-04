@@ -78,23 +78,6 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
             }
         }
         emotionNum = diary[indexPath.row].emotion
-//        if emotionNum == 0 {
-//            cell.emotionImage.image = UIImage(named: "happy")
-//        } else if emotionNum == 1 {
-//            cell.emotionImage.image = UIImage(named: "regret")
-//        } else if emotionNum == 2 {
-//            cell.emotionImage.image = UIImage(named: "anxiety")
-//        } else if emotionNum == 3 {
-//            cell.emotionImage.image = UIImage(named: "angry")
-//        } else if emotionNum == 4 {
-//            cell.emotionImage.image = UIImage(named: "sad")
-//        } else if emotionNum == 5 {
-//            cell.emotionImage.image = UIImage(named: "love")
-//        } else if emotionNum == 6 {
-//            cell.emotionImage.image = UIImage(named: "joy")
-//        } else {
-//            cell.emotionImage.image = UIImage(named: "tired")
-//        }
         let emotionImageName = ["happy", "regret", "anxiety", "angry", "sad", "love", "joy", "tired"]
         for i in 0..<8 {
             cell.emotionImage.image = UIImage(named: emotionImageName[emotionNum])
@@ -127,14 +110,18 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let space: CGFloat = 8
+        let flowLayout = collectionView.collectionViewLayout as! UICollectionViewFlowLayout
+        flowLayout.estimatedItemSize = .zero
+        let space: CGFloat = 32
         let cellWidth: CGFloat = diaryCollectionView.frame.width - space
-        let cellHeight: CGFloat = 88
+        let cellHeight: CGFloat = 122
         return CGSize(width: cellWidth, height: cellHeight)
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
-        return UIEdgeInsets(top: 24, left:16, bottom: 0, right: 16)
+        let flowLayout = collectionView.collectionViewLayout as! UICollectionViewFlowLayout
+        flowLayout.estimatedItemSize = .zero
+        return UIEdgeInsets(top: 16, left:16, bottom: 16, right: 16)
     }
     
     func loadImage(from url: URL, completion: @escaping (UIImage?) -> Void) {
