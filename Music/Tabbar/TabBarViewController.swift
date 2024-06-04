@@ -15,12 +15,17 @@ class TabBarViewController: UITabBarController, UITabBarControllerDelegate {
     
     // TabBarButton – 中央ボタンの設定
     func setupMiddleButton() {
-        let middleBtn = UIButton(frame: CGRect(x: (self.view.bounds.width / 2)-30, y: -30, width: 60, height: 60))
+        let middleBtn = UIButton(frame: CGRect(x: (self.view.bounds.width / 2)-40, y: -52, width: 80, height: 80))
         // ボタンを自分好みのスタイルに設定する
-        middleBtn.setImage(UIImage(systemName: "plus"), for: .normal)
+        //システムアイコン名、サイズを設定
+        var configuration = UIButton.Configuration.plain()
+        let symbolConfiguration = UIImage.SymbolConfiguration(pointSize: 24, weight: .bold, scale: .default)
+        let systemImage = UIImage(systemName: "plus", withConfiguration: symbolConfiguration)
+        configuration.image = systemImage
+        middleBtn.configuration = configuration
         middleBtn.tintColor = .white
         middleBtn.backgroundColor = UIColor(named: "mainColor")
-        middleBtn.layer.cornerRadius = 30
+        middleBtn.layer.cornerRadius = 40
         
         // タブバーに追加し、クリック イベントを追加する
         self.tabBar.addSubview(middleBtn)
@@ -31,7 +36,7 @@ class TabBarViewController: UITabBarController, UITabBarControllerDelegate {
     
     // メニュー ボタンのタッチ アクション
     @objc func menuButtonAction(sender: UIButton) {
-        self.selectedIndex = 1 // 中央のタブを選択します。タブが 3 つしかない場合は "1" を使用します。
+        self.selectedIndex = 2 // 中央のタブを選択します。タブが 3 つしかない場合は "1" を使用します。
         let storyboard: UIStoryboard = UIStoryboard(name: "AddDiary", bundle: nil)
         let addVC = storyboard.instantiateViewController(withIdentifier: "addNC")
         self.present(addVC, animated: true, completion: nil)

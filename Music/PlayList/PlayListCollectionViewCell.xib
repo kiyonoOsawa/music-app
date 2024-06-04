@@ -18,9 +18,13 @@
                 <subviews>
                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="WYz-nV-KPm">
                         <rect key="frame" x="16" y="16" width="142" height="142"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="142" id="byC-mp-usa"/>
+                            <constraint firstAttribute="width" constant="142" id="cF5-8z-5o0"/>
+                        </constraints>
                     </imageView>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TNn-wB-EiS">
-                        <rect key="frame" x="66" y="170" width="42" height="20"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TNn-wB-EiS">
+                        <rect key="frame" x="16" y="170" width="142" height="20"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="20" id="qwq-TQ-Y2c"/>
                         </constraints>
@@ -36,6 +40,7 @@
                 <constraint firstItem="WYz-nV-KPm" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="16" id="4zt-DS-qhR"/>
                 <constraint firstItem="WYz-nV-KPm" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="16" id="EN2-AO-pdA"/>
                 <constraint firstAttribute="trailing" secondItem="WYz-nV-KPm" secondAttribute="trailing" constant="16" id="Ft1-2A-5Uh"/>
+                <constraint firstItem="TNn-wB-EiS" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="16" id="H7b-Ce-hIg"/>
                 <constraint firstAttribute="bottom" secondItem="TNn-wB-EiS" secondAttribute="bottom" constant="16" id="HO0-2c-e7J"/>
                 <constraint firstItem="TNn-wB-EiS" firstAttribute="top" secondItem="WYz-nV-KPm" secondAttribute="bottom" constant="12" id="Y7Y-db-WYc"/>
                 <constraint firstItem="TNn-wB-EiS" firstAttribute="centerX" secondItem="gTV-IL-0wX" secondAttribute="centerX" id="bik-DD-UfT"/>

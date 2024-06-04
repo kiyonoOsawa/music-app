@@ -11,6 +11,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         Task {
             await MusicAuthorization.request()
+            
+            let requestPlaylists = MusicLibraryRequest<Playlist>()
+            let responsePlaylists = try await requestPlaylists.response()
+            let playlists = responsePlaylists.items
+            print("🐶",requestPlaylists, responsePlaylists.items)
+            if !playlists.contains(where: { $0.name == "created from Music app Playlist" }) {
+                try await MusicKitViewModel.createMusicPlaylist()
+            }
         }
         let config = Realm.Configuration(
             schemaVersion: 1,

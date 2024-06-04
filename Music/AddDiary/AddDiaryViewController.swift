@@ -1,4 +1,5 @@
 import UIKit
+import MusicKit
 import RealmSwift
 
 class AddDiaryViewController: UIViewController {
@@ -17,8 +18,10 @@ class AddDiaryViewController: UIViewController {
     var emotionCell = EmotionTableViewCell()
     var textCell = TextTableViewCell()
     var date = Date()
-    var musicImageURL: URL? = URL(string: "https://example.com")!
     var musicTitle = String()
+    var musicImageURL: URL? = URL(string: "https://example.com")!
+    var musicArtist = String()
+    var musicID = String()
     var emotion = Int()
     var content = String()
     var emotionNum = Int()
@@ -35,6 +38,7 @@ class AddDiaryViewController: UIViewController {
         print("曲名!?\(musicTitle)")
         print("ジャケ写!?\(musicImageURL)")
         print("感情ナンバー\(emotionNum)")
+        print("音楽のID\(musicID)")
         sectionTableView.reloadData()
     }
     
@@ -60,8 +64,10 @@ class AddDiaryViewController: UIViewController {
         diaryItem.date = dateCell.datePicker.date
         diaryItem.musicImage = musicImageURL
         diaryItem.musicTitle = musicCell.titleLabel.text!
+        diaryItem.artistName = musicArtist
         diaryItem.emotion = emotionNum
         diaryItem.content = textCell.diaryTextField.text!
+        diaryItem.musicID = musicID
         
         do{
             let realm = try! Realm()
@@ -73,6 +79,7 @@ class AddDiaryViewController: UIViewController {
         }
         print("ちゃんと保存されてるーーーー？\(diary.date)")
         print("こっちはーーー？\(diary.content)")
+        print("お願い。。。\(diary.musicID)")
         NotificationCenter.default.post(name: Notification.Name("DiarySaved"), object: nil)
     }
     
