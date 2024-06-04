@@ -78,22 +78,26 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
             }
         }
         emotionNum = diary[indexPath.row].emotion
-        if emotionNum == 0 {
-            cell.emotionImage.image = UIImage(named: "happy")
-        } else if emotionNum == 1 {
-            cell.emotionImage.image = UIImage(named: "regret")
-        } else if emotionNum == 2 {
-            cell.emotionImage.image = UIImage(named: "anxiety")
-        } else if emotionNum == 3 {
-            cell.emotionImage.image = UIImage(named: "angry")
-        } else if emotionNum == 4 {
-            cell.emotionImage.image = UIImage(named: "sad")
-        } else if emotionNum == 5 {
-            cell.emotionImage.image = UIImage(named: "love")
-        } else if emotionNum == 6 {
-            cell.emotionImage.image = UIImage(named: "joy")
-        } else {
-            cell.emotionImage.image = UIImage(named: "tired")
+//        if emotionNum == 0 {
+//            cell.emotionImage.image = UIImage(named: "happy")
+//        } else if emotionNum == 1 {
+//            cell.emotionImage.image = UIImage(named: "regret")
+//        } else if emotionNum == 2 {
+//            cell.emotionImage.image = UIImage(named: "anxiety")
+//        } else if emotionNum == 3 {
+//            cell.emotionImage.image = UIImage(named: "angry")
+//        } else if emotionNum == 4 {
+//            cell.emotionImage.image = UIImage(named: "sad")
+//        } else if emotionNum == 5 {
+//            cell.emotionImage.image = UIImage(named: "love")
+//        } else if emotionNum == 6 {
+//            cell.emotionImage.image = UIImage(named: "joy")
+//        } else {
+//            cell.emotionImage.image = UIImage(named: "tired")
+//        }
+        let emotionImageName = ["happy", "regret", "anxiety", "angry", "sad", "love", "joy", "tired"]
+        for i in 0..<8 {
+            cell.emotionImage.image = UIImage(named: emotionImageName[emotionNum])
         }
         
         if diary[indexPath.row].content == "" {
@@ -112,13 +116,11 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
             let dateFormatter = DateFormatter()
             dateFormatter.dateFormat = "yyyy/MM/dd"
             addVC.date = dateFormatter.string(from: diary[indexPath.row].date)
-            //            addVC.musicImage = UIImage(data: diary[indexPath.row].musicImage)!
+            addVC.musicImageURL = diary[indexPath.row].musicImage
             addVC.musicTitle = diary[indexPath.row].musicTitle
-            addVC.emotion = diary[indexPath.row].emotion
+            addVC.emotionNum = diary[indexPath.row].emotion
             addVC.content = diary[indexPath.row].content
             self.navigationController?.pushViewController(addVC, animated: true)
-            //            self.present(addVC, animated: true, completion: nil)
-            print("押された？\(indexPath.row)") //押されてるのになぜ動かないの------！
         } else {
             print("ダメでした")
         }

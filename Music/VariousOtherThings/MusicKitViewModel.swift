@@ -18,7 +18,7 @@ class MusicKitViewModel: NSObject {
         musicRequest.limit = 30
         response = try await musicRequest.response()
         let titles = response.items.compactMap { $0.title }
-        let images = response.items.compactMap { $0.artwork?.url(width: 100, height: 100) }
+        let images = response.items.compactMap { $0.artwork?.url(width: 200, height: 200) }
         let artists = response.items.compactMap { $0.artistName }
         let ids = response.items.compactMap{ $0.id}
         print("最近聴いた曲のタイトル: \(titles)")

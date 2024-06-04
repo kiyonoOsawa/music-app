@@ -80,6 +80,7 @@ class AddDiaryViewController: UIViewController {
         print("ちゃんと保存されてるーーーー？\(diary.date)")
         print("こっちはーーー？\(diary.content)")
         print("お願い。。。\(diary.musicID)")
+        print("感情番号把握したい\(emotionNum)")
         NotificationCenter.default.post(name: Notification.Name("DiarySaved"), object: nil)
     }
     
@@ -118,10 +119,12 @@ extension AddDiaryViewController: UITableViewDelegate, UITableViewDataSource, Em
             emotionCell.selectionStyle = UITableViewCell.SelectionStyle.none
             emotionCell.delegate = self
             emotionCell.emotionButtons.enumerated().forEach { (index, button) in
-                button.tag = index + 1
+//                button.tag = index + 1
+                button.tag = index
             }
             emotionCell.emotionLabels.enumerated().forEach { (index, label) in
-                label.tag = index + 1
+//                label.tag = index + 1
+                label.tag = index
             }
             return emotionCell
         } else {
@@ -165,6 +168,7 @@ extension AddDiaryViewController: UITableViewDelegate, UITableViewDataSource, Em
     }
     
     func tappedBtn(cell: EmotionTableViewCell, didTapButtonWithTag tag: Int) {
+        print(tag)
         emotionNum = tag
     }
     
