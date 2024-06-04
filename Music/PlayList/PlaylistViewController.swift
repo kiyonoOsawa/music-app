@@ -8,6 +8,11 @@ class PlaylistViewController: UIViewController {
     
     @IBOutlet weak var playListCollectionView: UICollectionView!
     
+    // レイアウト設定　UIEdgeInsets については下記の参考図を参照。
+    private let sectionInsets = UIEdgeInsets(top: 10.0, left: 2.0, bottom: 2.0, right: 2.0)
+    // 1行あたりのアイテム数
+    private let itemsPerRow: CGFloat = 2
+    
     weak var viewModel = MusicKitViewModel.shared
     let realm = try! Realm()
     var diary: Results<Diary>!
@@ -53,15 +58,18 @@ extension PlaylistViewController: UICollectionViewDelegate, UICollectionViewData
         cell.layer.shadowOffset = CGSize(width: 0, height: 0)
         cell.layer.shadowRadius = 5
         cell.layer.masksToBounds = false
-        //ここのmusicImageはplaylistの最後の一つを選びたい
-//        let musicImage = UIImage(data: diary[indexPath.row].musicImage)
-//        cell.musicImage.image = musicImage
-        //ここのmusicTitleあとで年・月に変更したい
-        cell.playListTitle.text = diary[indexPath.row].musicTitle
+        // Tag番号を使ってインスタンスをつくる
+        let photoImageView = cell.contentView.viewWithTag(1)  as! UIImageView
+        let photoImage = UIImage(named: "")
+        photoImageView.image = photoImage
+        let titleLabel = cell.contentView.viewWithTag(2) as! UILabel
+        titleLabel.text = diary[indexPath.row].musicTitle
         return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        let flowLayout = collectionView.collectionViewLayout as! UICollectionViewFlowLayout
+        flowLayout.estimatedItemSize = .zero
         let space: CGFloat = 8
         let cellWidth: CGFloat = UIScreen.main.bounds.width / 2 - space * 4
         let cellHeight: CGFloat = 206
@@ -69,10 +77,12 @@ extension PlaylistViewController: UICollectionViewDelegate, UICollectionViewData
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
-        return UIEdgeInsets(top: 24, left:18, bottom: 0, right: 18)
+        let flowLayout = collectionView.collectionViewLayout as! UICollectionViewFlowLayout
+        flowLayout.estimatedItemSize = .zero
+        return UIEdgeInsets(top: 16, left:16, bottom: 8, right: 16)
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
-        return 8
+        return 16
     }
 }
