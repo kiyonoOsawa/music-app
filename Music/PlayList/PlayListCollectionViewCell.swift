@@ -7,5 +7,10 @@ class PlayListCollectionViewCell: UICollectionViewCell {
 
     override func awakeFromNib() {
         super.awakeFromNib()
+        design()
+    }
+    
+    func design() {
+        musicImage.layer.cornerRadius = 12
     }
 }

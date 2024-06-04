@@ -18,7 +18,7 @@
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="he3-9b-oLU">
-                        <rect key="frame" x="70" y="16" width="80" height="39"/>
+                        <rect key="frame" x="70" y="20" width="75.666666666666686" height="39"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="39" id="YQe-Vn-EhL"/>
                             <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="39" id="cs5-4g-NI9"/>
@@ -28,23 +28,23 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A0T-L8-CqB">
-                        <rect key="frame" x="70" y="59" width="42" height="21"/>
+                        <rect key="frame" x="70" y="62.999999999999993" width="160" height="21.666666666666664"/>
                         <constraints>
-                            <constraint firstAttribute="height" constant="21" id="kAh-WQ-sPL"/>
+                            <constraint firstAttribute="width" constant="160" id="kJ5-Zd-sJu"/>
                         </constraints>
-                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="S9J-Bk-wzc">
-                        <rect key="frame" x="214" y="16" width="90" height="90"/>
+                        <rect key="frame" x="238" y="16" width="90" height="90"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="90" id="IZ6-1Z-kwd"/>
                             <constraint firstAttribute="width" constant="90" id="z4i-dz-mb0"/>
                         </constraints>
                     </imageView>
                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="QPa-4I-w0s">
-                        <rect key="frame" x="16" y="19.666666666666671" width="32" height="32"/>
+                        <rect key="frame" x="16" y="23.666666666666671" width="32" height="32"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="32" id="Yik-D1-rSP"/>
                             <constraint firstAttribute="width" constant="32" id="cgy-AQ-yyF"/>
@@ -58,22 +58,31 @@
                             <constraint firstAttribute="height" constant="29" id="ovE-lU-Q0g"/>
                         </constraints>
                     </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gke-6Q-j8i">
+                        <rect key="frame" x="70" y="88.666666666666671" width="160" height="15.666666666666671"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                        <color key="textColor" systemColor="scrollViewTexturedBackgroundColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
                 </subviews>
             </view>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
+                <constraint firstItem="S9J-Bk-wzc" firstAttribute="leading" secondItem="Gke-6Q-j8i" secondAttribute="trailing" constant="8" id="0Oc-AJ-uOv"/>
+                <constraint firstItem="Gke-6Q-j8i" firstAttribute="leading" secondItem="he3-9b-oLU" secondAttribute="leading" id="52k-Lg-SDd"/>
                 <constraint firstItem="z4I-lm-P4x" firstAttribute="leading" secondItem="QPa-4I-w0s" secondAttribute="leading" id="7SX-4S-tHI"/>
                 <constraint firstAttribute="bottom" secondItem="S9J-Bk-wzc" secondAttribute="bottom" constant="16" id="Evz-B2-YMj"/>
                 <constraint firstAttribute="bottom" secondItem="z4I-lm-P4x" secondAttribute="bottom" constant="16" id="J2Q-PT-Ztz"/>
+                <constraint firstItem="Gke-6Q-j8i" firstAttribute="top" secondItem="A0T-L8-CqB" secondAttribute="bottom" constant="4" id="OUo-dl-2uz"/>
                 <constraint firstItem="A0T-L8-CqB" firstAttribute="top" secondItem="he3-9b-oLU" secondAttribute="bottom" constant="4" id="SBu-1n-idb"/>
-                <constraint firstItem="S9J-Bk-wzc" firstAttribute="leading" secondItem="he3-9b-oLU" secondAttribute="trailing" constant="64" id="UfU-jh-Qjw"/>
                 <constraint firstItem="QPa-4I-w0s" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="16" id="YVa-aa-sDy"/>
                 <constraint firstItem="he3-9b-oLU" firstAttribute="leading" secondItem="QPa-4I-w0s" secondAttribute="trailing" constant="22" id="bIm-oN-JZI"/>
                 <constraint firstItem="S9J-Bk-wzc" firstAttribute="centerY" secondItem="gTV-IL-0wX" secondAttribute="centerY" id="dhU-oz-eFa"/>
-                <constraint firstAttribute="trailing" secondItem="S9J-Bk-wzc" secondAttribute="trailing" constant="40" id="kdK-bz-Wx2"/>
-                <constraint firstItem="he3-9b-oLU" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="16" id="pbt-Y3-9Rb"/>
+                <constraint firstAttribute="trailing" secondItem="S9J-Bk-wzc" secondAttribute="trailing" constant="16" id="kdK-bz-Wx2"/>
+                <constraint firstItem="he3-9b-oLU" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="20" id="pbt-Y3-9Rb"/>
                 <constraint firstItem="A0T-L8-CqB" firstAttribute="leading" secondItem="he3-9b-oLU" secondAttribute="leading" id="rje-NL-Zwa"/>
+                <constraint firstItem="S9J-Bk-wzc" firstAttribute="leading" secondItem="A0T-L8-CqB" secondAttribute="trailing" constant="8" id="voj-AC-I3Y"/>
                 <constraint firstItem="he3-9b-oLU" firstAttribute="centerY" secondItem="QPa-4I-w0s" secondAttribute="centerY" id="x1a-M3-bSS"/>
             </constraints>
             <size key="customSize" width="372" height="104"/>
@@ -81,6 +90,7 @@
                 <outlet property="contentAble" destination="z4I-lm-P4x" id="dZn-dw-NAD"/>
                 <outlet property="dateLabel" destination="he3-9b-oLU" id="ErA-cN-pJh"/>
                 <outlet property="emotionImage" destination="QPa-4I-w0s" id="jJQ-aY-rpD"/>
+                <outlet property="musicArtistLabel" destination="Gke-6Q-j8i" id="ba9-qg-OFK"/>
                 <outlet property="musicImageView" destination="S9J-Bk-wzc" id="999-ec-BxD"/>
                 <outlet property="musicTitleLabel" destination="A0T-L8-CqB" id="Btc-6B-OJk"/>
             </connections>
@@ -91,6 +101,9 @@
         <image name="text.alignleft" catalog="system" width="128" height="99"/>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="scrollViewTexturedBackgroundColor">
+            <color red="0.43529411764705883" green="0.44313725490196076" blue="0.47450980392156861" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

@@ -1,10 +1,14 @@
 import UIKit
 import RealmSwift
+import MusicKit
+import MediaPlayer
+import StoreKit
 
 class PlaylistViewController: UIViewController {
     
     @IBOutlet weak var playListCollectionView: UICollectionView!
     
+    weak var viewModel = MusicKitViewModel.shared
     let realm = try! Realm()
     var diary: Results<Diary>!
     
@@ -25,6 +29,14 @@ class PlaylistViewController: UIViewController {
         super.viewWillAppear(animated)
         self.diary = realm.objects(Diary.self)
         playListCollectionView.reloadData()
+    }
+    
+    func fetchPlaylistData() {
+        Task {
+            do {
+                try await viewModel?.addMusicToLikedMusicLibrary(ID: MusicItemID(""))
+            }
+        }
     }
 }
 

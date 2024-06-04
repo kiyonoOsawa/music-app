@@ -41,6 +41,7 @@
 		CEF4EC352BFE503E0044EB54 /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = CEF4EC342BFE503E0044EB54 /* Realm */; };
 		CEF4EC372BFE503E0044EB54 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = CEF4EC362BFE503E0044EB54 /* RealmSwift */; };
 		CEF4EC3B2BFE51CA0044EB54 /* Diary.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF4EC3A2BFE51CA0044EB54 /* Diary.swift */; };
+		CEF858572C0D3F71004373E0 /* Play.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF858562C0D3F71004373E0 /* Play.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -78,6 +79,7 @@
 		CEF4EC2F2BFDCAFB0044EB54 /* MusicListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicListTableViewCell.swift; sourceTree = "<group>"; };
 		CEF4EC302BFDCAFB0044EB54 /* MusicListTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MusicListTableViewCell.xib; sourceTree = "<group>"; };
 		CEF4EC3A2BFE51CA0044EB54 /* Diary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Diary.swift; sourceTree = "<group>"; };
+		CEF858562C0D3F71004373E0 /* Play.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Play.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -201,6 +203,7 @@
 			children = (
 				CEF4EC252BFC96CC0044EB54 /* MusicKitViewModel.swift */,
 				CEF4EC3A2BFE51CA0044EB54 /* Diary.swift */,
+				CEF858562C0D3F71004373E0 /* Play.swift */,
 			);
 			path = VariousOtherThings;
 			sourceTree = "<group>";
@@ -312,6 +315,7 @@
 				CE2AA7C32BF9F09B00768F69 /* AppDelegate.swift in Sources */,
 				CE8A18D92BFC314D00CEBE7F /* MusicTableViewCell.swift in Sources */,
 				CE2AA7C52BF9F09B00768F69 /* SceneDelegate.swift in Sources */,
+				CEF858572C0D3F71004373E0 /* Play.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

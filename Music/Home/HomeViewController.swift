@@ -11,7 +11,6 @@ class HomeViewController: UIViewController {
     var musicImageURL: URL? = URL(string: "https://example.com")!
     var diaryCell = DiaryCollectionViewCell()
     var emotionNum = Int()
-//    var cell = DiaryCollectionViewCell()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -65,15 +64,12 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
         cell.layer.shadowOffset = CGSize(width: 0, height: 0)
         cell.layer.shadowRadius = 5
         cell.layer.masksToBounds = false
-        cell.musicTitleLabel.text = diary[indexPath.row].musicTitle
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "MM/dd"
         cell.dateLabel.text = dateFormatter.string(from: diary[indexPath.row].date)
+        cell.musicTitleLabel.text = diary[indexPath.row].musicTitle
+        cell.musicArtistLabel.text = diary[indexPath.row].artistName
         musicImageURL = URL(string: diary[indexPath.row].musicImageString!)
-        print("この中身みたい\(diary[indexPath.row].musicImageString)")
-        print("こっちのこれは？\(musicImageURL)")
-//        let filePath = musicImageURL?.path
-//        cell.musicImageView.image = UIImage(contentsOfFile: filePath!)
         if let url = musicImageURL {
             loadImage(from: url) { image in
                 DispatchQueue.main.async {
