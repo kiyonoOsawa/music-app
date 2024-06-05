@@ -41,6 +41,7 @@
 		CEF4EC352BFE503E0044EB54 /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = CEF4EC342BFE503E0044EB54 /* Realm */; };
 		CEF4EC372BFE503E0044EB54 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = CEF4EC362BFE503E0044EB54 /* RealmSwift */; };
 		CEF4EC3B2BFE51CA0044EB54 /* Diary.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF4EC3A2BFE51CA0044EB54 /* Diary.swift */; };
+		CEF8585C2C10BC02004373E0 /* NotificationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF8585B2C10BC02004373E0 /* NotificationService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -78,6 +79,8 @@
 		CEF4EC2F2BFDCAFB0044EB54 /* MusicListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicListTableViewCell.swift; sourceTree = "<group>"; };
 		CEF4EC302BFDCAFB0044EB54 /* MusicListTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MusicListTableViewCell.xib; sourceTree = "<group>"; };
 		CEF4EC3A2BFE51CA0044EB54 /* Diary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Diary.swift; sourceTree = "<group>"; };
+		CEF858582C10ACDB004373E0 /* Music.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Music.entitlements; sourceTree = "<group>"; };
+		CEF8585B2C10BC02004373E0 /* NotificationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,6 +115,7 @@
 		CE2AA7C12BF9F09B00768F69 /* Music */ = {
 			isa = PBXGroup;
 			children = (
+				CEF858582C10ACDB004373E0 /* Music.entitlements */,
 				CE2AA7C22BF9F09B00768F69 /* AppDelegate.swift */,
 				CE2AA7C42BF9F09B00768F69 /* SceneDelegate.swift */,
 				CE2AA7C62BF9F09B00768F69 /* ViewController.swift */,
@@ -200,6 +204,7 @@
 			isa = PBXGroup;
 			children = (
 				CEF4EC252BFC96CC0044EB54 /* MusicKitViewModel.swift */,
+				CEF8585B2C10BC02004373E0 /* NotificationService.swift */,
 				CEF4EC3A2BFE51CA0044EB54 /* Diary.swift */,
 			);
 			path = VariousOtherThings;
@@ -301,6 +306,7 @@
 				CE8A18D52BFC312F00CEBE7F /* DateTableViewCell.swift in Sources */,
 				CE90425A2C0396480053A212 /* PlayListCollectionViewCell.swift in Sources */,
 				CEF4EC282BFCF1350044EB54 /* MusicViewController.swift in Sources */,
+				CEF8585C2C10BC02004373E0 /* NotificationService.swift in Sources */,
 				CEF4EC312BFDCAFB0044EB54 /* MusicListTableViewCell.swift in Sources */,
 				CE428F5B2BFA15CE00C095B8 /* TabBar.swift in Sources */,
 				CE90425F2C04288B0053A212 /* DetailViewController.swift in Sources */,
@@ -461,6 +467,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = Music/Music.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 7Y5RBD24LU;
@@ -490,6 +497,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = Music/Music.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 7Y5RBD24LU;
