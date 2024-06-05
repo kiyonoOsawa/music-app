@@ -10,10 +10,6 @@ class Diary: Object {
     @objc dynamic var emotion = Int()
     @objc dynamic var content = String()
     
-//    override static func primaryKey() -> String? {
-//        return "id"
-//    }
-    
     // URL型のカスタムプロパティ
     var musicImage: URL? {
         get {
