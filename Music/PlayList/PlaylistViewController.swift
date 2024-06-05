@@ -8,14 +8,10 @@ class PlaylistViewController: UIViewController {
     
     @IBOutlet weak var playListCollectionView: UICollectionView!
     
-    // レイアウト設定　UIEdgeInsets については下記の参考図を参照。
-    private let sectionInsets = UIEdgeInsets(top: 10.0, left: 2.0, bottom: 2.0, right: 2.0)
-    // 1行あたりのアイテム数
-    private let itemsPerRow: CGFloat = 2
-    
     weak var viewModel = MusicKitViewModel.shared
     let realm = try! Realm()
     var diary: Results<Diary>!
+//    var playlistMusicIDs: String = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,13 +32,6 @@ class PlaylistViewController: UIViewController {
         playListCollectionView.reloadData()
     }
     
-    func fetchPlaylistData() {
-        Task {
-            do {
-                try await viewModel?.addMusicToLikedMusicLibrary(ID: MusicItemID(""))
-            }
-        }
-    }
 }
 
 extension PlaylistViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {

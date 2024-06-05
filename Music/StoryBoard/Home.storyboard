@@ -104,6 +104,11 @@
                                     </label>
                                 </subviews>
                             </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3cY-0y-Auh">
+                                <rect key="frame" x="263.66666666666669" y="419.66666666666669" width="43.333333333333314" height="34.333333333333314"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" image="play" catalog="system"/>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="atO-3F-u12"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -112,6 +117,7 @@
                             <constraint firstItem="dKr-Yk-G1H" firstAttribute="centerX" secondItem="XDe-FE-dOe" secondAttribute="centerX" id="4Ba-es-QKf"/>
                             <constraint firstItem="XWK-3S-HvK" firstAttribute="centerX" secondItem="XDe-FE-dOe" secondAttribute="centerX" id="9dI-0U-JDM"/>
                             <constraint firstItem="dKr-Yk-G1H" firstAttribute="top" secondItem="AvK-Sd-N3g" secondAttribute="bottom" constant="24" id="BPF-Ri-5Ge"/>
+                            <constraint firstItem="3cY-0y-Auh" firstAttribute="leading" secondItem="ezj-k6-NoT" secondAttribute="trailing" constant="24" id="KEk-EX-aFL"/>
                             <constraint firstItem="MOn-rK-R3Z" firstAttribute="top" secondItem="ezj-k6-NoT" secondAttribute="bottom" constant="12" id="QPY-Wi-HLp"/>
                             <constraint firstItem="AvK-Sd-N3g" firstAttribute="centerX" secondItem="XDe-FE-dOe" secondAttribute="centerX" id="QjY-fd-WQU"/>
                             <constraint firstItem="MOn-rK-R3Z" firstAttribute="leading" secondItem="atO-3F-u12" secondAttribute="leading" constant="40" id="Rth-MD-avF"/>
@@ -120,6 +126,7 @@
                             <constraint firstItem="atO-3F-u12" firstAttribute="bottom" secondItem="XWK-3S-HvK" secondAttribute="bottom" constant="24" id="hrM-dc-geb"/>
                             <constraint firstItem="XWK-3S-HvK" firstAttribute="leading" secondItem="atO-3F-u12" secondAttribute="leading" constant="40" id="kIj-RG-yro"/>
                             <constraint firstItem="ezj-k6-NoT" firstAttribute="top" secondItem="dKr-Yk-G1H" secondAttribute="bottom" constant="12" id="qrS-bD-Jn9"/>
+                            <constraint firstItem="3cY-0y-Auh" firstAttribute="centerY" secondItem="ezj-k6-NoT" secondAttribute="centerY" id="vQf-Jk-sQF"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="BPE-0m-E3U"/>
@@ -175,6 +182,7 @@
     </scenes>
     <resources>
         <image name="house" catalog="system" width="128" height="104"/>
+        <image name="play" catalog="system" width="117" height="128"/>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

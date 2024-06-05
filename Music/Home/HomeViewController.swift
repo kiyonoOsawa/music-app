@@ -1,4 +1,5 @@
 import UIKit
+import MusicKit
 import RealmSwift
 
 class HomeViewController: UIViewController {
@@ -93,17 +94,17 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let storyboard: UIStoryboard = UIStoryboard(name: "Home", bundle: nil)
-        if let addVC = storyboard.instantiateViewController(withIdentifier: "ditailVC") as? DetailViewController {
-            addVC.modalTransitionStyle = .coverVertical
-            addVC.modalPresentationStyle = .pageSheet
+        if let nextVC = storyboard.instantiateViewController(withIdentifier: "ditailVC") as? DetailViewController {
+            nextVC.modalTransitionStyle = .coverVertical
+            nextVC.modalPresentationStyle = .pageSheet
             let dateFormatter = DateFormatter()
             dateFormatter.dateFormat = "yyyy/MM/dd"
-            addVC.date = dateFormatter.string(from: diary[indexPath.row].date)
-            addVC.musicImageURL = diary[indexPath.row].musicImage
-            addVC.musicTitle = diary[indexPath.row].musicTitle
-            addVC.emotionNum = diary[indexPath.row].emotion
-            addVC.content = diary[indexPath.row].content
-            self.navigationController?.pushViewController(addVC, animated: true)
+            nextVC.date = dateFormatter.string(from: diary[indexPath.row].date)
+            let musicID = MusicItemID(rawValue: diary[indexPath.row].musicIDString)
+            nextVC.musicID = musicID
+            nextVC.emotionNum = diary[indexPath.row].emotion
+            nextVC.content = diary[indexPath.row].content
+            self.navigationController?.pushViewController(nextVC, animated: true)
         } else {
             print("ダメでした")
         }

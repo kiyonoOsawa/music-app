@@ -9,6 +9,7 @@ class MusicKitViewModel: NSObject {
     
     @Published var musicRequest = MusicRecentlyPlayedRequest<Song>()
     @Published var response: MusicRecentlyPlayedResponse<Song>!
+    @Published var musicID: String?
     
     static let shared = MusicKitViewModel()
     
@@ -20,11 +21,37 @@ class MusicKitViewModel: NSObject {
         let titles = response.items.compactMap { $0.title }
         let images = response.items.compactMap { $0.artwork?.url(width: 200, height: 200) }
         let artists = response.items.compactMap { $0.artistName }
-        let ids = response.items.compactMap{ $0.id}
+        let ids = response.items.compactMap{ $0.id }
         print("最近聴いた曲のタイトル: \(titles)")
         print("何を取得できているのかみたい\(response)")
         print("何型？\(type(of: ids))")
         return (titles, images, artists, ids)
+    }
+    
+    func fetchMusicID() async {
+        do {
+            // MusicKit APIを使用して音楽IDを取得
+            let request = MusicCatalogSearchRequest(term: "Your Search Term", types: [Song.self])
+            let response = try await request.response()
+            
+            if let song = response.songs.first {
+                DispatchQueue.main.async {
+                    self.musicID = song.id.rawValue
+                }
+            }
+        } catch {
+            print("Error fetching music ID: \(error)")
+        }
+    }
+    
+    func getSpecificSongsOnCatalog(ID: MusicItemID) async throws ->  MusicItemCollection<Song>.Element {
+        //試しに上の関数で取ってきた30個目の曲の情報を持ってくる
+        //idは曲一つ一つに必ず振られてるからidだけ抑えとけばこれで検索できる
+        let Songrequest = MusicCatalogResourceRequest<Song>(matching: \.id, equalTo: ID)
+        let Songresponse = try await Songrequest.response()
+        let song = Songresponse.items.first
+        print("id検索結果",song)
+        return song!
     }
     
     static func createMusicPlaylist() async throws {
@@ -38,19 +65,19 @@ class MusicKitViewModel: NSObject {
     }
     
     //この関数は作ったplaylistに曲追加してくれる曲の保存
-    func addMusicToLikedMusicLibrary(ID: MusicItemID) async throws {
-        Task {
-            do {
-                let Request = MusicCatalogResourceRequest<Song>(matching: \.id, equalTo: ID)
-                let Response = try await Request.response()
-                var requestPlaylists = MusicLibraryRequest<Playlist>()
-                //プレイリストとfilterのtextの名前一致してないと動かないから気をつけて
-                requestPlaylists.filter(text: "created from Music app Playlist")
-                let responsePlaylists = try await requestPlaylists.response()
-                try await MusicLibrary.shared.add(Response.items.first!, to: responsePlaylists.items.first!)
-            } catch (let error) {
-                print(error)
-            }
-        }
-    }
+//    func addMusicToLikedMusicLibrary(ID: MusicItemID) async throws {
+//        Task {
+//            do {
+//                let Request = MusicCatalogResourceRequest<Song>(matching: \.id, equalTo: ID)
+//                let Response = try await Request.response()
+//                var requestPlaylists = MusicLibraryRequest<Playlist>()
+//                //プレイリストとfilterのtextの名前一致してないと動かないから気をつけて
+//                requestPlaylists.filter(text: "created from Music app Playlist")
+//                let responsePlaylists = try await requestPlaylists.response()
+//                try await MusicLibrary.shared.add(Response.items.first!, to: responsePlaylists.items.first!)
+//            } catch (let error) {
+//                print(error)
+//            }
+//        }
+//    }
 }
