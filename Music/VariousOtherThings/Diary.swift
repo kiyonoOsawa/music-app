@@ -2,7 +2,7 @@ import Foundation
 import RealmSwift
 
 class Diary: Object {
-    @objc dynamic var musicID: String = ""
+    @objc dynamic var musicIDString: String = ""
     @objc dynamic var musicTitle = String()
     @objc dynamic var musicImageString: String? = nil
     @objc dynamic var artistName: String = ""

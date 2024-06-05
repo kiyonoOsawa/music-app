@@ -72,7 +72,7 @@ extension MusicViewController: UITableViewDelegate, UITableViewDataSource {
         preVC?.musicTitle = musicTitles[indexPath.row]
         preVC?.musicImageURL = musicImageURLs[indexPath.row]!
         preVC?.musicArtist = musicArtists[indexPath.row]
-        preVC?.musicID = musicIDs[indexPath.row].rawValue
+        preVC?.musicIDString = musicIDs[indexPath.row].rawValue
         self.navigationController?.popViewController(animated: true)
     }
     

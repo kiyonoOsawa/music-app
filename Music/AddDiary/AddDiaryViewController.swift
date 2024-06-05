@@ -21,7 +21,7 @@ class AddDiaryViewController: UIViewController {
     var musicTitle = String()
     var musicImageURL: URL? = URL(string: "https://example.com")!
     var musicArtist = String()
-    var musicID = String()
+    var musicIDString = String()
     var emotion = Int()
     var content = String()
     var emotionNum = Int()
@@ -38,7 +38,7 @@ class AddDiaryViewController: UIViewController {
         print("曲名!?\(musicTitle)")
         print("ジャケ写!?\(musicImageURL)")
         print("感情ナンバー\(emotionNum)")
-        print("音楽のID\(musicID)")
+        print("音楽のID\(musicIDString)")
         sectionTableView.reloadData()
     }
     
@@ -67,7 +67,7 @@ class AddDiaryViewController: UIViewController {
         diaryItem.artistName = musicArtist
         diaryItem.emotion = emotionNum
         diaryItem.content = textCell.diaryTextField.text!
-        diaryItem.musicID = musicID
+        diaryItem.musicIDString = musicIDString
         
         do{
             let realm = try! Realm()
@@ -78,9 +78,6 @@ class AddDiaryViewController: UIViewController {
             print("Save is Faild")
         }
         print("ちゃんと保存されてるーーーー？\(diary.date)")
-        print("こっちはーーー？\(diary.content)")
-        print("お願い。。。\(diary.musicID)")
-        print("感情番号把握したい\(emotionNum)")
         NotificationCenter.default.post(name: Notification.Name("DiarySaved"), object: nil)
     }
     
@@ -119,11 +116,9 @@ extension AddDiaryViewController: UITableViewDelegate, UITableViewDataSource, Em
             emotionCell.selectionStyle = UITableViewCell.SelectionStyle.none
             emotionCell.delegate = self
             emotionCell.emotionButtons.enumerated().forEach { (index, button) in
-//                button.tag = index + 1
                 button.tag = index
             }
             emotionCell.emotionLabels.enumerated().forEach { (index, label) in
-//                label.tag = index + 1
                 label.tag = index
             }
             return emotionCell
