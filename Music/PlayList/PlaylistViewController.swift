@@ -11,7 +11,7 @@ class PlaylistViewController: UIViewController {
     weak var viewModel = MusicKitViewModel.shared
     let realm = try! Realm()
     var diary: Results<Diary>!
-//    var playlistMusicIDs: String = ""
+    var playList: MusicItemID = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,10 +31,10 @@ class PlaylistViewController: UIViewController {
         self.diary = realm.objects(Diary.self)
         playListCollectionView.reloadData()
     }
-    
 }
 
 extension PlaylistViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return diary.count
     }
