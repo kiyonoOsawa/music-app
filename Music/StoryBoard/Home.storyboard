@@ -108,6 +108,9 @@
                                 <rect key="frame" x="263.66666666666669" y="419.66666666666669" width="43.333333333333314" height="34.333333333333314"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" image="play" catalog="system"/>
+                                <connections>
+                                    <action selector="playButtonTapped" destination="00C-T3-xoN" eventType="touchUpInside" id="fvr-LD-D4z"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="atO-3F-u12"/>
@@ -136,6 +139,7 @@
                         <outlet property="emotionImage" destination="9ny-1w-lRH" id="ee9-N6-yqJ"/>
                         <outlet property="musicImageView" destination="dKr-Yk-G1H" id="VTA-vB-f8V"/>
                         <outlet property="musicTitleLabel" destination="ezj-k6-NoT" id="gS5-Zz-mcz"/>
+                        <outlet property="playButton" destination="3cY-0y-Auh" id="lTw-Gp-oa0"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ppX-LH-c6o" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
