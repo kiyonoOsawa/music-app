@@ -54,6 +54,28 @@ class MusicKitViewModel: NSObject {
         return song!
     }
     
+    func startSystemMusic(ID: MusicItemID) {
+        Task {
+            do {
+                let song = try await getSpecificSongsOnCatalog(ID: ID)
+                SystemMusicPlayer.shared.queue = [song]
+                try await SystemMusicPlayer.shared.play()
+            } catch {
+                print("システムで再生する時のエラー",error.localizedDescription)
+            }
+        }
+    }
+    
+    func stopSystemMusic(ID: MusicItemID) {
+        Task {
+            do {
+                try await SystemMusicPlayer.shared.stop()
+            } catch {
+                print("システムで再生する時のエラー",error.localizedDescription)
+            }
+        }
+    }
+    
     static func createMusicPlaylist() async throws {
         Task {
             do{

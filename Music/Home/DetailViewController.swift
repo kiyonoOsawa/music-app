@@ -9,6 +9,7 @@ class DetailViewController: UIViewController {
     @IBOutlet weak var musicTitleLabel: UILabel!
     @IBOutlet weak var emotionImage: UIImageView!
     @IBOutlet weak var contentText: UITextView!
+    @IBOutlet weak var playButton: UIButton!
     
     weak var viewModel = MusicKitViewModel.shared
     var diary: Results<Diary>!
@@ -18,6 +19,7 @@ class DetailViewController: UIViewController {
     var emotionNum = Int()
     var content = String()
     var musicID: MusicItemID = ""
+    var tappedBtn: Bool = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -83,17 +85,16 @@ class DetailViewController: UIViewController {
         self.view.endEditing(true)
     }
     
-//    @IBAction func playButtonTapped() {
-//        Task {
-//            do {
-////                let song = try await viewModel?.getSpecificSongsOnCatalog(ID: musicID)
-//                let player = SystemMusicPlayer.shared
-//                player.queue = [musicID]
-//                try await player.prepareToPlay()
-//                player.play()
-//            } catch {
-//                print("Failed to play music: \(error)")
-//            }
-//        }
-//    }
+    @IBAction func playButtonTapped() {
+//        tappedBtn = true
+        self.tappedBtn.toggle()
+        if tappedBtn == false {
+            viewModel?.stopSystemMusic(ID: musicID)
+            playButton.setImage(UIImage(systemName: "play"), for: .normal)
+        } else if tappedBtn == true {
+            viewModel?.startSystemMusic(ID: musicID)
+            playButton.setImage(UIImage(systemName: "pause.fill"), for: .normal)
+
+        }
+    }
 }
