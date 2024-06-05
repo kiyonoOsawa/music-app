@@ -86,7 +86,6 @@ class DetailViewController: UIViewController {
     }
     
     @IBAction func playButtonTapped() {
-//        tappedBtn = true
         self.tappedBtn.toggle()
         if tappedBtn == false {
             viewModel?.stopSystemMusic(ID: musicID)
