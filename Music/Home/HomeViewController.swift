@@ -104,6 +104,7 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
             nextVC.musicID = musicID
             nextVC.emotionNum = diary[indexPath.row].emotion
             nextVC.content = diary[indexPath.row].content
+            nextVC.hidesBottomBarWhenPushed = true
             self.navigationController?.pushViewController(nextVC, animated: true)
         } else {
             print("ダメでした")

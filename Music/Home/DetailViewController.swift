@@ -8,6 +8,7 @@ class DetailViewController: UIViewController {
     @IBOutlet weak var musicImageView: UIImageView!
     @IBOutlet weak var musicTitleLabel: UILabel!
     @IBOutlet weak var emotionImage: UIImageView!
+    @IBOutlet weak var emotionName: UILabel!
     @IBOutlet weak var contentText: UITextView!
     @IBOutlet weak var playButton: UIButton!
     
@@ -30,11 +31,20 @@ class DetailViewController: UIViewController {
     
     func design() {
         contentText.isEditable = false
+        var configuration = UIButton.Configuration.plain()
+        let symbolConfiguration = UIImage.SymbolConfiguration(pointSize: 24, weight: .bold, scale: .default)
+        let systemImage = UIImage(systemName: "play", withConfiguration: symbolConfiguration)
+        configuration.image = systemImage
+        playButton.configuration = configuration
+        playButton.tintColor = .white
+        playButton.backgroundColor = UIColor(named: "mainColor")
+        playButton.layer.cornerRadius = 40
     }
     
     func setData() {
         dateLabel.text = date
         setEmotion()
+        musicTitleLabel.adjustsFontSizeToFitWidth = true
         contentText.text = content
     }
     
@@ -42,6 +52,7 @@ class DetailViewController: UIViewController {
         let emotionImageName = ["happy", "regret", "anxiety", "angry", "sad", "love", "joy", "tired"]
         for i in 0..<8 {
             emotionImage.image = UIImage(named: emotionImageName[emotionNum])
+            emotionName.text = emotionImageName[emotionNum]
         }
     }
     
