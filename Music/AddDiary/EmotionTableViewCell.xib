@@ -18,7 +18,7 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <stackView opaque="NO" contentMode="scaleToFill" spacing="34" translatesAutoresizingMaskIntoConstraints="NO" id="P6m-lj-KnR">
-                        <rect key="frame" x="16" y="8" width="374" height="94"/>
+                        <rect key="frame" x="16" y="20" width="374" height="94"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="pcv-RQ-daE">
                                 <rect key="frame" x="0.0" y="0.0" width="67.333333333333329" height="94"/>
@@ -111,7 +111,7 @@
                         </subviews>
                     </stackView>
                     <stackView opaque="NO" contentMode="scaleToFill" spacing="34" translatesAutoresizingMaskIntoConstraints="NO" id="09G-Nb-y30">
-                        <rect key="frame" x="16" y="112" width="374" height="94"/>
+                        <rect key="frame" x="16" y="100" width="374" height="94"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="z0A-Hb-0N1">
                                 <rect key="frame" x="0.0" y="0.0" width="67.333333333333329" height="94"/>
@@ -207,10 +207,10 @@
                 <constraints>
                     <constraint firstItem="P6m-lj-KnR" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="J6k-Na-hQb"/>
                     <constraint firstItem="09G-Nb-y30" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="PfS-Sv-cg5"/>
-                    <constraint firstAttribute="bottom" secondItem="09G-Nb-y30" secondAttribute="bottom" constant="8" id="Tx3-oz-Q9z"/>
+                    <constraint firstAttribute="bottom" secondItem="09G-Nb-y30" secondAttribute="bottom" constant="20" id="Tx3-oz-Q9z"/>
                     <constraint firstItem="P6m-lj-KnR" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" id="Vgm-c8-46t"/>
                     <constraint firstItem="09G-Nb-y30" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" id="e13-Vh-b2B"/>
-                    <constraint firstItem="P6m-lj-KnR" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="hBm-Hz-lzC"/>
+                    <constraint firstItem="P6m-lj-KnR" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="20" id="hBm-Hz-lzC"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
@@ -245,7 +245,7 @@
         <image name="sad" width="555" height="420"/>
         <image name="tired" width="481" height="431"/>
         <namedColor name="blackColor">
-            <color red="0.066666666666666666" green="0.10196078431372549" blue="0.10980392156862745" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.10980392156862745" green="0.12941176470588237" blue="0.13333333333333333" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
     </resources>
 </document>

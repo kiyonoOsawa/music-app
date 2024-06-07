@@ -16,12 +16,13 @@ class TabBar: UITabBar {
         let shapeLayer = CAShapeLayer()
         shapeLayer.path = createPath()
         shapeLayer.fillColor = UIColor.white.cgColor
+        shapeLayer.opacity = 0.4
         shapeLayer.lineWidth = 1.0
         
         //The below 4 lines are for shadow above the bar. you can skip them if you do not want a shadow
         shapeLayer.shadowOffset = CGSize(width:0, height:0)
         shapeLayer.shadowRadius = 10
-        shapeLayer.shadowColor = UIColor(named: "grayColor")?.cgColor
+        shapeLayer.shadowColor = UIColor(named: "lightColor")?.cgColor
         shapeLayer.shadowOpacity = 0.8
         
         if let oldShapeLayer = self.shapeLayer {

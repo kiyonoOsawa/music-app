@@ -12,6 +12,7 @@ class AddDiaryViewController: UIViewController {
     
     let realm = try! Realm()
     var diary = Diary()
+    let emotionNames = ["happy", "regret", "anxiety", "angry", "sad", "love", "joy", "tired"]
     
     var dateCell = DateTableViewCell()
     var musicCell = MusicTableViewCell()
@@ -79,6 +80,10 @@ class AddDiaryViewController: UIViewController {
         }
         print("ちゃんと保存されてるーーーー？\(diary.date)")
         NotificationCenter.default.post(name: Notification.Name("DiarySaved"), object: nil)
+        Task {
+            try await MusicKitViewModel().addMusicToLikedMusicLibrary(emotion: emotionNames[emotionNum], ID: MusicItemID(musicIDString))
+
+        }
     }
     
     @IBAction func desimiss() {
@@ -95,10 +100,14 @@ extension AddDiaryViewController: UITableViewDelegate, UITableViewDataSource, Em
         if indexPath.section == 0 {
             dateCell = tableView.dequeueReusableCell(withIdentifier: "dateCell") as! DateTableViewCell
             dateCell.selectionStyle = UITableViewCell.SelectionStyle.none
+            dateCell.layer.borderWidth = 1
+            dateCell.layer.borderColor = UIColor(named: "mainColor")?.cgColor
             return dateCell
         } else if indexPath.section == 1 {
             musicCell = tableView.dequeueReusableCell(withIdentifier: "musicCell") as! MusicTableViewCell
             musicCell.selectionStyle = UITableViewCell.SelectionStyle.none
+            musicCell.layer.borderWidth = 1
+            musicCell.layer.borderColor = UIColor(named: "mainColor")?.cgColor
             musicCell.titleLabel.text = musicTitle
             //取得してきた画像を表示
             if let url = musicImageURL {
@@ -114,6 +123,8 @@ extension AddDiaryViewController: UITableViewDelegate, UITableViewDataSource, Em
         } else if indexPath.section == 2 {
             emotionCell = tableView.dequeueReusableCell(withIdentifier: "emotionCell") as! EmotionTableViewCell
             emotionCell.selectionStyle = UITableViewCell.SelectionStyle.none
+            emotionCell.layer.borderWidth = 1
+            emotionCell.layer.borderColor = UIColor(named: "mainColor")?.cgColor
             emotionCell.delegate = self
             emotionCell.emotionButtons.enumerated().forEach { (index, button) in
                 button.tag = index
@@ -125,6 +136,8 @@ extension AddDiaryViewController: UITableViewDelegate, UITableViewDataSource, Em
         } else {
             textCell = tableView.dequeueReusableCell(withIdentifier: "textCell") as! TextTableViewCell
             textCell.selectionStyle = UITableViewCell.SelectionStyle.none
+            textCell.layer.borderWidth = 1
+            textCell.layer.borderColor = UIColor(named: "mainColor")?.cgColor
             return textCell
         }
     }
@@ -140,11 +153,11 @@ extension AddDiaryViewController: UITableViewDelegate, UITableViewDataSource, Em
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         if indexPath.section == 0 {
-            return 36
+            return 56
         } else if indexPath.section == 1 {
-            return 120
+            return 144
         } else if indexPath.section == 2 {
-            return 214
+            return 230
         } else if indexPath.section == 3 {
             return 380
         }

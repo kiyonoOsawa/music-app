@@ -5,6 +5,7 @@ import MusicKit
 class DetailViewController: UIViewController {
     
     @IBOutlet weak var dateLabel: UILabel!
+    @IBOutlet weak var backGround: UIView!
     @IBOutlet weak var musicImageView: UIImageView!
     @IBOutlet weak var musicTitleLabel: UILabel!
     @IBOutlet weak var emotionImage: UIImageView!
@@ -30,6 +31,14 @@ class DetailViewController: UIViewController {
     }
     
     func design() {
+        musicImageView.layer.masksToBounds = true
+        musicImageView.layer.cornerRadius = 12
+        backGround.layer.cornerRadius = 15
+        backGround.layer.opacity = 0.4
+        emotionName.layer.masksToBounds = true
+        emotionName.layer.cornerRadius = 6
+        emotionName.layer.borderWidth = 1.0
+        emotionName.layer.borderColor = UIColor(named: "mainColor")?.cgColor
         contentText.isEditable = false
         var configuration = UIButton.Configuration.plain()
         let symbolConfiguration = UIImage.SymbolConfiguration(pointSize: 24, weight: .bold, scale: .default)
@@ -49,11 +58,8 @@ class DetailViewController: UIViewController {
     }
     
     func setEmotion() {
-        let emotionImageName = ["happy", "regret", "anxiety", "angry", "sad", "love", "joy", "tired"]
-        for i in 0..<8 {
-            emotionImage.image = UIImage(named: emotionImageName[emotionNum])
-            emotionName.text = emotionImageName[emotionNum]
-        }
+        emotionImage.image = UIImage(named: viewModel!.emotionNames[emotionNum])
+        emotionName.text = viewModel?.emotionNames[emotionNum]
     }
     
     private func fetchMusicDetails() {
@@ -62,7 +68,7 @@ class DetailViewController: UIViewController {
                 let song = try await viewModel?.getSpecificSongsOnCatalog(ID: musicID)
                 if let song = song {
                     musicTitleLabel.text = song.title
-                    if let artworkURL = song.artwork?.url(width: 200, height: 200) {
+                    if let artworkURL = song.artwork?.url(width: 500, height: 500) {
                         loadImage(from: artworkURL) { image in
                             DispatchQueue.main.async {
                                 self.musicImageView.image = image

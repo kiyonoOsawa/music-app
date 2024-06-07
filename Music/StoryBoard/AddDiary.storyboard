@@ -32,33 +32,20 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="2If-Wm-aaS">
-                        <barButtonItem key="leftBarButtonItem" title="Cancel" id="aZk-Jx-DHV">
-                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="rcw-oA-njj">
-                                <rect key="frame" x="16.000000000000007" y="5" width="103.66666666666669" height="34.333333333333336"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="キャンセル"/>
-                                <connections>
-                                    <action selector="desimiss" destination="h16-hn-MV3" eventType="touchUpInside" id="Hyl-KK-PHD"/>
-                                </connections>
-                            </button>
-                            <color key="tintColor" name="AccentColor"/>
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="aZk-Jx-DHV">
+                            <color key="tintColor" name="accentColor"/>
+                            <connections>
+                                <action selector="desimiss" destination="h16-hn-MV3" id="p4a-Ca-IAn"/>
+                            </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" title="保存" id="iuX-xN-qWK">
-                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="iJB-ID-Fdz">
-                                <rect key="frame" x="290" y="5" width="87" height="34.333333333333336"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="保存"/>
-                                <connections>
-                                    <action selector="save" destination="h16-hn-MV3" eventType="touchUpInside" id="V5c-IV-m1o"/>
-                                </connections>
-                            </button>
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="iuX-xN-qWK">
+                            <color key="tintColor" name="accentColor"/>
+                            <connections>
+                                <action selector="save" destination="h16-hn-MV3" id="dTN-cs-NO6"/>
+                            </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="cancelButton" destination="rcw-oA-njj" id="bCu-9G-3sH"/>
-                        <outlet property="saveButton" destination="iJB-ID-Fdz" id="7sI-lQ-fnX"/>
                         <outlet property="sectionTableView" destination="bCa-pQ-FA2" id="DdY-Ty-CJ3"/>
                         <segue destination="qsL-DM-icz" kind="show" identifier="toSelectMusic" id="T0r-wd-dmQ"/>
                     </connections>
@@ -118,8 +105,8 @@
         </scene>
     </scenes>
     <resources>
-        <namedColor name="AccentColor">
-            <color red="0.0" green="0.46000000000000002" blue="0.89000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        <namedColor name="accentColor">
+            <color red="0.22745098039215686" green="0.5725490196078431" blue="0.74901960784313726" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

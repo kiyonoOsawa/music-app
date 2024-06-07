@@ -7,6 +7,8 @@ class HomeViewController: UIViewController {
     @IBOutlet weak var diaryCollectionView: UICollectionView!
     
     static let shared = HomeViewController()
+    let emotionNames = ["happy", "regret", "anxiety", "angry", "sad", "love", "joy", "tired"]
+
     let realm = try! Realm()
     var diary: Results<Diary>!
     var musicImageURL: URL? = URL(string: "https://example.com")!
@@ -60,11 +62,14 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "DiaryCell", for: indexPath) as! DiaryCollectionViewCell
         cell.layer.cornerRadius = 16
-        cell.layer.shadowColor = UIColor.gray.cgColor
-        cell.layer.shadowOpacity = 0.45
+        cell.layer.shadowColor = UIColor(named: "accentColor")?.cgColor
+        cell.layer.shadowOpacity = 0.50
         cell.layer.shadowOffset = CGSize(width: 0, height: 0)
-        cell.layer.shadowRadius = 5
+        cell.layer.shadowRadius = 12
+//        cell.layer.shadowRadius = 5
         cell.layer.masksToBounds = false
+//        cell.layer.opacity = 0.3
+//        cell.layer.backgroundColor = UIColor(red: 255, green: 255, blue: 255, alpha: 0.3).cgColor
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "MM/dd"
         cell.dateLabel.text = dateFormatter.string(from: diary[indexPath.row].date)
@@ -79,10 +84,9 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
             }
         }
         emotionNum = diary[indexPath.row].emotion
-        let emotionImageName = ["happy", "regret", "anxiety", "angry", "sad", "love", "joy", "tired"]
-        for i in 0..<8 {
-            cell.emotionImage.image = UIImage(named: emotionImageName[emotionNum])
-        }
+        //        for i in 0..<8 {
+        cell.emotionImage.image = UIImage(named: emotionNames[emotionNum])
+        //        }
         
         if diary[indexPath.row].content == "" {
             cell.contentAble.isHidden = true
