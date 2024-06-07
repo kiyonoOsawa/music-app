@@ -84,9 +84,7 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
             }
         }
         emotionNum = diary[indexPath.row].emotion
-        //        for i in 0..<8 {
         cell.emotionImage.image = UIImage(named: emotionNames[emotionNum])
-        //        }
         
         if diary[indexPath.row].content == "" {
             cell.contentAble.isHidden = true
@@ -112,6 +110,23 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
             self.navigationController?.pushViewController(nextVC, animated: true)
         } else {
             print("ダメでした")
+        }
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, contextMenuConfigurationForItemAt indexPath: IndexPath, point: CGPoint) -> UIContextMenuConfiguration? {
+        let item = diary[indexPath.row]
+        
+        return UIContextMenuConfiguration(identifier: indexPath as NSCopying, previewProvider: nil) { _ in
+            let deleteAction = UIAction(title: "Delete", attributes: .destructive) { _ in
+                let realm = try! Realm()
+                if let objectToDelete = realm.object(ofType: Diary.self, forPrimaryKey: item.id) {
+                    try! realm.write {
+                        realm.delete(objectToDelete)
+                    }
+                }
+                self.diaryCollectionView.reloadData()
+            }
+            return UIMenu(title: "", children: [deleteAction])
         }
     }
     
