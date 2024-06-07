@@ -18,12 +18,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
         Realm.Configuration.defaultConfiguration = config
         Task {
             await MusicAuthorization.request()
-            let requestPlaylists = MusicLibraryRequest<Playlist>()
-            let responsePlaylists = try await requestPlaylists.response()
-            let playlists = responsePlaylists.items
-            print("🐶",requestPlaylists, responsePlaylists.items)
-            if !playlists.contains(where: { $0.name == "created from Music app Playlist" }) {
-                try await MusicKitViewModel.createMusicPlaylist()
+            let emotionNames = ["happy", "regret", "anxiety", "angry", "sad", "love", "joy", "tired"]
+            
+            emotionNames.map { item in
+                Task {
+                    let requestPlaylists = MusicLibraryRequest<Playlist>()
+                    let responsePlaylists = try await requestPlaylists.response()
+                    let playlists = responsePlaylists.items
+                    print("🐶",requestPlaylists, responsePlaylists.items)
+                    if !playlists.contains(where: { $0.name == "created from Music app Playlist" }) {
+                        try await MusicKitViewModel.createMusicPlaylist(name: item)
+                    }
+                }
             }
         }
         registerForPushNotifications()

@@ -79,40 +79,36 @@ class MusicKitViewModel: NSObject {
         }
     }
     
-    static func createMusicPlaylist() async throws {
+//    func fetchMusicPlaylist(name: String, id: Playlist.ID) {
+//        Task {
+//            let requestPlaylists = MusicLibraryRequest<Playlist>()
+//            let responsePlaylists = try await requestPlaylists.response()
+//            let playlists = responsePlaylists.items
+//            print("🐶",requestPlaylists, responsePlaylists.items)
+//            if !playlists.contains(where: { $0.name == "created from Music app Playlist" }) {
+//                try await MusicKitViewModel.createMusicPlaylist(name: item)
+//            }
+//        }
+//    }
+    
+    static func createMusicPlaylist(name: String) async throws {
         Task {
             do{
-                try await MusicLibrary.shared.createPlaylist(name: "created from Music app Playlist", description: "A library of songs shared by the app.", authorDisplayName: nil)
+                try await MusicLibrary.shared.createPlaylist(name: name, description: "A library of songs shared by the app.", authorDisplayName: nil)
             }catch{
                 print("😺",error)
             }
         }
     }
     
-    //この関数は作ったplaylistに曲追加してくれる曲の保存
-//    func addMusicToLikedMusicLibrary(ID: MusicItemID) async throws {
-//        Task {
-//            do {
-//                let Request = MusicCatalogResourceRequest<Song>(matching: \.id, equalTo: ID)
-//                let Response = try await Request.response()
-//                var requestPlaylists = MusicLibraryRequest<Playlist>()
-//                //プレイリストとfilterのtextの名前一致してないと動かないから気をつけて
-//                requestPlaylists.filter(text: "created from Music app Playlist")
-//                let responsePlaylists = try await requestPlaylists.response()
-//                try await MusicLibrary.shared.add(Response.items.first!, to: responsePlaylists.items.first!)
-//            } catch (let error) {
-//                print(error)
-//            }
-//        }
-//    }
-    
-    func addMusicToLikedMusicLibrary(emotion: String,ID: MusicItemID) async throws {
+    func addMusicToLikedMusicLibrary(emotion: String, ID: MusicItemID) async throws {
         Task {
             do {
                 let Request = MusicCatalogResourceRequest<Song>(matching: \.id, equalTo: ID)
                 let Response = try await Request.response()
                 var requestPlaylists = MusicLibraryRequest<Playlist>()
-                requestPlaylists.filter(text: emotion)
+                //プレイリストとfilterのtextの名前一致してないと動かないから気をつけて
+                requestPlaylists.filter(text: "created from Music app Playlist")
                 let responsePlaylists = try await requestPlaylists.response()
                 try await MusicLibrary.shared.add(Response.items.first!, to: responsePlaylists.items.first!)
             } catch (let error) {

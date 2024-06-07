@@ -31,6 +31,21 @@ class PlaylistViewController: UIViewController {
         self.diary = realm.objects(Diary.self)
         playListCollectionView.reloadData()
     }
+    
+//    func fetchPlayList() {
+//        Task {
+//            do {
+//                let (id, name) = try await viewModel?.getCurrentMusic() ?? ([], [], [], [])
+//                musicTitles.append(contentsOf: titles)
+//                musicImageURLs.append(contentsOf: images)
+//                musicArtists.append(contentsOf: artists)
+//                musicIDs.append(contentsOf: ids)
+//                musicTable.reloadData()
+//            } catch {
+//                print("Error fetching music data: \(error)")
+//            }
+//        }
+//    }
 }
 
 extension PlaylistViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
