@@ -106,20 +106,14 @@ class MusicKitViewModel: NSObject {
 //        }
 //    }
     
-    func addMusicToLikedMusicLibrary(emotion: String, ID: MusicItemID) async throws {
+    func addMusicToLikedMusicLibrary(emotion: String,ID: MusicItemID) async throws {
         Task {
             do {
                 let Request = MusicCatalogResourceRequest<Song>(matching: \.id, equalTo: ID)
                 let Response = try await Request.response()
-                guard !response.items.isEmpty, let song = response.items.first else {
-                    throw NSError(domain: "MusicKitViewModel", code: -1, userInfo: [NSLocalizedDescriptionKey: "Song not found"])
-                }
                 var requestPlaylists = MusicLibraryRequest<Playlist>()
                 requestPlaylists.filter(text: emotion)
                 let responsePlaylists = try await requestPlaylists.response()
-                guard let playlist = responsePlaylists.items.first else {
-                    throw NSError(domain: "MusicKitViewModel", code: -1, userInfo: [NSLocalizedDescriptionKey: "Playlist not found"])
-                }
                 try await MusicLibrary.shared.add(Response.items.first!, to: responsePlaylists.items.first!)
             } catch (let error) {
                 print(error)
