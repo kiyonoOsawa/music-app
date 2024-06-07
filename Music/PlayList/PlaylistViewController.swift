@@ -41,16 +41,18 @@ extension PlaylistViewController: UICollectionViewDelegate, UICollectionViewData
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "PlayListCell", for: indexPath) as! PlayListCollectionViewCell
-        cell.layer.cornerRadius = 12
-        cell.layer.shadowColor = UIColor.gray.cgColor
-        cell.layer.shadowOpacity = 0.45
-        cell.layer.shadowOffset = CGSize(width: 0, height: 0)
-        cell.layer.shadowRadius = 5
-        cell.layer.masksToBounds = false
+//        cell.layer.cornerRadius = 12
+//        cell.layer.shadowColor = UIColor.gray.cgColor
+//        cell.layer.shadowOpacity = 0.45
+//        cell.layer.shadowOffset = CGSize(width: 0, height: 0)
+//        cell.layer.shadowRadius = 5
+//        cell.layer.masksToBounds = false
         // Tag番号を使ってインスタンスをつくる
         let photoImageView = cell.contentView.viewWithTag(1)  as! UIImageView
         let photoImage = UIImage(named: "")
         photoImageView.image = photoImage
+        //ここ消したい
+        photoImageView.backgroundColor = .gray
         let titleLabel = cell.contentView.viewWithTag(2) as! UILabel
         titleLabel.text = diary[indexPath.row].musicTitle
         return cell

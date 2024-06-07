@@ -2,7 +2,6 @@ import Foundation
 import MusicKit
 import MediaPlayer
 import StoreKit
-//import Combine
 
 @MainActor
 class MusicKitViewModel: NSObject {
@@ -12,6 +11,7 @@ class MusicKitViewModel: NSObject {
     @Published var musicID: String?
     
     static let shared = MusicKitViewModel()
+    let emotionNames = ["happy", "regret", "anxiety", "angry", "sad", "love", "joy", "tired"]
     
     //最近聴いた曲を最新から順に取得する
     func getCurrentMusic() async throws -> ([String], [URL?], [String], [MusicItemID]) {
@@ -49,9 +49,12 @@ class MusicKitViewModel: NSObject {
         //idは曲一つ一つに必ず振られてるからidだけ抑えとけばこれで検索できる
         let Songrequest = MusicCatalogResourceRequest<Song>(matching: \.id, equalTo: ID)
         let Songresponse = try await Songrequest.response()
-        let song = Songresponse.items.first
+//        let song = Songresponse.items.first
+        guard !Songresponse.items.isEmpty, let song = Songresponse.items.first else {
+            throw NSError(domain: "MusicKitViewModel", code: -1, userInfo: [NSLocalizedDescriptionKey: "Song not found"])
+        }
         print("id検索結果",song)
-        return song!
+        return song
     }
     
     func startSystemMusic(ID: MusicItemID) {
@@ -102,4 +105,25 @@ class MusicKitViewModel: NSObject {
 //            }
 //        }
 //    }
+    
+    func addMusicToLikedMusicLibrary(emotion: String, ID: MusicItemID) async throws {
+        Task {
+            do {
+                let Request = MusicCatalogResourceRequest<Song>(matching: \.id, equalTo: ID)
+                let Response = try await Request.response()
+                guard !response.items.isEmpty, let song = response.items.first else {
+                    throw NSError(domain: "MusicKitViewModel", code: -1, userInfo: [NSLocalizedDescriptionKey: "Song not found"])
+                }
+                var requestPlaylists = MusicLibraryRequest<Playlist>()
+                requestPlaylists.filter(text: emotion)
+                let responsePlaylists = try await requestPlaylists.response()
+                guard let playlist = responsePlaylists.items.first else {
+                    throw NSError(domain: "MusicKitViewModel", code: -1, userInfo: [NSLocalizedDescriptionKey: "Playlist not found"])
+                }
+                try await MusicLibrary.shared.add(Response.items.first!, to: responsePlaylists.items.first!)
+            } catch (let error) {
+                print(error)
+            }
+        }
+    }
 }

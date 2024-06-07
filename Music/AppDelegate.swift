@@ -9,6 +9,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         UIApplication.shared.registerForRemoteNotifications()
+        let config = Realm.Configuration(
+            schemaVersion: 1,
+            migrationBlock: nil,
+            deleteRealmIfMigrationNeeded: true
+        )
+        Realm.Configuration.defaultConfiguration = config
         Task {
             await MusicAuthorization.request()
             let requestPlaylists = MusicLibraryRequest<Playlist>()
@@ -19,12 +25,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
                 try await MusicKitViewModel.createMusicPlaylist()
             }
         }
-        let config = Realm.Configuration(
-            schemaVersion: 1,
-            migrationBlock: nil,
-            deleteRealmIfMigrationNeeded: true
-        )
-        Realm.Configuration.defaultConfiguration = config
         registerForPushNotifications()
 
         return true

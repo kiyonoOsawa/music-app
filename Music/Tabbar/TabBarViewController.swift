@@ -23,10 +23,15 @@ class TabBarViewController: UITabBarController, UITabBarControllerDelegate {
         let systemImage = UIImage(systemName: "plus", withConfiguration: symbolConfiguration)
         configuration.image = systemImage
         middleBtn.configuration = configuration
-        middleBtn.tintColor = .white
-        middleBtn.backgroundColor = UIColor(named: "mainColor")
+//        middleBtn.tintColor = .white
+//        middleBtn.backgroundColor = UIColor(named: "mainColor")
+        middleBtn.tintColor = UIColor(named: "mainColor")
+        middleBtn.backgroundColor = UIColor.white
         middleBtn.layer.cornerRadius = 40
-        
+        middleBtn.layer.shadowColor = UIColor(named: "mainColor")?.cgColor
+        middleBtn.layer.shadowOpacity = 0.50
+        middleBtn.layer.shadowOffset = CGSize(width: 0, height: 0)
+        middleBtn.layer.shadowRadius = 5
         // タブバーに追加し、クリック イベントを追加する
         self.tabBar.addSubview(middleBtn)
         middleBtn.addTarget(self, action: #selector(self.menuButtonAction), for: .touchUpInside)
