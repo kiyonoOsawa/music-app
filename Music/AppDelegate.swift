@@ -26,14 +26,28 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
                     let responsePlaylists = try await requestPlaylists.response()
                     let playlists = responsePlaylists.items
                     print("🐶",requestPlaylists, responsePlaylists.items)
-                    if !playlists.contains(where: { $0.name == "created from Music app Playlist" }) {
+                    if !playlists.contains(where: { $0.name == "happy" }) {
+                        try await MusicKitViewModel.createMusicPlaylist(name: item)
+                    } else if !playlists.contains(where: { $0.name == "regret" }) {
+                        try await MusicKitViewModel.createMusicPlaylist(name: item)
+                    } else if !playlists.contains(where: { $0.name == "anxiety" }) {
+                        try await MusicKitViewModel.createMusicPlaylist(name: item)
+                    } else if !playlists.contains(where: { $0.name == "angry" }) {
+                        try await MusicKitViewModel.createMusicPlaylist(name: item)
+                    } else if !playlists.contains(where: { $0.name == "sad" }) {
+                        try await MusicKitViewModel.createMusicPlaylist(name: item)
+                    } else if !playlists.contains(where: { $0.name == "love" }) {
+                        try await MusicKitViewModel.createMusicPlaylist(name: item)
+                    } else if !playlists.contains(where: { $0.name == "joy" }) {
+                        try await MusicKitViewModel.createMusicPlaylist(name: item)
+                    } else if !playlists.contains(where: { $0.name == "tired" }) {
                         try await MusicKitViewModel.createMusicPlaylist(name: item)
                     }
                 }
             }
         }
         registerForPushNotifications()
-
+        
         return true
     }
     

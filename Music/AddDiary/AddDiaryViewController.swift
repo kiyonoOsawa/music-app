@@ -5,8 +5,8 @@ import RealmSwift
 class AddDiaryViewController: UIViewController {
     
     @IBOutlet weak var sectionTableView: UITableView!
-    @IBOutlet weak var cancelButton: UIButton!
-    @IBOutlet weak var saveButton: UIButton!
+//    @IBOutlet weak var cancelButton: UIButton!
+//    @IBOutlet weak var saveButton: UIButton!
     
     static let shared = AddDiaryViewController()
     
@@ -81,7 +81,7 @@ class AddDiaryViewController: UIViewController {
         print("ちゃんと保存されてるーーーー？\(diary.date)")
         NotificationCenter.default.post(name: Notification.Name("DiarySaved"), object: nil)
         Task {
-            try await MusicKitViewModel().addMusicToLikedMusicLibrary(emotion: MusicKitViewModel().emotionNames[emotionNum],ID: MusicItemID(musicIDString))
+            try await MusicKitViewModel().addMusicToLikedMusicLibrary(emotion: MusicKitViewModel().emotionNames[emotionNum], ID: MusicItemID(musicIDString))
         }
     }
     
