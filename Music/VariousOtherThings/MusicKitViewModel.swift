@@ -79,14 +79,14 @@ class MusicKitViewModel: NSObject {
         }
     }
     
-    func fetchMusicPlaylist() async throws -> ([String], [MusicItemID], [URL?]) {
+    func fetchMusicPlaylist() async throws -> ([String], [URL?], [URL?]) {
         let requestPlaylists = MusicLibraryRequest<Playlist>()
         let responsePlaylists = try await requestPlaylists.response()
         let playlists = responsePlaylists.items
         let playlistTitles = playlists.map { $0.name }
-        let playlistIDs = playlists.map { $0.id }
+        let playlistIDs = playlists.map { $0.url }
         let playlistImages = playlists.map { $0.artwork?.url(width: 200, height: 200) }
-        print("🐶",requestPlaylists, responsePlaylists.items)
+        print("わんわん🐶",requestPlaylists, responsePlaylists.debugDescription)
         return (playlistTitles, playlistIDs, playlistImages)
     }
     
