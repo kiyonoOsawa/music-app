@@ -9,68 +9,98 @@ class PlaylistViewController: UIViewController {
     @IBOutlet weak var playListCollectionView: UICollectionView!
     
     weak var viewModel = MusicKitViewModel.shared
-    let realm = try! Realm()
-    var diary: Results<Diary>!
-    var playList: MusicItemID = ""
+    var emotionNames = ["happy", "regret", "anxiety", "angry", "sad", "love", "joy", "tired"]
+    var playListTitles: [String] = []
+    var playListImageURLs: [URL?] = []
+    var playListIDs: [MusicItemID] = []
+    var filteredImageURLs: [URL?] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
         playListCollectionView.delegate = self
         playListCollectionView.dataSource = self
         playListCollectionView.register(UINib(nibName: "PlayListCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "PlayListCell")
-        do{
-            let realm = try Realm()
-            diary = realm.objects(Diary.self)
-            playListCollectionView.reloadData()
-        } catch {
-        }
+        fetchPlayListData()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        self.diary = realm.objects(Diary.self)
         playListCollectionView.reloadData()
     }
     
-//    func fetchPlayList() {
-//        Task {
-//            do {
-//                let (id, name) = try await viewModel?.getCurrentMusic() ?? ([], [], [], [])
-//                musicTitles.append(contentsOf: titles)
-//                musicImageURLs.append(contentsOf: images)
-//                musicArtists.append(contentsOf: artists)
-//                musicIDs.append(contentsOf: ids)
-//                musicTable.reloadData()
-//            } catch {
-//                print("Error fetching music data: \(error)")
-//            }
-//        }
-//    }
+    func fetchPlayListData() {
+        Task {
+            do {
+                let (titles, ids, images) = try await viewModel?.fetchMusicPlaylist() ?? ([], [], [])
+                
+                // 絞り込み処理
+                let transientPrefix = "musicKit://artwork/transient"
+                var filteredTitles: [String] = []
+                var filteredIDs: [MusicItemID] = []
+                var filteredImages: [URL?] = []
+                
+                for (index, title) in titles.enumerated() {
+                    let imageURL = images[index]
+                    // emotionNamesと一致し、かつURLがtransientPrefixで始まらない場合のみ追加
+                    if emotionNames.contains(title.lowercased()) && !(imageURL?.absoluteString.hasPrefix(transientPrefix) ?? false) {
+                        filteredTitles.append(title)
+                        filteredIDs.append(ids[index])
+                        filteredImages.append(imageURL)
+                    }
+                }
+                
+                // 絞り込んだプレイリストを使用
+                playListTitles = filteredTitles
+                playListIDs = filteredIDs
+                playListImageURLs = filteredImages
+                
+                playListCollectionView.reloadData()
+            } catch {
+                print("Error fetching music data: \(error)")
+            }
+        }
+    }
+    
+    func openAppleMusicPlaylist(withID id: MusicItemID) {
+        if let url = URL(string: "https://music.apple.com/jp/playlist/\(id)") {
+            UIApplication.shared.open(url)
+        }
+    }
 }
 
 extension PlaylistViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return diary.count
+        return playListTitles.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "PlayListCell", for: indexPath) as! PlayListCollectionViewCell
-//        cell.layer.cornerRadius = 12
-//        cell.layer.shadowColor = UIColor.gray.cgColor
-//        cell.layer.shadowOpacity = 0.45
-//        cell.layer.shadowOffset = CGSize(width: 0, height: 0)
-//        cell.layer.shadowRadius = 5
-//        cell.layer.masksToBounds = false
+        cell.backgroundColor = .clear
         // Tag番号を使ってインスタンスをつくる
         let photoImageView = cell.contentView.viewWithTag(1)  as! UIImageView
-        let photoImage = UIImage(named: "")
-        photoImageView.image = photoImage
-        //ここ消したい
-        photoImageView.backgroundColor = .gray
+        print("ここの中身見れたら最高\(playListImageURLs)")
+        let url = playListImageURLs[indexPath.item]
+        if let url = url, filteredImageURLs.contains(url) {
+            cell.isHidden = true
+        } else {
+            cell.isHidden = false
+            if let url = url {
+                loadImage(from: url) { image in
+                    DispatchQueue.main.async {
+                        photoImageView.image = image
+                    }
+                }
+            }
+        }
         let titleLabel = cell.contentView.viewWithTag(2) as! UILabel
-        titleLabel.text = diary[indexPath.row].musicTitle
+        titleLabel.text = playListTitles[indexPath.row]
         return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let selectedPlaylistID = playListIDs[indexPath.item]
+        openAppleMusicPlaylist(withID: selectedPlaylistID)
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
@@ -90,5 +120,15 @@ extension PlaylistViewController: UICollectionViewDelegate, UICollectionViewData
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
         return 16
+    }
+    
+    func loadImage(from url: URL, completion: @escaping (UIImage?) -> Void) {
+        DispatchQueue.global().async {
+            if let data = try? Data(contentsOf: url), let image = UIImage(data: data) {
+                completion(image)
+            } else {
+                completion(nil)
+            }
+        }
     }
 }
