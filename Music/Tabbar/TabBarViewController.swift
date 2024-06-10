@@ -10,6 +10,7 @@ class TabBarViewController: UITabBarController, UITabBarControllerDelegate {
         super.viewDidLoad()
         self.delegate = self
         UITabBarItem.appearance().setTitleTextAttributes([.font: UIFont.init(name: "HelveticaNeue-Bold", size: 13), .foregroundColor: UIColor(named: "mainColor")], for: .selected)
+        UITabBarItem.appearance().selectedImage?.withTintColor(.red)
         setupMiddleButton()
     }
     
@@ -23,8 +24,6 @@ class TabBarViewController: UITabBarController, UITabBarControllerDelegate {
         let systemImage = UIImage(systemName: "plus", withConfiguration: symbolConfiguration)
         configuration.image = systemImage
         middleBtn.configuration = configuration
-//        middleBtn.tintColor = .white
-//        middleBtn.backgroundColor = UIColor(named: "mainColor")
         middleBtn.tintColor = UIColor(named: "mainColor")
         middleBtn.backgroundColor = UIColor.white
         middleBtn.layer.cornerRadius = 40

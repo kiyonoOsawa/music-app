@@ -19,7 +19,12 @@ class MusicViewController: UIViewController {
         musicTable.dataSource = self
         musicTable.delegate = self
         musicTable.register(UINib(nibName: "MusicListTableViewCell", bundle: nil), forCellReuseIdentifier: "musicListCell")
+        design()
         fetchMusicData()
+    }
+    
+    func design() {
+        self.navigationController?.navigationBar.tintColor = UIColor(named: "mainColor")
     }
     
     func fetchMusicData() {
@@ -38,6 +43,7 @@ class MusicViewController: UIViewController {
         print("こっちの数は？\(musicTitles.count)")
         print("これもみたい\(MPMusicPlayerController.systemMusicPlayer.nowPlayingItem!)")
     }
+    
 }
 
 extension MusicViewController: UITableViewDelegate, UITableViewDataSource {

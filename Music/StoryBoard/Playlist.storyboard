@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Y6W-OH-hqX">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="x1F-ee-q5I">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22684"/>
@@ -17,7 +17,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="LtI-hy-YYI">
-                                <rect key="frame" x="0.0" y="59" width="393" height="710"/>
+                                <rect key="frame" x="0.0" y="103" width="393" height="666"/>
                                 <color key="backgroundColor" name="lightColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="8" minimumInteritemSpacing="8" id="w9D-r7-WIG">
                                     <size key="itemSize" width="128" height="128"/>
@@ -27,23 +27,48 @@
                                 </collectionViewFlowLayout>
                                 <cells/>
                             </collectionView>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="W1q-5O-8Ce">
+                                <rect key="frame" x="0.0" y="103" width="393" height="44"/>
+                            </navigationBar>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" name="lightColor"/>
                         <constraints>
                             <constraint firstItem="LtI-hy-YYI" firstAttribute="trailing" secondItem="vDu-zF-Fre" secondAttribute="trailing" id="77H-0p-zsw"/>
+                            <constraint firstItem="W1q-5O-8Ce" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="9Vh-RV-mJH"/>
                             <constraint firstItem="LtI-hy-YYI" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="CCn-Q1-WNF"/>
                             <constraint firstItem="LtI-hy-YYI" firstAttribute="bottom" secondItem="vDu-zF-Fre" secondAttribute="bottom" id="DiF-18-f5J"/>
-                            <constraint firstItem="LtI-hy-YYI" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="cAz-2M-OsG"/>
+                            <constraint firstItem="W1q-5O-8Ce" firstAttribute="trailing" secondItem="vDu-zF-Fre" secondAttribute="trailing" id="Ry9-gc-xzd"/>
+                            <constraint firstItem="LtI-hy-YYI" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="UgH-6E-29N"/>
+                            <constraint firstItem="W1q-5O-8Ce" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="z7j-lX-o2p"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="PlayList" image="play.square.stack" catalog="system" id="DgH-QM-ANG"/>
+                    <navigationItem key="navigationItem" title="PlayList" id="jdw-lb-1Bx"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="playListCollectionView" destination="LtI-hy-YYI" id="BJ0-i9-fDP"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1002.2900763358779" y="-2.1126760563380285"/>
+        </scene>
+        <!--PlayList-->
+        <scene sceneID="8es-dP-iIs">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="x1F-ee-q5I" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="PlayList" image="play.square.stack" catalog="system" id="DgH-QM-ANG"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="aak-Qk-mdU">
+                        <rect key="frame" x="0.0" y="59" width="393" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="Y6W-OH-hqX" kind="relationship" relationship="rootViewController" id="X0e-Ij-j1v"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="I8o-S8-ed0" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="75.572519083969468" y="-2.1126760563380285"/>
         </scene>

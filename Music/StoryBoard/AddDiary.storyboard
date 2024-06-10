@@ -33,12 +33,12 @@
                     </view>
                     <navigationItem key="navigationItem" id="2If-Wm-aaS">
                         <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="aZk-Jx-DHV">
-                            <color key="tintColor" name="accentColor"/>
+                            <color key="tintColor" name="mainColor"/>
                             <connections>
                                 <action selector="desimiss" destination="h16-hn-MV3" id="p4a-Ca-IAn"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="iuX-xN-qWK">
+                        <barButtonItem key="rightBarButtonItem" title="Save" style="done" id="iuX-xN-qWK">
                             <color key="tintColor" name="accentColor"/>
                             <connections>
                                 <action selector="save" destination="h16-hn-MV3" id="dTN-cs-NO6"/>
@@ -107,6 +107,9 @@
     <resources>
         <namedColor name="accentColor">
             <color red="0.22745098039215686" green="0.5725490196078431" blue="0.74901960784313726" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="mainColor">
+            <color red="0.44313725490196076" green="0.80392156862745101" blue="0.83137254901960789" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
