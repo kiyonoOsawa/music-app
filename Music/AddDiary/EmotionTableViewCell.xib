@@ -17,17 +17,17 @@
                 <rect key="frame" x="0.0" y="0.0" width="406" height="272"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <stackView opaque="NO" contentMode="scaleToFill" spacing="34" translatesAutoresizingMaskIntoConstraints="NO" id="P6m-lj-KnR">
-                        <rect key="frame" x="16" y="20.000000000000007" width="374" height="94.666666666666686"/>
+                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="vWH-X3-5fT">
+                        <rect key="frame" x="37" y="16" width="332" height="94.666666666666671"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="pcv-RQ-daE">
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="vsn-fe-yRB">
                                 <rect key="frame" x="0.0" y="0.0" width="68" height="94.666666666666671"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zxj-ai-hda">
                                         <rect key="frame" x="0.0" y="0.0" width="68" height="68"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="68" id="9Hl-KW-Pit"/>
-                                            <constraint firstAttribute="width" constant="68" id="cvq-TI-ZEp"/>
+                                            <constraint firstAttribute="width" constant="68" id="GQO-t7-m8f"/>
+                                            <constraint firstAttribute="height" constant="68" id="vht-EG-PnW"/>
                                         </constraints>
                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                         <state key="normal" title="Button" image="happy"/>
@@ -37,23 +37,27 @@
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Happy" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="78Z-fB-d85">
                                         <rect key="frame" x="0.0" y="76" width="68" height="18.666666666666671"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="18.670000000000002" id="TuQ-gQ-0JJ"/>
+                                        </constraints>
                                         <fontDescription key="fontDescription" name="Thonburi" family="Thonburi" pointSize="14"/>
                                         <color key="textColor" name="blackColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstItem="78Z-fB-d85" firstAttribute="top" secondItem="Zxj-ai-hda" secondAttribute="bottom" constant="8" symbolic="YES" id="H1p-Mi-XaQ"/>
+                                    <constraint firstItem="78Z-fB-d85" firstAttribute="centerX" secondItem="Zxj-ai-hda" secondAttribute="centerX" id="gtg-ob-xmR"/>
+                                    <constraint firstItem="78Z-fB-d85" firstAttribute="top" secondItem="Zxj-ai-hda" secondAttribute="bottom" constant="8" symbolic="YES" id="lpv-a2-Y8A"/>
                                 </constraints>
                             </stackView>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="7" translatesAutoresizingMaskIntoConstraints="NO" id="6AE-1B-HXP">
-                                <rect key="frame" x="102" y="0.0" width="68" height="94.666666666666671"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="Og2-5Q-cRf">
+                                <rect key="frame" x="88" y="0.0" width="68" height="94.666666666666671"/>
                                 <subviews>
                                     <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="j1j-6Q-46Q">
                                         <rect key="frame" x="0.0" y="0.0" width="68" height="68"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="68" id="70u-YN-jxy"/>
-                                            <constraint firstAttribute="width" constant="68" id="IJN-9h-gzp"/>
+                                            <constraint firstAttribute="height" constant="68" id="b4u-st-X1N"/>
+                                            <constraint firstAttribute="width" constant="68" id="ewY-cx-lPZ"/>
                                         </constraints>
                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                         <state key="normal" image="regret"/>
@@ -63,23 +67,27 @@
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" tag="1" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Regret" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uZ4-IS-SHT">
                                         <rect key="frame" x="0.0" y="76" width="68" height="18.666666666666671"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="18.670000000000002" id="htP-wk-TmE"/>
+                                        </constraints>
                                         <fontDescription key="fontDescription" name="Thonburi" family="Thonburi" pointSize="14"/>
                                         <color key="textColor" name="blackColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstItem="uZ4-IS-SHT" firstAttribute="top" secondItem="j1j-6Q-46Q" secondAttribute="bottom" constant="8" symbolic="YES" id="ElJ-fy-Dxf"/>
+                                    <constraint firstItem="uZ4-IS-SHT" firstAttribute="top" secondItem="j1j-6Q-46Q" secondAttribute="bottom" constant="8" symbolic="YES" id="gQQ-K1-Nuv"/>
+                                    <constraint firstItem="uZ4-IS-SHT" firstAttribute="centerX" secondItem="j1j-6Q-46Q" secondAttribute="centerX" id="y3S-0T-iv5"/>
                                 </constraints>
                             </stackView>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="7" translatesAutoresizingMaskIntoConstraints="NO" id="w4k-ht-Zxj">
-                                <rect key="frame" x="204" y="0.0" width="68" height="94.666666666666671"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="QKg-J9-IuA">
+                                <rect key="frame" x="176" y="0.0" width="68" height="94.666666666666671"/>
                                 <subviews>
                                     <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YVG-EG-50E">
                                         <rect key="frame" x="0.0" y="0.0" width="68" height="68"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="68" id="9pr-4X-0Cm"/>
-                                            <constraint firstAttribute="width" constant="68" id="JQV-JE-h9n"/>
+                                            <constraint firstAttribute="width" constant="68" id="1Ze-10-QjI"/>
+                                            <constraint firstAttribute="height" constant="68" id="LYj-XJ-D54"/>
                                         </constraints>
                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                         <state key="normal" backgroundImage="anxiety"/>
@@ -90,7 +98,7 @@
                                     <label opaque="NO" userInteractionEnabled="NO" tag="2" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Anxiety" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wL1-AX-zhC">
                                         <rect key="frame" x="0.0" y="76" width="68" height="18.666666666666671"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="18.670000000000002" id="0kG-8u-Vg9"/>
+                                            <constraint firstAttribute="height" constant="18.670000000000002" id="bdp-9U-MVm"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" name="Thonburi" family="Thonburi" pointSize="14"/>
                                         <color key="textColor" name="blackColor"/>
@@ -98,17 +106,18 @@
                                     </label>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstItem="wL1-AX-zhC" firstAttribute="top" secondItem="YVG-EG-50E" secondAttribute="bottom" constant="8" symbolic="YES" id="M4R-u0-Rn1"/>
+                                    <constraint firstItem="wL1-AX-zhC" firstAttribute="top" secondItem="YVG-EG-50E" secondAttribute="bottom" constant="8" symbolic="YES" id="fFz-6U-lkO"/>
+                                    <constraint firstItem="wL1-AX-zhC" firstAttribute="centerX" secondItem="YVG-EG-50E" secondAttribute="centerX" id="sl4-JG-tuS"/>
                                 </constraints>
                             </stackView>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="7" translatesAutoresizingMaskIntoConstraints="NO" id="dDC-wW-6q3">
-                                <rect key="frame" x="306" y="0.0" width="68" height="94.666666666666671"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="7" translatesAutoresizingMaskIntoConstraints="NO" id="VCm-Kb-qDw">
+                                <rect key="frame" x="264" y="-0.3333333333333357" width="68" height="95.666666666666686"/>
                                 <subviews>
                                     <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WWS-oJ-4ES">
                                         <rect key="frame" x="0.0" y="0.0" width="68" height="68.666666666666671"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="68.670000000000002" id="lid-L2-nuL"/>
-                                            <constraint firstAttribute="width" constant="68" id="x0Q-tD-IOj"/>
+                                            <constraint firstAttribute="width" constant="68" id="GZ3-rd-O8k"/>
+                                            <constraint firstAttribute="height" constant="68.670000000000002" id="Xuh-9c-fU0"/>
                                         </constraints>
                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                         <state key="normal" backgroundImage="angry"/>
@@ -117,32 +126,38 @@
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" tag="3" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Angry" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lan-JQ-26M">
-                                        <rect key="frame" x="0.0" y="75.666666666666671" width="68" height="19"/>
+                                        <rect key="frame" x="0.0" y="76.666666666666657" width="68" height="19"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="19" id="eUZ-WJ-3yY"/>
+                                            <constraint firstAttribute="height" constant="19" id="UX4-VN-fj1"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" name="Thonburi" family="Thonburi" pointSize="14"/>
                                         <color key="textColor" name="blackColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
+                                <constraints>
+                                    <constraint firstItem="Lan-JQ-26M" firstAttribute="centerX" secondItem="WWS-oJ-4ES" secondAttribute="centerX" id="OJ4-tm-Tvc"/>
+                                    <constraint firstItem="Lan-JQ-26M" firstAttribute="top" secondItem="WWS-oJ-4ES" secondAttribute="bottom" constant="8" symbolic="YES" id="kJx-1h-YxR"/>
+                                </constraints>
                             </stackView>
                         </subviews>
                         <constraints>
-                            <constraint firstAttribute="height" constant="94.670000000000002" id="etw-8V-Hgi"/>
+                            <constraint firstItem="Og2-5Q-cRf" firstAttribute="centerY" secondItem="vsn-fe-yRB" secondAttribute="centerY" id="ar0-lr-Qtv"/>
+                            <constraint firstItem="VCm-Kb-qDw" firstAttribute="centerY" secondItem="vsn-fe-yRB" secondAttribute="centerY" id="gdy-cE-8IJ"/>
+                            <constraint firstItem="QKg-J9-IuA" firstAttribute="centerY" secondItem="vsn-fe-yRB" secondAttribute="centerY" id="swq-7e-dDr"/>
                         </constraints>
                     </stackView>
-                    <stackView opaque="NO" contentMode="scaleToFill" spacing="34" translatesAutoresizingMaskIntoConstraints="NO" id="09G-Nb-y30">
-                        <rect key="frame" x="16" y="158" width="374" height="94"/>
+                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="lq2-Nl-lnw">
+                        <rect key="frame" x="37" y="158" width="332" height="94"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="z0A-Hb-0N1">
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="rsQ-QD-TdQ">
                                 <rect key="frame" x="0.0" y="0.0" width="67.333333333333329" height="94"/>
                                 <subviews>
                                     <button opaque="NO" tag="4" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xho-W5-c21">
                                         <rect key="frame" x="0.0" y="0.0" width="67.333333333333329" height="67.333333333333329"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="67.329999999999998" id="Bhl-Q4-k0s"/>
-                                            <constraint firstAttribute="height" constant="67.329999999999998" id="OU5-OT-VfZ"/>
+                                            <constraint firstAttribute="height" constant="67.329999999999998" id="6eo-hL-8Fu"/>
+                                            <constraint firstAttribute="width" constant="67.329999999999998" id="k9H-fV-SJD"/>
                                         </constraints>
                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                         <state key="normal" title="Button" image="sad"/>
@@ -152,20 +167,27 @@
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" tag="4" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sad" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UDo-Yi-Dxd">
                                         <rect key="frame" x="0.0" y="75.333333333333343" width="67.333333333333329" height="18.666666666666671"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="18.670000000000002" id="397-Oa-5uL"/>
+                                        </constraints>
                                         <fontDescription key="fontDescription" name="Thonburi" family="Thonburi" pointSize="14"/>
                                         <color key="textColor" name="blackColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
+                                <constraints>
+                                    <constraint firstItem="UDo-Yi-Dxd" firstAttribute="top" secondItem="xho-W5-c21" secondAttribute="bottom" constant="8" symbolic="YES" id="NsC-ps-Dy9"/>
+                                    <constraint firstItem="UDo-Yi-Dxd" firstAttribute="centerX" secondItem="xho-W5-c21" secondAttribute="centerX" id="nD4-TA-d07"/>
+                                </constraints>
                             </stackView>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="7" translatesAutoresizingMaskIntoConstraints="NO" id="Cfz-5F-t2a">
-                                <rect key="frame" x="101.33333333333334" y="0.0" width="68.333333333333343" height="94"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="7" translatesAutoresizingMaskIntoConstraints="NO" id="YjL-fO-T9o">
+                                <rect key="frame" x="87.333333333333343" y="-1" width="68.333333333333343" height="95"/>
                                 <subviews>
                                     <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jXm-BW-tNl">
                                         <rect key="frame" x="0.0" y="0.0" width="68.333333333333329" height="68.333333333333329"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="68.329999999999998" id="1SQ-QF-E0G"/>
-                                            <constraint firstAttribute="height" constant="68.329999999999998" id="3qG-Ra-ZDt"/>
+                                            <constraint firstAttribute="width" constant="68.329999999999998" id="UrP-eM-2yF"/>
+                                            <constraint firstAttribute="height" constant="68.329999999999998" id="eqZ-bJ-HaD"/>
                                         </constraints>
                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                         <state key="normal" image="love"/>
@@ -174,21 +196,28 @@
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" tag="5" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Love" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="j7P-Ul-7qq">
-                                        <rect key="frame" x="0.0" y="75.333333333333343" width="68.333333333333329" height="18.666666666666671"/>
+                                        <rect key="frame" x="0.0" y="76.333333333333343" width="68.333333333333329" height="18.666666666666671"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="18.670000000000002" id="2ng-5T-zSI"/>
+                                        </constraints>
                                         <fontDescription key="fontDescription" name="Thonburi" family="Thonburi" pointSize="14"/>
                                         <color key="textColor" name="blackColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
+                                <constraints>
+                                    <constraint firstItem="j7P-Ul-7qq" firstAttribute="centerX" secondItem="jXm-BW-tNl" secondAttribute="centerX" id="wqC-ph-EMT"/>
+                                    <constraint firstItem="j7P-Ul-7qq" firstAttribute="top" secondItem="jXm-BW-tNl" secondAttribute="bottom" constant="8" symbolic="YES" id="z4h-bP-dpI"/>
+                                </constraints>
                             </stackView>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="7" translatesAutoresizingMaskIntoConstraints="NO" id="7Ic-sR-Tmo">
-                                <rect key="frame" x="203.66666666666666" y="0.0" width="67.999999999999972" height="94"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="7" translatesAutoresizingMaskIntoConstraints="NO" id="kp4-pl-oXA">
+                                <rect key="frame" x="175.66666666666666" y="-1" width="68" height="95"/>
                                 <subviews>
                                     <button opaque="NO" tag="6" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OeD-aG-XtO">
                                         <rect key="frame" x="0.0" y="0.0" width="68" height="68"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="68" id="iKS-VR-Cha"/>
-                                            <constraint firstAttribute="height" constant="68" id="wAf-h3-XCU"/>
+                                            <constraint firstAttribute="width" constant="68" id="OIJ-dY-Z78"/>
+                                            <constraint firstAttribute="height" constant="68" id="wvw-zf-jG3"/>
                                         </constraints>
                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                         <state key="normal" image="joy"/>
@@ -197,21 +226,28 @@
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" tag="6" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Joy" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ro0-Wm-uop">
-                                        <rect key="frame" x="0.0" y="75" width="68" height="19"/>
+                                        <rect key="frame" x="0.0" y="76" width="68" height="19"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="19" id="KcW-qt-97h"/>
+                                        </constraints>
                                         <fontDescription key="fontDescription" name="Thonburi" family="Thonburi" pointSize="14"/>
                                         <color key="textColor" name="blackColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
+                                <constraints>
+                                    <constraint firstItem="ro0-Wm-uop" firstAttribute="top" secondItem="OeD-aG-XtO" secondAttribute="bottom" constant="8" symbolic="YES" id="HLC-xI-DWZ"/>
+                                    <constraint firstItem="ro0-Wm-uop" firstAttribute="centerX" secondItem="OeD-aG-XtO" secondAttribute="centerX" id="YHG-bd-Ik4"/>
+                                </constraints>
                             </stackView>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="7" translatesAutoresizingMaskIntoConstraints="NO" id="jUv-d0-NtU">
-                                <rect key="frame" x="305.66666666666669" y="0.0" width="68.333333333333314" height="94"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="7" translatesAutoresizingMaskIntoConstraints="NO" id="HcW-aj-ywL">
+                                <rect key="frame" x="263.66666666666669" y="-363.66666666666663" width="68.333333333333314" height="457.66666666666669"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0eR-jf-TeQ">
-                                        <rect key="frame" x="0.0" y="0.0" width="68.333333333333329" height="68.333333333333329"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="68.333333333333329" height="431"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="68.329999999999998" id="0Ot-Ge-YI4"/>
-                                            <constraint firstAttribute="width" constant="68.329999999999998" id="bPE-ew-rZx"/>
+                                            <constraint firstAttribute="height" constant="68.329999999999998" id="IyC-Py-XCB"/>
+                                            <constraint firstAttribute="width" constant="68.329999999999998" id="xP5-gC-vn4"/>
                                         </constraints>
                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                         <state key="normal" backgroundImage="tired"/>
@@ -220,43 +256,52 @@
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" tag="7" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tired" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dFu-sv-9F7">
-                                        <rect key="frame" x="0.0" y="75.333333333333343" width="68.333333333333329" height="18.666666666666671"/>
+                                        <rect key="frame" x="0.0" y="439" width="68.333333333333329" height="18.666666666666686"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="18.670000000000002" id="H1J-8k-WOR"/>
+                                        </constraints>
                                         <fontDescription key="fontDescription" name="Thonburi" family="Thonburi" pointSize="14"/>
                                         <color key="textColor" name="blackColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
+                                <constraints>
+                                    <constraint firstItem="dFu-sv-9F7" firstAttribute="top" secondItem="0eR-jf-TeQ" secondAttribute="bottom" constant="8" symbolic="YES" id="veg-u7-RJT"/>
+                                </constraints>
                             </stackView>
                         </subviews>
                     </stackView>
                 </subviews>
                 <constraints>
-                    <constraint firstItem="09G-Nb-y30" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" id="1xo-mi-0qG"/>
-                    <constraint firstAttribute="bottom" secondItem="09G-Nb-y30" secondAttribute="bottom" constant="20" id="Tx3-oz-Q9z"/>
-                    <constraint firstItem="P6m-lj-KnR" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" id="c1f-SO-CMN"/>
-                    <constraint firstItem="P6m-lj-KnR" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="20" id="hBm-Hz-lzC"/>
+                    <constraint firstItem="lq2-Nl-lnw" firstAttribute="top" relation="greaterThanOrEqual" secondItem="vWH-X3-5fT" secondAttribute="bottom" constant="16" id="3Cx-fc-sYa"/>
+                    <constraint firstItem="vWH-X3-5fT" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" id="51e-hP-l2M"/>
+                    <constraint firstItem="vWH-X3-5fT" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="16" id="AIe-a8-h6Q"/>
+                    <constraint firstAttribute="bottom" secondItem="lq2-Nl-lnw" secondAttribute="bottom" constant="20" symbolic="YES" id="Qqe-gj-iSF"/>
+                    <constraint firstItem="lq2-Nl-lnw" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" id="Ukt-we-1AO"/>
+                    <constraint firstItem="vWH-X3-5fT" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="bmR-Rd-Y1o"/>
+                    <constraint firstItem="lq2-Nl-lnw" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="mJK-Bh-hJE"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
+                <outletCollection property="emotionLabels" destination="78Z-fB-d85" collectionClass="NSMutableArray" id="SgF-BR-YDX"/>
                 <outletCollection property="emotionButtons" destination="Zxj-ai-hda" collectionClass="NSMutableArray" id="LOT-up-Muo"/>
+                <outletCollection property="emotionLabels" destination="uZ4-IS-SHT" collectionClass="NSMutableArray" id="wE9-Xr-gAo"/>
                 <outletCollection property="emotionButtons" destination="j1j-6Q-46Q" collectionClass="NSMutableArray" id="hA7-eH-THc"/>
+                <outletCollection property="emotionLabels" destination="wL1-AX-zhC" collectionClass="NSMutableArray" id="C5b-Rz-UFg"/>
                 <outletCollection property="emotionButtons" destination="YVG-EG-50E" collectionClass="NSMutableArray" id="sSK-jC-RyY"/>
+                <outletCollection property="emotionLabels" destination="Lan-JQ-26M" collectionClass="NSMutableArray" id="tMo-yP-cI1"/>
                 <outletCollection property="emotionButtons" destination="WWS-oJ-4ES" collectionClass="NSMutableArray" id="QGD-Zg-pq4"/>
                 <outletCollection property="emotionButtons" destination="xho-W5-c21" collectionClass="NSMutableArray" id="RdG-N4-rt8"/>
-                <outletCollection property="emotionButtons" destination="jXm-BW-tNl" collectionClass="NSMutableArray" id="aaf-EY-6q7"/>
-                <outletCollection property="emotionButtons" destination="OeD-aG-XtO" collectionClass="NSMutableArray" id="UGH-BH-jl7"/>
-                <outletCollection property="emotionButtons" destination="0eR-jf-TeQ" collectionClass="NSMutableArray" id="mY0-rm-uJL"/>
-                <outletCollection property="emotionLabels" destination="78Z-fB-d85" collectionClass="NSMutableArray" id="SgF-BR-YDX"/>
-                <outletCollection property="emotionLabels" destination="uZ4-IS-SHT" collectionClass="NSMutableArray" id="wE9-Xr-gAo"/>
-                <outletCollection property="emotionLabels" destination="wL1-AX-zhC" collectionClass="NSMutableArray" id="C5b-Rz-UFg"/>
-                <outletCollection property="emotionLabels" destination="Lan-JQ-26M" collectionClass="NSMutableArray" id="tMo-yP-cI1"/>
                 <outletCollection property="emotionLabels" destination="UDo-Yi-Dxd" collectionClass="NSMutableArray" id="oXL-ls-Raa"/>
+                <outletCollection property="emotionButtons" destination="jXm-BW-tNl" collectionClass="NSMutableArray" id="aaf-EY-6q7"/>
                 <outletCollection property="emotionLabels" destination="j7P-Ul-7qq" collectionClass="NSMutableArray" id="E1o-6O-mvo"/>
+                <outletCollection property="emotionButtons" destination="OeD-aG-XtO" collectionClass="NSMutableArray" id="UGH-BH-jl7"/>
                 <outletCollection property="emotionLabels" destination="ro0-Wm-uop" collectionClass="NSMutableArray" id="8hI-T6-Wz0"/>
+                <outletCollection property="emotionButtons" destination="0eR-jf-TeQ" collectionClass="NSMutableArray" id="mY0-rm-uJL"/>
                 <outletCollection property="emotionLabels" destination="dFu-sv-9F7" collectionClass="NSMutableArray" id="kO3-sB-Pur"/>
             </connections>
-            <point key="canvasLocation" x="198.47328244274809" y="-1.4084507042253522"/>
+            <point key="canvasLocation" x="-232" y="-63"/>
         </tableViewCell>
     </objects>
     <resources>

@@ -24,9 +24,10 @@
         <scene sceneID="iX7-ot-lbc">
             <objects>
                 <viewControllerPlaceholder storyboardName="Playlist" id="L7Z-Xx-Mze" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" selectedImage="play.square.stack" catalog="system" id="lnV-dP-EVv">
-                        <imageReference key="image" image="play.square.stack" catalog="system" renderingMode="original"/>
-                        <color key="badgeColor" name="mainColor"/>
+                    <tabBarItem key="tabBarItem" title="Item" id="lnV-dP-EVv">
+                        <imageReference key="image" image="play.square.stack" catalog="system"/>
+                        <color key="badgeColor" name="accentColor"/>
+                        <imageReference key="selectedImage" image="play.square.stack" catalog="system" symbolScale="default"/>
                     </tabBarItem>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="E6w-3B-scD" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -41,7 +42,9 @@
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="VE8-r5-Erc" customClass="TabBar" customModule="Music" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="tintColor" name="mainColor"/>
+                        <color key="tintColor" name="accentColor"/>
+                        <color key="barTintColor" name="accentColor"/>
+                        <color key="selectedImageTintColor" name="accentColor"/>
                     </tabBar>
                     <connections>
                         <segue destination="EYT-oY-FQB" kind="relationship" relationship="viewControllers" id="RpY-Ga-Ixu"/>
@@ -61,6 +64,9 @@
     <resources>
         <image name="house" catalog="system" width="128" height="104"/>
         <image name="play.square.stack" catalog="system" width="105" height="128"/>
+        <namedColor name="accentColor">
+            <color red="0.22745098039215686" green="0.5725490196078431" blue="0.74901960784313726" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <namedColor name="mainColor">
             <color red="0.44313725490196076" green="0.80392156862745101" blue="0.83137254901960789" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

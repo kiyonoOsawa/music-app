@@ -31,6 +31,7 @@ class DetailViewController: UIViewController {
     }
     
     func design() {
+        self.navigationController?.navigationBar.tintColor = UIColor(named: "mainColor")
         musicImageView.layer.masksToBounds = true
         musicImageView.layer.cornerRadius = 12
         backGround.layer.cornerRadius = 15

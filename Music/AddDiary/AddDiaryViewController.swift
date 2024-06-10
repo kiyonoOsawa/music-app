@@ -107,6 +107,7 @@ extension AddDiaryViewController: UITableViewDelegate, UITableViewDataSource, Em
             musicCell.layer.borderColor = UIColor(named: "mainColor")?.cgColor
             if musicTitle == "" {
                 musicCell.titleLabel.text = "音楽を選択"
+                musicCell.titleLabel.font = UIFont(name: "HelveticaNeue", size: 16)
             } else {
                 musicCell.titleLabel.text = musicTitle
             }
