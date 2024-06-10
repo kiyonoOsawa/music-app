@@ -57,7 +57,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VN5-ly-Hww">
-                                <rect key="frame" x="71.666666666666686" y="177" width="250" height="250"/>
+                                <rect key="frame" x="71.666666666666686" y="189" width="250" height="250"/>
                                 <color key="backgroundColor" name="lightColor"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="250" id="ZvR-zt-XtF"/>
@@ -65,14 +65,14 @@
                                 </constraints>
                             </view>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="dKr-Yk-G1H">
-                                <rect key="frame" x="83.666666666666686" y="189" width="226" height="226"/>
+                                <rect key="frame" x="83.666666666666686" y="201" width="226" height="226"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="226" id="FQl-hX-GJJ"/>
                                     <constraint firstAttribute="width" constant="226" id="Kbb-mq-WoE"/>
                                 </constraints>
                             </imageView>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="XWK-3S-HvK">
-                                <rect key="frame" x="40" y="515.33333333333337" width="313" height="182.66666666666663"/>
+                                <rect key="frame" x="40" y="527.33333333333337" width="313" height="170.66666666666663"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                 <color key="textColor" systemColor="labelColor"/>
@@ -80,7 +80,7 @@
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="X86-3f-MDW">
-                                <rect key="frame" x="96" y="111" width="201" height="50"/>
+                                <rect key="frame" x="96" y="123" width="201" height="50"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="9ny-1w-lRH">
                                         <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
@@ -113,7 +113,7 @@
                                 </connections>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="ABv-Xy-0I5">
-                                <rect key="frame" x="115.33333333333333" y="443" width="162.33333333333337" height="32"/>
+                                <rect key="frame" x="115.33333333333333" y="455" width="162.33333333333337" height="32"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="タイトル" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ezj-k6-NoT">
                                         <rect key="frame" x="0.0" y="0.0" width="86.333333333333329" height="32"/>
@@ -137,11 +137,17 @@
                                 </subviews>
                             </stackView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="日記" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MOn-rK-R3Z">
-                                <rect key="frame" x="40" y="483" width="32" height="20.333333333333314"/>
+                                <rect key="frame" x="40" y="495" width="32" height="20.333333333333371"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="emmm_bar" translatesAutoresizingMaskIntoConstraints="NO" id="SMR-aI-i10">
+                                <rect key="frame" x="0.0" y="103" width="393" height="4"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="4" id="eQ7-Nd-Yk9"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="atO-3F-u12"/>
                         <color key="backgroundColor" systemColor="secondarySystemGroupedBackgroundColor"/>
@@ -149,19 +155,22 @@
                             <constraint firstItem="VN5-ly-Hww" firstAttribute="top" secondItem="X86-3f-MDW" secondAttribute="bottom" constant="16" id="1ly-7P-1FW"/>
                             <constraint firstItem="ABv-Xy-0I5" firstAttribute="top" secondItem="VN5-ly-Hww" secondAttribute="bottom" constant="16" id="2ID-04-rW2"/>
                             <constraint firstItem="dKr-Yk-G1H" firstAttribute="centerX" secondItem="XDe-FE-dOe" secondAttribute="centerX" id="4Ba-es-QKf"/>
+                            <constraint firstItem="X86-3f-MDW" firstAttribute="top" secondItem="SMR-aI-i10" secondAttribute="bottom" constant="16" id="5cc-Pf-bEM"/>
                             <constraint firstItem="XWK-3S-HvK" firstAttribute="centerX" secondItem="XDe-FE-dOe" secondAttribute="centerX" id="9dI-0U-JDM"/>
                             <constraint firstItem="M6W-RF-NKY" firstAttribute="centerX" secondItem="XDe-FE-dOe" secondAttribute="centerX" id="9dO-HX-742"/>
+                            <constraint firstItem="SMR-aI-i10" firstAttribute="top" secondItem="atO-3F-u12" secondAttribute="top" id="GCB-eg-hgT"/>
                             <constraint firstItem="dKr-Yk-G1H" firstAttribute="centerY" secondItem="VN5-ly-Hww" secondAttribute="centerY" id="NRr-5k-sXP"/>
                             <constraint firstItem="M6W-RF-NKY" firstAttribute="top" secondItem="XWK-3S-HvK" secondAttribute="bottom" constant="16" id="Nve-ds-VHS"/>
                             <constraint firstItem="XWK-3S-HvK" firstAttribute="top" secondItem="MOn-rK-R3Z" secondAttribute="bottom" constant="12" id="Onm-mn-4Pv"/>
                             <constraint firstItem="ABv-Xy-0I5" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="atO-3F-u12" secondAttribute="leading" constant="12" id="Xga-wI-ba9"/>
                             <constraint firstItem="dKr-Yk-G1H" firstAttribute="centerX" secondItem="VN5-ly-Hww" secondAttribute="centerX" id="aex-Ou-lYx"/>
                             <constraint firstItem="atO-3F-u12" firstAttribute="bottom" secondItem="M6W-RF-NKY" secondAttribute="bottom" constant="24" id="cdi-yk-FAa"/>
+                            <constraint firstItem="SMR-aI-i10" firstAttribute="leading" secondItem="atO-3F-u12" secondAttribute="leading" id="eUQ-EF-Hgy"/>
                             <constraint firstItem="XWK-3S-HvK" firstAttribute="leading" secondItem="atO-3F-u12" secondAttribute="leading" constant="40" id="kIj-RG-yro"/>
                             <constraint firstItem="ABv-Xy-0I5" firstAttribute="centerX" secondItem="XDe-FE-dOe" secondAttribute="centerX" id="lXp-4t-HdL"/>
                             <constraint firstItem="X86-3f-MDW" firstAttribute="centerX" secondItem="XDe-FE-dOe" secondAttribute="centerX" id="qBa-uS-NpY"/>
                             <constraint firstItem="MOn-rK-R3Z" firstAttribute="top" secondItem="ABv-Xy-0I5" secondAttribute="bottom" constant="8" id="ufH-eg-EgO"/>
-                            <constraint firstItem="X86-3f-MDW" firstAttribute="top" secondItem="atO-3F-u12" secondAttribute="top" constant="8" id="y5p-rl-1oz"/>
+                            <constraint firstItem="SMR-aI-i10" firstAttribute="trailing" secondItem="atO-3F-u12" secondAttribute="trailing" id="xNL-U6-MgV"/>
                             <constraint firstItem="MOn-rK-R3Z" firstAttribute="leading" secondItem="atO-3F-u12" secondAttribute="leading" constant="40" id="ynA-8c-fco"/>
                         </constraints>
                     </view>
@@ -220,6 +229,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="emmm_bar" width="5430" height="107"/>
         <image name="house" catalog="system" width="128" height="104"/>
         <namedColor name="lightColor">
             <color red="0.7803921568627451" green="0.92549019607843142" blue="0.93725490196078431" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
