@@ -5,8 +5,6 @@ import RealmSwift
 class AddDiaryViewController: UIViewController {
     
     @IBOutlet weak var sectionTableView: UITableView!
-//    @IBOutlet weak var cancelButton: UIButton!
-//    @IBOutlet weak var saveButton: UIButton!
     
     static let shared = AddDiaryViewController()
     
@@ -107,7 +105,11 @@ extension AddDiaryViewController: UITableViewDelegate, UITableViewDataSource, Em
             musicCell.selectionStyle = UITableViewCell.SelectionStyle.none
             musicCell.layer.borderWidth = 1
             musicCell.layer.borderColor = UIColor(named: "mainColor")?.cgColor
-            musicCell.titleLabel.text = musicTitle
+            if musicTitle == "" {
+                musicCell.titleLabel.text = "音楽を選択"
+            } else {
+                musicCell.titleLabel.text = musicTitle
+            }
             //取得してきた画像を表示
             if let url = musicImageURL {
                 loadImage(from: url) { image in

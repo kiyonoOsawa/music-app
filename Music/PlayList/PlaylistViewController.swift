@@ -12,7 +12,7 @@ class PlaylistViewController: UIViewController {
     var emotionNames = ["happy", "regret", "anxiety", "angry", "sad", "love", "joy", "tired"]
     var playListTitles: [String] = []
     var playListImageURLs: [URL?] = []
-    var playListIDs: [MusicItemID] = []
+    var playListIDs: [URL?] = []
     var filteredImageURLs: [URL?] = []
     
     override func viewDidLoad() {
@@ -36,7 +36,7 @@ class PlaylistViewController: UIViewController {
                 // 絞り込み処理
                 let transientPrefix = "musicKit://artwork/transient"
                 var filteredTitles: [String] = []
-                var filteredIDs: [MusicItemID] = []
+                var filteredIDs: [URL?] = []
                 var filteredImages: [URL?] = []
                 
                 for (index, title) in titles.enumerated() {
@@ -61,8 +61,8 @@ class PlaylistViewController: UIViewController {
         }
     }
     
-    func openAppleMusicPlaylist(withID id: MusicItemID) {
-        if let url = URL(string: "https://music.apple.com/jp/playlist/\(id)") {
+    func openAppleMusicPlaylist(withID id: URL) {
+        if let url = URL(string: "\(id)") {
             UIApplication.shared.open(url)
         }
     }
@@ -99,7 +99,7 @@ extension PlaylistViewController: UICollectionViewDelegate, UICollectionViewData
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let selectedPlaylistID = playListIDs[indexPath.item]
+        let selectedPlaylistID = playListIDs[indexPath.item]!
         openAppleMusicPlaylist(withID: selectedPlaylistID)
     }
     

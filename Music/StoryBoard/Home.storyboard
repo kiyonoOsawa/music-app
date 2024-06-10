@@ -9,7 +9,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Home View Controller-->
+        <!--Music-->
         <scene sceneID="s0d-6b-0kx">
             <objects>
                 <viewController id="Y6W-OH-hqX" customClass="HomeViewController" customModule="Music" customModuleProvider="target" sceneMemberID="viewController">
@@ -38,7 +38,7 @@
                             <constraint firstItem="rRR-JM-oM0" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="SGV-mQ-32v"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="Dpr-xu-AH7"/>
+                    <navigationItem key="navigationItem" title="Music" id="Dpr-xu-AH7"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="diaryCollectionView" destination="rRR-JM-oM0" id="DFY-De-BpB"/>
